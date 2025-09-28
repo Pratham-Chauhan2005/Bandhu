@@ -18,7 +18,7 @@ export default function AppContainer({
               <div className="relative flex min-h-screen flex-col">
                 <AppHeader />
                 <div className="flex-1">
-                  <main className="container mx-auto p-4 md:p-6 lg:p-8 pb-32">
+                  <main className="container mx-auto p-4 md:p-6 lg:p-8 pb-32 overflow-x-hidden">
                     {children}
                   </main>
                 </div>
