@@ -175,10 +175,10 @@ export const topFoods = [
 ];
 
 export const nearbyEvents = [
-  { id: '1', title: 'Diwali Festival of Lights', description: 'City-wide celebrations.', image: getImage('event1'), imageHint: getHint('event1'), date: 'Nov 12, 2024' },
-  { id: '2', title: 'Sufi Music Night', description: 'Soulful music at Nizamuddin.', image: getImage('event2'), imageHint: getHint('event2'), date: 'Fridays, 8 PM' },
-  { id: '3', title: 'India Art Fair', description: 'Contemporary art exhibition.', image: getImage('event3'), imageHint: getHint('event3'), date: 'Feb 1-4, 2025' },
-  { id: '4', title: 'Qutub Festival', description: 'Classical music and dance.', image: getImage('event4'), imageHint: getHint('event4'), date: 'Dec 15-19, 2024' },
+  { id: '1', title: 'Diwali Festival', description: 'City-wide celebrations.', image: getImage('event1'), imageHint: getHint('event1'), date: 'Nov 12', time: 'All Day' },
+  { id: '2', title: 'Sufi Music Night', description: 'Soulful music at Nizamuddin.', image: getImage('event2'), imageHint: getHint('event2'), date: 'Fridays', time: '8:00 PM' },
+  { id: '3', title: 'India Art Fair', description: 'Contemporary art exhibition.', image: getImage('event3'), imageHint: getHint('event3'), date: 'Feb 1-4', time: '11 AM - 7 PM' },
+  { id: '4', title: 'Qutub Festival', description: 'Classical music and dance.', image: getImage('event4'), imageHint: getHint('event4'), date: 'Dec 15-19', time: '6:30 PM' },
 ];
 
 export const mustVisitAttractions = [
