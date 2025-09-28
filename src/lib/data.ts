@@ -29,7 +29,9 @@ export const recommendedBandhus = [
     bio: "Passionate historian and storyteller, born and raised in Delhi. I'll show you the hidden gems and tales behind the city's iconic landmarks. Let's explore the soul of India together!",
     languages: ['English', 'Hindi', 'Punjabi'],
     skills: ['History Buff', 'Street Food Expert', 'Photography'],
-    photos: [getImage('gallery1'), getImage('gallery2'), getImage('gallery3')]
+    photos: [getImage('gallery1'), getImage('gallery2'), getImage('gallery3')],
+    phone: '+911234567890',
+    isAvailable: true,
   },
   {
     id: '2',
@@ -44,7 +46,9 @@ export const recommendedBandhus = [
     bio: "Capturing moments is my passion. Whether it's a portrait session against a stunning backdrop or candid street photography, I'll make your memories last a lifetime. I love finding unique angles and lighting.",
     languages: ['English', 'Hindi'],
     skills: ['Portrait Photography', 'Street Photography', 'Photo Editing'],
-    photos: [getImage('gallery4'), getImage('gallery5'), getImage('gallery6')]
+    photos: [getImage('gallery4'), getImage('gallery5'), getImage('gallery6')],
+    phone: '+912345678901',
+    isAvailable: false,
   },
   {
     id: '3',
@@ -59,7 +63,9 @@ export const recommendedBandhus = [
     bio: "Join me for a pottery workshop or a live painting session. I believe art is a universal language, and I love sharing traditional techniques with travelers from all over the world.",
     languages: ['English', 'Gujarati'],
     skills: ['Pottery', 'Mural Painting', 'Art History'],
-    photos: [getImage('gallery7'), getImage('gallery8'), getImage('gallery9')]
+    photos: [getImage('gallery7'), getImage('gallery8'), getImage('gallery9')],
+    phone: '+913456789012',
+    isAvailable: true,
   },
   {
     id: '4',
@@ -74,7 +80,9 @@ export const recommendedBandhus = [
     bio: "They say the way to the heart is through the stomach, and I'm here to prove it! I run a cooking class and food tours, introducing you to the authentic flavors of my home.",
     languages: ['English', 'Hindi'],
     skills: ['Cooking Classes', 'Food Tours', 'Spice Knowledge'],
-    photos: [getImage('gallery10'), getImage('gallery11'), getImage('gallery12')]
+    photos: [getImage('gallery10'), getImage('gallery11'), getImage('gallery12')],
+    phone: '+914567890123',
+    isAvailable: false,
   },
   {
     id: '5',
@@ -89,7 +97,9 @@ export const recommendedBandhus = [
     bio: "An adventure enthusiast who loves to explore the city's natural landscapes. From hiking trails to riverfronts, let's discover the greener side of the city.",
     languages: ['English', 'Hindi', 'Gujarati'],
     skills: ['Hiking', 'Nature Walks', 'Local History'],
-    photos: [getImage('gallery13'), getImage('gallery14'), getImage('gallery15')]
+    photos: [getImage('gallery13'), getImage('gallery14'), getImage('gallery15')],
+    phone: '+915678901234',
+    isAvailable: true,
   },
   {
     id: '6',
@@ -104,7 +114,9 @@ export const recommendedBandhus = [
     bio: "A textile artist passionate about traditional Indian fabrics and weaving techniques. Join my workshops to create your own beautiful textile art.",
     languages: ['English', 'Hindi'],
     skills: ['Weaving', 'Block Printing', 'Textile History'],
-    photos: [getImage('gallery16'), getImage('gallery17'), getImage('gallery18')]
+    photos: [getImage('gallery16'), getImage('gallery17'), getImage('gallery18')],
+    phone: '+916789012345',
+    isAvailable: true,
   },
   {
     id: '7',
@@ -119,7 +131,9 @@ export const recommendedBandhus = [
     bio: "I specialize in architectural and drone photography. Let's capture the grandeur of the city's monuments from a unique perspective.",
     languages: ['English', 'Punjabi'],
     skills: ['Drone Photography', 'Architecture', 'Videography'],
-    photos: [getImage('gallery19'), getImage('gallery20'), getImage('gallery21')]
+    photos: [getImage('gallery19'), getImage('gallery20'), getImage('gallery21')],
+    phone: '+917890123456',
+    isAvailable: false,
   },
   {
     id: '8',
@@ -134,7 +148,9 @@ export const recommendedBandhus = [
     bio: "From street food stalls to fine dining, I know all the best spots. My food tours are a journey through the city's culinary soul.",
     languages: ['English', 'Hindi', 'Marathi'],
     skills: ['Food Tours', 'Restaurant Curation', 'Wine Pairing'],
-    photos: [getImage('gallery22'), getImage('gallery23'), getImage('gallery24')]
+    photos: [getImage('gallery22'), getImage('gallery23'), getImage('gallery24')],
+    phone: '+918901234567',
+    isAvailable: true,
   },
   {
     id: '9',
@@ -149,7 +165,9 @@ export const recommendedBandhus = [
     bio: "Explore the city's nightlife with me. From trendy bars to hidden local hangouts, I'll show you the best places to be after dark.",
     languages: ['English', 'Hindi'],
     skills: ['Nightlife', 'Music Scene', 'Local Culture'],
-    photos: [getImage('gallery25'), getImage('gallery26'), getImage('gallery27')]
+    photos: [getImage('gallery25'), getImage('gallery26'), getImage('gallery27')],
+    phone: '+919012345678',
+    isAvailable: false,
   },
   {
     id: '10',
@@ -164,7 +182,9 @@ export const recommendedBandhus = [
     bio: "I am a muralist and street artist. Let's explore the vibrant street art scene of the city or even collaborate on a community art project.",
     languages: ['English', 'Kannada'],
     skills: ['Street Art', 'Mural Painting', 'Community Art'],
-    photos: [getImage('gallery28'), getImage('gallery29'), getImage('gallery30')]
+    photos: [getImage('gallery28'), getImage('gallery29'), getImage('gallery30')],
+    phone: '+910123456789',
+    isAvailable: true,
   }
 ];
 
@@ -209,3 +229,6 @@ export const localFoodShops = [
 ];
 
 
+
+
+    

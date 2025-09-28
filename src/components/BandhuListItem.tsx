@@ -2,9 +2,11 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Card, CardContent } from '@/components/ui/card';
 import VerifiedBadge from './VerifiedBadge';
-import { Star, Languages } from 'lucide-react';
+import { Star, Languages, Phone } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from './ui/button';
+import { Badge } from './ui/badge';
+import { cn } from '@/lib/utils';
 
 type Bandhu = {
   id: string;
@@ -17,6 +19,8 @@ type Bandhu = {
   image: string;
   imageHint: string;
   languages: string[];
+  phone: string;
+  isAvailable: boolean;
 };
 
 type BandhuListItemProps = {
@@ -45,16 +49,31 @@ export default function BandhuListItem({ bandhu }: BandhuListItemProps) {
                 </div>
             </div>
 
-            <div className="flex md:flex-col items-center md:items-end justify-between gap-2">
-                <div className="text-lg font-bold text-foreground">
+            <div className="flex flex-col items-end gap-2">
+                <div className="flex items-center gap-2">
+                    <Badge className={cn(
+                        bandhu.isAvailable ? 'bg-green-500' : 'bg-red-500',
+                        'text-white'
+                    )}>
+                        {bandhu.isAvailable ? 'Available' : 'Occupied'}
+                    </Badge>
+                    {bandhu.isAvailable && (
+                        <Button asChild size="sm">
+                            <a href={`tel:${bandhu.phone}`}>
+                                <Phone className="mr-2 h-4 w-4" />
+                                Contact
+                            </a>
+                        </Button>
+                    )}
+                </div>
+                 <div className="text-lg font-bold text-foreground">
                     ₹{bandhu.rate}/hr
                 </div>
-                <Link href={`/bandhus/${bandhu.id}`} passHref>
-                  <Button size="sm">View Profile</Button>
-                </Link>
             </div>
         </div>
       </CardContent>
     </Card>
   );
 }
+
+    
