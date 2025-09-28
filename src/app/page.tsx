@@ -63,9 +63,9 @@ export default function Home() {
         </div>
       </div>
 
-      <section>
+      <section className="pt-4">
         <div className="flex justify-between items-center mb-4">
-          <h2 className="text-xl font-bold">Recommended for You</h2>
+          <h2 className="text-xl font-bold text-foreground">Recommended for You</h2>
           <Button variant="ghost" asChild>
             <Link href="/explore">
               View all
@@ -73,10 +73,12 @@ export default function Home() {
             </Link>
           </Button>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {recommendedBandhus.slice(0, 4).map((bandhu) => (
-            <BandhuCard key={bandhu.id} bandhu={bandhu} />
-          ))}
+        <div className="overflow-x-hidden">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {recommendedBandhus.slice(0, 4).map((bandhu) => (
+              <BandhuCard key={bandhu.id} bandhu={bandhu} />
+            ))}
+          </div>
         </div>
       </section>
       
