@@ -30,6 +30,7 @@ import {
 } from 'lucide-react';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
+import Logo from '../Logo';
 
 const navItems = [
   { href: '/', icon: Home, label: 'Home' },
@@ -56,8 +57,7 @@ export default function AppSidebar() {
     <Sidebar variant="floating">
       <SidebarHeader>
         <Link href="/" className="flex items-center gap-2 text-primary font-headline font-bold text-lg">
-          <Zap className="h-6 w-6" />
-          <span className="group-data-[collapsible=icon]:hidden">Bandhu Local</span>
+          <Logo />
         </Link>
       </SidebarHeader>
       <SidebarContent>

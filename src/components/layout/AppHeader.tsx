@@ -7,6 +7,7 @@ import { useState, useEffect } from 'react';
 import { useScroll } from '@/hooks/use-scroll';
 import { cn } from '@/lib/utils';
 import { SidebarTrigger, useSidebar } from '../ui/sidebar';
+import Logo from '../Logo';
 
 export default function AppHeader() {
   const [location, setLocation] = useState('Detecting location...');
@@ -51,7 +52,7 @@ export default function AppHeader() {
     )}>
       <div className="flex items-center gap-2">
         <SidebarTrigger />
-        <div className='flex items-center gap-2 text-muted-foreground font-semibold'>
+        <div className='hidden md:flex items-center gap-2 text-muted-foreground font-semibold'>
             {isLoading ? (
             <Loader2 className="h-5 w-5 animate-spin text-primary" />
             ) : (
@@ -63,12 +64,12 @@ export default function AppHeader() {
             )}>{location}</span>
         </div>
       </div>
-      <div className="flex-1 text-center md:text-right">
+      <div className="flex-1 text-center md:text-left">
         <Link href="/" className={cn(
           "font-bold text-primary font-headline transition-all duration-200",
           isScrolled ? 'text-xl' : 'text-2xl'
         )}>
-          Bandhu
+          <Logo />
         </Link>
       </div>
        <div className='md:hidden flex-1'></div>
