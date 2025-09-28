@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { Card, CardContent } from '@/components/ui/card';
@@ -40,9 +41,7 @@ export default function BandhuCard({ bandhu }: BandhuCardProps) {
                 <span>{bandhu.rating.toFixed(1)}</span>
             </div>
           </div>
-          <div className="text-xs text-muted-foreground mt-1">
-            <span>₹{bandhu.rate}/hr</span>
-          </div>
+          <p className="text-xs text-primary font-medium mt-1">{bandhu.service}</p>
         </CardContent>
       </Card>
     </Link>
