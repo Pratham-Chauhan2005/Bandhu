@@ -2,14 +2,12 @@
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent } from '@/components/ui/card';
-import { Search, MapPin, Loader2, Star, Users, Camera, Palette, UtensilsCrossed, CalendarDays, Landmark } from 'lucide-react';
+import { Search, MapPin, Loader2 } from 'lucide-react';
 import { recommendedBandhus, topFoods, nearbyEvents, mustVisitAttractions, categories } from '@/lib/data';
 import BandhuCard from '@/components/BandhuCard';
 import ContentCard from '@/components/ContentCard';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 
 export default function Home() {
   const [location, setLocation] = useState('Detecting location...');
@@ -25,9 +23,8 @@ export default function Home() {
               `https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`
             );
             const data = await response.json();
-            const { suburb, city, town, village, state } = data.address;
-            const locationString = [suburb, city, town, village].filter(Boolean).join(', ');
-            setLocation(`${locationString}, ${state}`);
+            const { city, state } = data.address;
+            setLocation(city ? `${city}, ${state}`: 'Unknown Location');
           } catch (error) {
             console.error('Error fetching address:', error);
             setLocation('Could not determine location');
@@ -49,7 +46,7 @@ export default function Home() {
 
   return (
     <div className="space-y-8">
-       <div className="flex items-center gap-2 text-foreground/80 font-semibold">
+       <div className="flex items-center gap-2 text-muted-foreground font-semibold">
         {isLoading ? (
           <Loader2 className="h-5 w-5 animate-spin text-primary" />
         ) : (
@@ -59,19 +56,19 @@ export default function Home() {
       </div>
 
       <div className="relative w-full">
-        <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+        <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
         <Input
           placeholder="Search services, guides, food..."
-          className="h-12 text-base pl-10 pr-4 rounded-lg shadow-sm border focus-visible:ring-primary/50"
+          className="h-12 text-base pl-12 pr-4 rounded-full shadow-sm border-0 bg-gray-100 focus-visible:ring-primary/50"
         />
       </div>
 
-      <div className="flex flex-wrap gap-2">
+      <div className="flex overflow-x-auto space-x-2 -mx-4 px-4 pb-2">
         {categories.map(category => (
-            <Button key={category.name} variant="outline" className="flex items-center gap-2 rounded-lg" asChild>
+            <Button key={category.name} variant="outline" className="flex items-center gap-2 rounded-full bg-white flex-shrink-0" asChild>
                 <Link href={category.href}>
                     <category.icon className="h-4 w-4" />
-                    <span>{category.name}</span>
+                    <span className="font-medium">{category.name}</span>
                 </Link>
             </Button>
         ))}
@@ -79,57 +76,37 @@ export default function Home() {
 
       <section>
         <h2 className="text-xl font-bold mb-4">Recommended for You</h2>
-        <div className="space-y-4">
+        <div className="flex space-x-4 overflow-x-auto -mx-4 px-4 pb-4">
             {recommendedBandhus.map((bandhu) => (
-              <Card key={bandhu.id} className="overflow-hidden">
-                <Link href={`/bandhus/${bandhu.id}`} className="block">
-                  <CardContent className="p-4 flex items-center gap-4">
-                      <Image 
-                        src={bandhu.image}
-                        alt={bandhu.name}
-                        width={64}
-                        height={64}
-                        className="w-16 h-16 rounded-lg object-cover"
-                        data-ai-hint={bandhu.imageHint}
-                      />
-                      <div className="flex-grow">
-                          <p className="font-semibold text-foreground">{bandhu.name}</p>
-                          <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                              <div className="flex items-center gap-1">
-                                <Star className="w-4 h-4 fill-primary text-primary" />
-                                <span>{bandhu.rating.toFixed(1)}</span>
-                              </div>
-                              <span>•</span>
-                              <span>₹{bandhu.rate}/hr</span>
-                          </div>
-                      </div>
-                  </CardContent>
-                </Link>
-              </Card>
+              <div key={bandhu.id} className="w-40 flex-shrink-0">
+                <BandhuCard bandhu={bandhu} />
+              </div>
             ))}
         </div>
       </section>
       
       <section>
         <h2 className="text-xl font-bold mb-4">Top Local Foods</h2>
-        <div className="grid grid-cols-2 gap-4">
+        <div className="flex space-x-4 overflow-x-auto -mx-4 px-4 pb-4">
             {topFoods.map((food) => (
-              <Card key={food.id}>
-                  <CardContent className="p-4 flex items-center justify-center">
-                    <p className="font-medium text-center">{food.title}</p>
-                  </CardContent>
-              </Card>
+              <div key={food.id} className="w-64 flex-shrink-0">
+                <ContentCard content={food} type="food" />
+              </div>
             ))}
         </div>
       </section>
 
       <section>
         <h2 className="text-xl font-bold mb-4">Nearby Events</h2>
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 gap-4">
             {nearbyEvents.map((event) => (
-              <Card key={event.id} className="bg-green-100/50">
-                  <CardContent className="p-4 flex items-center justify-center">
-                    <p className="font-medium text-center">{event.title}</p>
+              <Card key={event.id} className="shadow-md rounded-xl">
+                  <CardContent className="p-4 flex items-center justify-between">
+                    <div>
+                      <p className="font-bold text-primary">{event.title}</p>
+                      <p className="text-sm text-muted-foreground">{event.description}</p>
+                    </div>
+                    <Button size="sm">Details</Button>
                   </CardContent>
               </Card>
             ))}
@@ -138,13 +115,11 @@ export default function Home() {
 
       <section>
         <h2 className="text-xl font-bold mb-4">Must Visit Attractions</h2>
-        <div className="grid grid-cols-2 gap-4">
+        <div className="flex space-x-4 overflow-x-auto -mx-4 px-4 pb-4">
             {mustVisitAttractions.map((attraction) => (
-              <Card key={attraction.id} className="bg-blue-100/50">
-                  <CardContent className="p-4 flex items-center justify-center">
-                    <p className="font-medium text-center">{attraction.title}</p>
-                  </CardContent>
-              </Card>
+              <div key={attraction.id} className="w-64 flex-shrink-0">
+                <ContentCard content={attraction} type="attraction" />
+              </div>
             ))}
         </div>
       </section>

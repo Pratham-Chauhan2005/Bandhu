@@ -67,7 +67,7 @@ export default function BandhuProfilePage({ params }: { params: { id: string } }
                 <span>{bandhu.rating.toFixed(1)}</span>
                 <span className="font-normal text-muted-foreground">({bandhu.reviews} reviews)</span>
               </div>
-              <span className="text-2xl font-bold text-foreground/90">${bandhu.rate}/hr</span>
+              <span className="text-2xl font-bold text-foreground/90">₹{bandhu.rate}/hr</span>
             </div>
             <div className="flex flex-wrap gap-2">
               {bandhu.skills.map(skill => <Badge key={skill} variant="secondary">{skill}</Badge>)}
