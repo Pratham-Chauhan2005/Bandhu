@@ -3,7 +3,7 @@
     {
       "id": "bandhu1",
       "description": "Portrait of Rohan Sharma",
-      "imageUrl": "https://images.unsplash.com/photo-1615109398623-88346a601842?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxpbmRpYW4lMjBtYW58ZW58MHx8fHwxNzY0NTg0NTU3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1615109398623-88346a601842?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aW5kaWFuJTIwbWFufGVufDB8fDB8fA%3D%3D&w=1000&q=80",
       "imageHint": "indian guide"
     },
     {
@@ -87,13 +87,13 @@
     {
       "id": "event1",
       "description": "Diwali Festival",
-      "imageUrl": "https://images.unsplash.com/photo-1605292356183-a77d0a9c9d1d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxkaXdhbGklMjBmZXN0aXZhbHxlbnwwfHx8fDE3NTkwNDA1OTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1605292356183-a77d0a9c9d1d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxkaXdhbGklMjBmZXN0aXZhbHxlbnwwfHx8fDE3NTkwNDA1OTF8MA&ixlib.rb-4.1.0&q=80&w=1080",
       "imageHint": "diwali festival"
     },
     {
       "id": "event2",
       "description": "Sufi Music Night",
-      "imageUrl": "https://images.unsplash.com/photo-1657404377553-4a1dfeafd91f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxzdWZpJTIwbXVzaWN8ZW58MHx8fHwxNzU5MDUzNDI0fDA&ixlibrb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1657404377553-4a1dfeafd91f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxzdWZpJTIwbXVzaWN8ZW58MHx8fHwxNzU5MDUzNDI0fDA&ixlib.rb-4.1.0&q=80&w=1080",
       "imageHint": "sufi music"
     },
     {
@@ -238,7 +238,7 @@
     },
     {
       "id": "gallery23",
-      "imageUrl": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHxpbmRpYW4lMjBmaW5lJTIwZGluaW5nfGVufDB8fHx8fDE3NTkwNTM0MjZ8MA&ixlib.rb-4.10&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHxpbmRpYW4lMjBmaW5lJTIwZGluaW5nfGVufDB8fHx8fDE3NTkwNTM0MjZ8MA&ixlib.rb-4.1.0&q=80&w=1080",
       "imageHint": "indian dining"
     },
     {
@@ -278,22 +278,22 @@
     },
     {
       "id": "homestay1",
-      "imageUrl": "https://images.unsplash.com/photo-1620141692021-968b3236e783?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxpbmRpYW4lMjBob21lJTIwaW50ZXJpb3J8ZW58MHx8fHwxNzY0MDgzODQwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1606385881194-10b786d723ee?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxpbmRpYW4lMjBob21lfGVufDB8fHx8MTc1OTA3OTgxN3ww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "indian home"
     },
     {
       "id": "homestay2",
-      "imageUrl": "https://images.unsplash.com/photo-1618221195720-dd6b41fa91a4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxjb3p5JTIwaW50ZXJpb3J8ZW58MHx8fHwxNzY0MDgzOTIwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1560890264-4b92305ee66e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8Y296eSUyMGludGVyaW9yfGVufDB8fHx8MTc1OTA5MDU3Nnww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "cozy interior"
     },
     {
       "id": "homestay3",
-      "imageUrl": "https://images.unsplash.com/photo-1600585152220-90363fe7e115?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxtb2Rlcm4lMjBob21lJTIwaW50ZXJpb3J8ZW58MHx8fHwxNzY0MDgzOTQxfDA&ixlib.rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxtb2Rlcm4lMjBob21lfGVufDB8fHx8MTc1OTA4ODM0Mnww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "modern home"
     },
     {
       "id": "homestay4",
-      "imageUrl": "https://images.unsplash.com/photo-1556702582-149303e3a473?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxpbmRpYW4lMjBob3VzZSUyMGludGVyaW9yfGVufDB8fHx8MTc2NDA4Mzk2NHww&ixlib.rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1737560878355-408cc8a8a83f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxpbmRpYW4lMjBpbnRlcmlvcnxlbnwwfHx8fDE3NTkwNTExMTV8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "indian interior"
     },
     {
