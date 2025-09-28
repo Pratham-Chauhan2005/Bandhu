@@ -27,7 +27,7 @@
     {
       "id": "bandhu5",
       "description": "Portrait of Aarav Patel",
-      "imageUrl": "https://images.unsplash.com/photo-1599481238640-4c12727c298a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxpbmRpYW4lMjBndWlkZXxlbnwwfHx8fDE3NTkwNTM0MjR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1599481238640-4c12727c298a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxpbmRpYW4lMjBndWlkZXxlbnwwfHx8fDE3NTkwNTM0MjR8MA&ixlib-rb-4.1.0&q=80&w=1080",
       "imageHint": "indian guide"
     },
     {
@@ -69,7 +69,7 @@
     {
       "id": "food2",
       "description": "Masala Dosa",
-      "imageUrl": "https://images.unsplash.com/photo-1743517894265-c86ab035adef?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxkb3NhfGVufDB8fHx8MTc1OTA0MjMwMnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1743517894265-c86ab035adef?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxkb3NhfGVufDB8fHx8MTc1OTA0MjMwMnww&ixlib.rb-4.1.0&q=80&w=1080",
       "imageHint": "dosa"
     },
     {
@@ -297,54 +297,54 @@
       "imageHint": "artistic loft"
     },
     {
-      "id": "shop1",
-      "imageUrl": "https://images.unsplash.com/photo-1599557041284-7e2a1581e189?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzdHJlZXQlMjBmb29kJTIwc3RhbGx8ZW58MHx8fHwxNzU5MDYzMjY3fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "street food stall"
+      "id": "gwalior_shop1",
+      "imageUrl": "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxpbmRpYW4lMjBzd2VldHN8ZW58MHx8fHwxNzU5MDYzMjY3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "indian sweets"
     },
     {
-      "id": "shop2",
-      "imageUrl": "https://images.unsplash.com/photo-1579631542720-3a8383299788?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxpbmRpYW4lMjByZXN0YXVyYW50fGVufDB8fHx8MTc1OTA2MzI2N3ww&ixlib.rb-4.1.0&q=80&w=1080",
-      "imageHint": "indian restaurant"
+      "id": "gwalior_shop2",
+      "imageUrl": "https://images.unsplash.com/photo-1604382354936-07c5d9983d34?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxrYWNob3JpfGVufDB8fHx8MTc1OTA2MzI2N3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "kachori"
     },
     {
-      "id": "shop3",
-      "imageUrl": "https://images.unsplash.com/photo-1511920170033-f832d754ca33?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjb2ZmZWUlMjBzaG9wfGVufDB8fHx8MTc1OTA2MzI2N3ww&ixlib.rb-4.1.0&q=80&w=1080",
-      "imageHint": "coffee shop"
+      "id": "gwalior_shop3",
+      "imageUrl": "https://images.unsplash.com/photo-1552566626-52f8b828add9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxpbmRpYW4lMjBkaW5pbmd8ZW58MHx8fHwxNzU5MDYzMjY3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "indian dining"
     },
     {
-      "id": "shop4",
-      "imageUrl": "https://images.unsplash.com/photo-1628579434199-73c33de34415?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxpY2UlMjBjcmVhbSUyMHNob3B8ZW58MHx8fHwxNzU5MDYzMjY4fDA&ixlib.rb-4.1.0&q=80&w=1080",
-      "imageHint": "ice cream shop"
+      "id": "gwalior_shop4",
+      "imageUrl": "https://images.unsplash.com/photo-1511920170033-f832d754ca33?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxpbmRpYW4lMjBjb2ZmZWUlMjBob3VzZXxlbnwwfHx8fDE3NTkwNjMyNjh8MA&ixlib.rb-4.1.0&q=80&w=1080",
+      "imageHint": "indian coffee"
     },
     {
-      "id": "shop5",
-      "imageUrl": "https://images.unsplash.com/photo-1565557623262-b27c25248a48?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxpbmRpYW4lMjBicmVha2Zhc3R8ZW58MHx8fHwxNzU5MDYzMjY4fDA&ixlib.rb-4.1.0&q=80&w=1080",
-      "imageHint": "indian breakfast"
+      "id": "gwalior_shop5",
+      "imageUrl": "https://images.unsplash.com/photo-1598636423989-13a2760f381c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwZXRoYXxlbnwwfHx8fDE3NTkwNjMyNjh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "petha sweet"
     },
     {
-      "id": "shop6",
+      "id": "gwalior_shop6",
       "imageUrl": "https://images.unsplash.com/photo-1574936145849-0f46159a35c5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxidXR0ZXIlMjBjaGlja2VufGVufDB8fHx8MTc1OTA2MzI2OHww&ixlib.rb-4.1.0&q=80&w=1080",
       "imageHint": "butter chicken"
     },
     {
-      "id": "shop7",
-      "imageUrl": "https://images.unsplash.com/photo-1590846406792-0adc7f938f1d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzb3V0aCUyMGluZGlhbiUyMHJlc3RhdXJhbnR8ZW58MHx8fHwxNzU5MDYzMjY4fDA&ixlib.rb-4.1.0&q=80&w=1080",
-      "imageHint": "south indian restaurant"
+      "id": "gwalior_shop7",
+      "imageUrl": "https://images.unsplash.com/photo-1513104890138-7c749659a591?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxpbmRpYW4lMjB0aGFsaXxlbnwwfHx8fDE3NTkwNjMyNjh8MA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageHint": "indian thali"
     },
     {
-      "id": "shop8",
-      "imageUrl": "https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwYXJhbnRoYXxlbnwwfHx8fDE3NTkwNjMyNjh8MA&ixlib.rb-4.1.0&q=80&w=1080",
-      "imageHint": "parantha"
+      "id": "gwalior_shop8",
+      "imageUrl": "https://images.unsplash.com/photo-1589302168068-964664d93dc0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxpbmRpYW4lMjBjdWlzaW5lfGVufDB8fHx8MTc1OTA2MzI2OHww&ixlib.rb-4.1.0&q=80&w=1080",
+      "imageHint": "indian cuisine"
     },
     {
-      "id": "shop9",
-      "imageUrl": "https://images.unsplash.com/photo-1625813532892-454533035a4b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxrZWJhYnxlbnwwfHx8fDE3NTkwNjMyNjl8MA&ixlib.rb-4.1.0&q=80&w=1080",
-      "imageHint": "kebab"
+      "id": "gwalior_shop9",
+      "imageUrl": "https://images.unsplash.com/photo-1604118042475-e9b2f6b31e2a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxoZXJpdGFnZSUyMGNhZmV8ZW58MHx8fHwxNzU5MDYzMjY5fDA&ixlib.rb-4.1.0&q=80&w=1080",
+      "imageHint": "heritage cafe"
     },
     {
-      "id": "shop10",
-      "imageUrl": "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxtb21vc3xlbnwwfHx8fDE3NTkwNjMyNjl8MA&ixlib.rb-4.1.0&q=80&w=1080",
-      "imageHint": "momos"
+      "id": "gwalior_shop10",
+      "imageUrl": "https://images.unsplash.com/photo-1551782450-a2132b4ba21d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBjYWZlfGVufDB8fHx8fDE3NTkwNjMyNjl8MA&ixlib.rb-4.1.0&q=80&w=1080",
+      "imageHint": "modern cafe"
     }
   ]
 }

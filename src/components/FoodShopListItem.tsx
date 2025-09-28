@@ -14,6 +14,7 @@ type FoodShop = {
   reviews: number;
   image: string;
   imageHint: string;
+  distance?: number;
 };
 
 type FoodShopListItemProps = {
@@ -38,6 +39,11 @@ export default function FoodShopListItem({ shop }: FoodShopListItemProps) {
         </div>
 
         <div className="flex flex-col items-end justify-center gap-1 text-right">
+            {shop.distance !== undefined && (
+                <div className="text-xs font-semibold text-primary rounded-full bg-primary/10 px-2 py-1">
+                    {shop.distance.toFixed(1)} km away
+                </div>
+            )}
           <div className="flex items-center gap-1 font-bold text-amber-500">
             <Star className="w-5 h-5 fill-current" />
             <span>{shop.rating.toFixed(1)}</span>

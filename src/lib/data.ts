@@ -182,9 +182,9 @@ export const nearbyEvents = [
 ];
 
 export const mustVisitAttractions = [
-  { id: '1', title: 'Gwalior Fort', description: 'A hill fort in Gwalior, Madhya Pradesh.', image: getImage('attractionGwalior'), imageHint: getHint('attractionGwalior') },
-  { id: '2', title: 'Humayun\'s Tomb', description: 'The tomb of the Mughal Emperor.', image: getImage('attraction2'), imageHint: getHint('attraction2') },
-  { id: '3', title: 'Qutub Minar', description: 'A towering minaret and victory tower.', image: getImage('attraction3'), imageHint: getHint('attraction3') },
+    { id: '1', title: 'Gwalior Fort', description: 'A hill fort in Gwalior, Madhya Pradesh.', image: getImage('attractionGwalior'), imageHint: getHint('attractionGwalior'), latitude: 26.2307, longitude: 78.1689, hours: '10:00 AM - 5:00 PM', price: '₹75 for Indians' },
+    { id: '2', title: 'Humayun\'s Tomb', description: 'The tomb of the Mughal Emperor.', image: getImage('attraction2'), imageHint: getHint('attraction2'), latitude: 28.5933, longitude: 77.2507, hours: '6:00 AM - 6:00 PM', price: '₹35 for Indians' },
+    { id: '3', title: 'Qutub Minar', description: 'A towering minaret and victory tower.', image: getImage('attraction3'), imageHint: getHint('attraction3'), latitude: 28.5245, longitude: 77.1855, hours: '7:00 AM - 5:00 PM', price: '₹35 for Indians' },
 ];
 
 export const homestays = [
@@ -195,14 +195,14 @@ export const homestays = [
 ];
 
 export const localFoodShops = [
-    { id: '1', name: 'Paranthe Wali Gali', location: 'Chandni Chowk, Delhi', rating: 4.5, reviews: 2300, image: getImage('shop1'), imageHint: getHint('shop1') },
-    { id: '2', name: 'Karim\'s', location: 'Jama Masjid, Delhi', rating: 4.7, reviews: 3500, image: getImage('shop2'), imageHint: getHint('shop2') },
-    { id: '3', name: 'Indian Coffee House', location: 'Connaught Place, Delhi', rating: 4.4, reviews: 1800, image: getImage('shop3'), imageHint: getHint('shop3') },
-    { id: '4', name: 'Kuremal Mohan Lal Kulfi Wale', location: 'Chawri Bazar, Delhi', rating: 4.8, reviews: 1500, image: getImage('shop4'), imageHint: getHint('shop4') },
-    { id: '5', name: 'Sita Ram Diwan Chand', location: 'Paharganj, Delhi', rating: 4.6, reviews: 2100, image: getImage('shop5'), imageHint: getHint('shop5') },
-    { id: '6', name: 'Moti Mahal Delux', location: 'Daryaganj, Delhi', rating: 4.3, reviews: 2800, image: getImage('shop6'), imageHint: getHint('shop6') },
-    { id: '7', name: 'Saravana Bhavan', location: 'Connaught Place, Delhi', rating: 4.5, reviews: 4200, image: getImage('shop7'), imageHint: getHint('shop7') },
-    { id: '8', name: 'Gali Parathe Wali', location: 'Chandni Chowk, Delhi', rating: 4.2, reviews: 1200, image: getImage('shop8'), imageHint: getHint('shop8') },
-    { id: '9', name: 'Khan Chacha', location: 'Khan Market, Delhi', rating: 4.4, reviews: 3100, image: getImage('shop9'), imageHint: getHint('shop9') },
-    { id: '10', name: 'Dolma Aunty Momos', location: 'Lajpat Nagar, Delhi', rating: 4.9, reviews: 5600, image: getImage('shop10'), imageHint: getHint('shop10') },
+    { id: '1', name: 'Bahadura Sweets', location: 'Naya Bazaar, Gwalior', rating: 4.5, reviews: 1200, image: getImage('gwalior_shop1'), imageHint: getHint('gwalior_shop1'), latitude: 26.2208, longitude: 78.1828 },
+    { id: '2', name: 'SS Kachoriwala', location: 'Nai Sadak, Gwalior', rating: 4.7, reviews: 2500, image: getImage('gwalior_shop2'), imageHint: getHint('gwalior_shop2'), latitude: 26.215, longitude: 78.172 },
+    { id: '3', name: 'Kwality Restaurant', location: 'Lashkar, Gwalior', rating: 4.4, reviews: 1800, image: getImage('gwalior_shop3'), imageHint: getHint('gwalior_shop3'), latitude: 26.204, longitude: 78.169 },
+    { id: '4', name: 'Indian Coffee House', location: 'Phool Bagh, Gwalior', rating: 4.8, reviews: 3500, image: getImage('gwalior_shop4'), imageHint: getHint('gwalior_shop4'), latitude: 26.218, longitude: 78.18 },
+    { id: '5', name: 'Panchhi Petha', location: 'Thatipur, Gwalior', rating: 4.6, reviews: 950, image: getImage('gwalior_shop5'), imageHint: getHint('gwalior_shop5'), latitude: 26.234, longitude: 78.199 },
+    { id: '6', name: 'Moti Mahal Delux', location: 'City Center, Gwalior', rating: 4.3, reviews: 2200, image: getImage('gwalior_shop6'), imageHint: getHint('gwalior_shop6'), latitude: 26.218, longitude: 78.201 },
+    { id: '7', name: 'Shri Restaurant', location: 'Morar, Gwalior', rating: 4.5, reviews: 1500, image: getImage('gwalior_shop7'), imageHint: getHint('gwalior_shop7'), latitude: 26.237, longitude: 78.232 },
+    { id: '8', name: 'Alfanzo Restaurant', location: 'City Center, Gwalior', rating: 4.2, reviews: 1100, image: getImage('gwalior_shop8'), imageHint: getHint('gwalior_shop8'), latitude: 26.219, longitude: 78.203 },
+    { id: '9', name: 'Victorian Vantage', location: 'Jayendraganj, Lashkar', rating: 4.4, reviews: 800, image: getImage('gwalior_shop9'), imageHint: getHint('gwalior_shop9'), latitude: 26.207, longitude: 78.171 },
+    { id: '10', name: 'Captain\'s Cafe', location: 'Phool Bagh, Gwalior', rating: 4.9, reviews: 4100, image: getImage('gwalior_shop10'), imageHint: getHint('gwalior_shop10'), latitude: 26.217, longitude: 78.181 },
 ];
