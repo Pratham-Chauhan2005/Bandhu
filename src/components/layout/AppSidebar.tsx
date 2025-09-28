@@ -9,6 +9,8 @@ import {
   SidebarMenuItem,
   SidebarMenuButton,
   SidebarGroupLabel,
+  SidebarTrigger,
+  useSidebar,
 } from '@/components/ui/sidebar';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
@@ -27,6 +29,7 @@ import {
   Map,
 } from 'lucide-react';
 import Link from 'next/link';
+import { cn } from '@/lib/utils';
 
 const navItems = [
   { href: '/', icon: Home, label: 'Home' },
@@ -47,6 +50,7 @@ const bottomNavItems = [
 
 export default function AppSidebar() {
   const pathname = usePathname();
+  const { state } = useSidebar();
 
   return (
     <Sidebar variant="floating">
@@ -58,7 +62,13 @@ export default function AppSidebar() {
       </SidebarHeader>
       <SidebarContent>
         <SidebarMenu>
-          <SidebarGroupLabel>Menu</SidebarGroupLabel>
+          <div className='flex justify-between items-center px-2 mb-2'>
+            <SidebarGroupLabel className='px-0'>Menu</SidebarGroupLabel>
+            <SidebarTrigger className={cn(
+              "h-7 w-7 group-data-[collapsible=icon]:hidden",
+               state === 'collapsed' && 'hidden'
+            )} />
+          </div>
           {navItems.map((item) => (
             <SidebarMenuItem key={item.href}>
               <SidebarMenuButton asChild isActive={pathname === item.href} tooltip={item.label}>

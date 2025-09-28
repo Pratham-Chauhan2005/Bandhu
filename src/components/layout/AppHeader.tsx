@@ -12,7 +12,6 @@ export default function AppHeader() {
   const [location, setLocation] = useState('Detecting location...');
   const [isLoading, setIsLoading] = useState(true);
   const { isScrolled } = useScroll(60);
-  const { isMobile } = useSidebar();
 
   useEffect(() => {
     if ('geolocation' in navigator) {
@@ -52,10 +51,7 @@ export default function AppHeader() {
     )}>
       <div className="flex items-center gap-2">
         <SidebarTrigger />
-        <div className={cn(
-            'flex items-center gap-2 text-muted-foreground font-semibold',
-            !isMobile && 'hidden'
-        )}>
+        <div className='flex items-center gap-2 text-muted-foreground font-semibold'>
             {isLoading ? (
             <Loader2 className="h-5 w-5 animate-spin text-primary" />
             ) : (
