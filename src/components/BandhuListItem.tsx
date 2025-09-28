@@ -66,14 +66,9 @@ export default function BandhuListItem({ bandhu }: BandhuListItemProps) {
                         </Button>
                     )}
                 </div>
-                 <div className="text-lg font-bold text-foreground">
-                    ₹{bandhu.rate}/hr
-                </div>
             </div>
         </div>
       </CardContent>
     </Card>
   );
 }
-
-    
