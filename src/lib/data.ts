@@ -5,12 +5,12 @@ const getImage = (id: string) => PlaceHolderImages.find(img => img.id === id)?.i
 const getHint = (id: string) => PlaceHolderImages.find(img => img.id === id)?.imageHint || 'placeholder';
 
 export const categories = [
-  { name: 'Guides', icon: Users, href: '#' },
-  { name: 'Photographers', icon: Camera, href: '#' },
-  { name: 'Artists', icon: Palette, href: '#' },
-  { name: 'Food', icon: UtensilsCrossed, href: '#' },
-  { name: 'Events', icon: CalendarDays, href: '#' },
-  { name: 'Attractions', icon: Landmark, href: '#' },
+  { name: 'Guides', icon: Users, href: '/category/guides' },
+  { name: 'Photographers', icon: Camera, href: '/category/photographers' },
+  { name: 'Artists', icon: Palette, href: '/category/artists' },
+  { name: 'Food', icon: UtensilsCrossed, href: '/category/food' },
+  { name: 'Events', icon: CalendarDays, href: '/category/events' },
+  { name: 'Attractions', icon: Landmark, href: '/category/attractions' },
 ];
 
 export const recommendedBandhus = [
@@ -77,17 +77,17 @@ export const recommendedBandhus = [
 ];
 
 export const topFoods = [
-  { id: '1', title: 'Chole Bhature', description: 'A classic North Indian breakfast.', image: getImage('food1'), imageHint: getHint('food1') },
-  { id: '2', title: 'Masala Dosa', description: 'Crispy South Indian crepe.', image: getImage('food2'), imageHint: getHint('food2') },
-  { id: '3', title: 'Vada Pav', description: 'The quintessential Mumbai street food.', image: getImage('food3'), imageHint: getHint('food3') },
-  { id: '4', title: 'Jalebi', description: 'Sweet, crispy, and syrupy spirals.', image: getImage('food4'), imageHint: getHint('food4') },
+  { id: '1', title: 'Chole Bhature', description: 'A classic North Indian breakfast.', image: getImage('food1'), imageHint: getHint('food1'), price: 3 },
+  { id: '2', title: 'Masala Dosa', description: 'Crispy South Indian crepe.', image: getImage('food2'), imageHint: getHint('food2'), price: 2 },
+  { id: '3', title: 'Vada Pav', description: 'The quintessential Mumbai street food.', image: getImage('food3'), imageHint: getHint('food3'), price: 1 },
+  { id: '4', title: 'Jalebi', description: 'Sweet, crispy, and syrupy spirals.', image: getImage('food4'), imageHint: getHint('food4'), price: 2 },
 ];
 
 export const nearbyEvents = [
-  { id: '1', title: 'Diwali Festival of Lights', description: 'City-wide celebrations.', image: getImage('event1'), imageHint: getHint('event1') },
-  { id: '2', title: 'Sufi Music Night', description: 'Soulful music at Nizamuddin.', image: getImage('event2'), imageHint: getHint('event2') },
-  { id: '3', title: 'India Art Fair', description: 'Contemporary art exhibition.', image: getImage('event3'), imageHint: getHint('event3') },
-  { id: '4', title: 'Qutub Festival', description: 'Classical music and dance.', image: getImage('event4'), imageHint: getHint('event4') },
+  { id: '1', title: 'Diwali Festival of Lights', description: 'City-wide celebrations.', image: getImage('event1'), imageHint: getHint('event1'), date: 'Nov 12, 2024' },
+  { id: '2', title: 'Sufi Music Night', description: 'Soulful music at Nizamuddin.', image: getImage('event2'), imageHint: getHint('event2'), date: 'Fridays, 8 PM' },
+  { id: '3', title: 'India Art Fair', description: 'Contemporary art exhibition.', image: getImage('event3'), imageHint: getHint('event3'), date: 'Feb 1-4, 2025' },
+  { id: '4', title: 'Qutub Festival', description: 'Classical music and dance.', image: getImage('event4'), imageHint: getHint('event4'), date: 'Dec 15-19, 2024' },
 ];
 
 export const mustVisitAttractions = [
