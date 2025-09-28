@@ -1,3 +1,4 @@
+
 'use client';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -11,14 +12,11 @@ import { useScroll } from '@/hooks/use-scroll';
 import { cn } from '@/lib/utils';
 import { useState, useEffect } from 'react';
 import type { Attraction } from '@/ai/schemas';
-import { getAttractionsByLocation } from '@/app/actions';
-
 
 export default function Home() {
   const { isScrolled } = useScroll(60);
   const [userCoords, setUserCoords] = useState<{latitude: number, longitude: number} | null>(null);
   const [attractions, setAttractions] = useState<Attraction[]>(mustVisitAttractions);
-
 
   useEffect(() => {
     if ('geolocation' in navigator) {
@@ -33,7 +31,6 @@ export default function Home() {
       );
     }
   }, []);
-
 
   return (
     <div className="space-y-8">
@@ -52,7 +49,7 @@ export default function Home() {
           />
         </div>
 
-        <div className="overflow-x-auto space-x-2 mt-4 pb-2 no-scrollbar">
+        <div className="overflow-x-auto space-x-2 mt-2 pb-2 no-scrollbar">
           <div className="flex space-x-2">
             {categories.map(category => (
                 <Button key={category.name} variant="outline" className="flex items-center gap-2 rounded-full bg-white flex-shrink-0" asChild>
@@ -66,10 +63,9 @@ export default function Home() {
         </div>
       </div>
 
-
-      <section>
+      <section className="overflow-x-hidden">
         <h2 className="text-xl font-bold mb-4">Recommended for You</h2>
-        <div className="overflow-x-auto pb-4 no-scrollbar">
+        <div className="overflow-x-auto pb-4 -mx-4 px-4 no-scrollbar">
             <div className="flex space-x-4">
               {recommendedBandhus.map((bandhu) => (
                 <div key={bandhu.id} className="w-40 flex-shrink-0">
@@ -80,9 +76,9 @@ export default function Home() {
         </div>
       </section>
       
-      <section>
+      <section className="overflow-x-hidden">
         <h2 className="text-xl font-bold mb-4">Top Local Foods</h2>
-        <div className="overflow-x-auto pb-4 no-scrollbar">
+        <div className="overflow-x-auto pb-4 -mx-4 px-4 no-scrollbar">
           <div className="flex space-x-4">
             {topFoods.map((food) => (
               <div key={food.id} className="w-64 flex-shrink-0">
@@ -110,9 +106,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section>
+      <section className="overflow-x-hidden">
         <h2 className="text-xl font-bold mb-4">Must Visit Attractions</h2>
-        <div className="overflow-x-auto pb-4 no-scrollbar">
+        <div className="overflow-x-auto pb-4 -mx-4 px-4 no-scrollbar">
           <div className="flex space-x-4">
             {attractions.map((attraction) => (
               <div key={attraction.id} className="w-64 flex-shrink-0">
