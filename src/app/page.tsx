@@ -3,7 +3,7 @@
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent } from '@/components/ui/card';
-import { Search } from 'lucide-react';
+import { ArrowRight, Search } from 'lucide-react';
 import { recommendedBandhus, topFoods, nearbyEvents, categories, mustVisitAttractions } from '@/lib/data';
 import BandhuCard from '@/components/BandhuCard';
 import ContentCard from '@/components/ContentCard';
@@ -63,16 +63,20 @@ export default function Home() {
         </div>
       </div>
 
-      <section className="overflow-x-hidden">
-        <h2 className="text-xl font-bold mb-4">Recommended for You</h2>
-        <div className="overflow-x-auto pb-4 no-scrollbar">
-            <div className="flex space-x-4">
-              {recommendedBandhus.map((bandhu) => (
-                <div key={bandhu.id} className="w-40 flex-shrink-0">
-                  <BandhuCard bandhu={bandhu} />
-                </div>
-              ))}
-            </div>
+      <section>
+        <div className="flex justify-between items-center mb-4">
+          <h2 className="text-xl font-bold">Recommended for You</h2>
+          <Button variant="ghost" asChild>
+            <Link href="/explore">
+              View all
+              <ArrowRight className="h-4 w-4 ml-2" />
+            </Link>
+          </Button>
+        </div>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {recommendedBandhus.slice(0, 4).map((bandhu) => (
+            <BandhuCard key={bandhu.id} bandhu={bandhu} />
+          ))}
         </div>
       </section>
       

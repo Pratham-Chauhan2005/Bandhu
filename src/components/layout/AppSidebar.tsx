@@ -1,3 +1,4 @@
+
 'use client';
 import { usePathname } from 'next/navigation';
 import {
@@ -20,13 +21,12 @@ import {
   Briefcase,
   UtensilsCrossed,
   CalendarDays,
-  History,
+  Map,
   MessageSquare,
-  HelpCircle,
   Settings,
   Star,
   Zap,
-  Map,
+  User,
 } from 'lucide-react';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
@@ -36,15 +36,15 @@ const navItems = [
   { href: '/explore', icon: Search, label: 'Explore' },
   { href: '/hire', icon: Briefcase, label: 'Hire a Bandhu' },
   { href: '/food', icon: UtensilsCrossed, label: 'Local Foods' },
-  { href: '/events', icon: CalendarDays, label: 'Events & Attractions' },
-  { href: '/history', icon: History, label: 'Bookings/History' },
+  { href: '/events', icon: CalendarDays, label: 'Events' },
+  { href: '/homestays', icon: Home, label: 'Homestays' },
   { href: '/itinerary', icon: Zap, label: 'Itinerary AI' },
   { href: '/tracking', icon: Map, label: 'Tracking' },
 ];
 
 const bottomNavItems = [
   { href: '/chat', icon: MessageSquare, label: 'Chat' },
-  { href: '/support', icon: HelpCircle, label: 'Help & Support' },
+  { href: '/profile', icon: User, label: 'Profile' },
   { href: '/settings', icon: Settings, label: 'Settings' },
 ];
 
