@@ -64,7 +64,8 @@ export default function AppHeader() {
             )}>{location}</span>
         </div>
       </div>
-      <div className="flex-1 text-center md:text-left">
+      <div className="flex-1"></div>
+      <div className="flex items-center">
         <Link href="/" className={cn(
           "font-bold text-primary font-headline transition-all duration-200",
           isScrolled ? 'text-xl' : 'text-2xl'
@@ -72,7 +73,6 @@ export default function AppHeader() {
           <Logo />
         </Link>
       </div>
-       <div className='md:hidden flex-1'></div>
     </header>
   );
 }
