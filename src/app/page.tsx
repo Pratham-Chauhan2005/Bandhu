@@ -3,16 +3,61 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card } from '@/components/ui/card';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
-import { Search } from 'lucide-react';
+import { Search, MapPin, Loader2 } from 'lucide-react';
 import { recommendedBandhus, topFoods, nearbyEvents, mustVisitAttractions } from '@/lib/data';
 import BandhuCard from '@/components/BandhuCard';
 import ContentCard from '@/components/ContentCard';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { useState, useEffect } from 'react';
 
 export default function Home() {
+  const [location, setLocation] = useState('Detecting location...');
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    if ('geolocation' in navigator) {
+      navigator.geolocation.getCurrentPosition(
+        async (position) => {
+          try {
+            const { latitude, longitude } = position.coords;
+            const response = await fetch(
+              `https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`
+            );
+            const data = await response.json();
+            const { suburb, city, town, village, state } = data.address;
+            const locationString = [suburb, city, town, village].filter(Boolean).join(', ');
+            setLocation(`${locationString}, ${state}`);
+          } catch (error) {
+            console.error('Error fetching address:', error);
+            setLocation('Could not determine location');
+          } finally {
+            setIsLoading(false);
+          }
+        },
+        (error) => {
+          console.error('Geolocation error:', error);
+          setLocation('Location access denied');
+          setIsLoading(false);
+        }
+      );
+    } else {
+      setLocation('Geolocation not available');
+      setIsLoading(false);
+    }
+  }, []);
+
   return (
     <div className="space-y-8">
-      <div className="relative max-w-2xl mx-auto mt-4">
+       <div className="flex items-center gap-2 text-foreground/80 font-semibold">
+        {isLoading ? (
+          <Loader2 className="h-5 w-5 animate-spin text-primary" />
+        ) : (
+          <MapPin className="h-5 w-5 text-primary" />
+        )}
+        <span className="truncate">{location}</span>
+      </div>
+
+      <div className="relative max-w-2xl mx-auto">
         <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
         <Input
           placeholder="Search for local food, guide, places..."
