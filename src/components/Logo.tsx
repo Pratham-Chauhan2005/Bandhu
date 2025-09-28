@@ -61,13 +61,12 @@ export default function Logo({ className }: { className?: string }) {
         />
         <path
           d="M14.68 17.8888H17.32L16.48 15.0488C16.32 15.0488 16.16 15.0488 16 15.0488C15.84 15.0488 15.68 15.0488 15.52 15.0488L14.68 17.8888Z"
--          fill="#3B82F6"
--        />
-+          fill="#3B82F6" />
-       </svg>
-       <span className="font-headline text-xl font-bold text-foreground">
-         Bandhu
-       </span>
-     </div>
-   );
- }
+          fill="#3B82F6"
+        />
+      </svg>
+      <span className="font-headline text-xl font-bold text-foreground">
+        Bandhu
+      </span>
+    </div>
+  );
+}
