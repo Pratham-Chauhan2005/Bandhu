@@ -60,7 +60,7 @@ export default function ExplorePage() {
         </Select>
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+      <div className="grid grid-cols-2 mobile-lg:grid-cols-3 tablet:grid-cols-4 laptop:grid-cols-5 desktop:grid-cols-6 gap-4">
         {filteredBandhus.map((bandhu) => (
           <BandhuCard key={bandhu.id} bandhu={bandhu} />
         ))}
