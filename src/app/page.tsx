@@ -49,8 +49,8 @@ export default function Home() {
           />
         </div>
 
-        <div className="overflow-x-auto space-x-2 mt-4 pb-2 no-scrollbar">
-          <div className="flex space-x-2">
+        <div className="mt-4">
+          <div className="flex flex-wrap gap-2">
             {categories.map(category => (
                 <Button key={category.name} variant="outline" className="flex items-center gap-2 rounded-full bg-white flex-shrink-0" asChild>
                     <Link href={category.href}>

@@ -44,8 +44,8 @@ export default function BandhuProfilePage({ params }: { params: { id: string } }
   return (
     <div className="max-w-4xl mx-auto space-y-8">
       <Card className="overflow-hidden">
-        <CardContent className="p-0 md:flex md:gap-8">
-          <div className="md:w-1/3">
+        <CardContent className="p-0 flex flex-wrap md:flex-nowrap md:gap-8">
+          <div className="w-full md:w-1/3">
             <Image
               src={bandhu.image}
               alt={`Profile of ${bandhu.name}`}
@@ -82,7 +82,7 @@ export default function BandhuProfilePage({ params }: { params: { id: string } }
       
       <Card>
         <CardContent className="p-6 space-y-4">
-            <div className="flex justify-between items-center">
+            <div className="flex flex-wrap justify-between items-center gap-4">
                 <h2 className="text-2xl font-headline font-bold">About {bandhu.name}</h2>
                 <div className="flex items-center gap-2">
                     <Languages className="h-5 w-5 text-muted-foreground" />
