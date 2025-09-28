@@ -16,11 +16,54 @@ import React, { useState, useRef, useCallback, useEffect } from 'react';
 
 export default function SosButton() {
   const { toast } = useToast();
-  const holdTimeout = useRef<NodeJS.Timeout | null>(null);
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
   const [isHolding, setIsHolding] = useState(false);
   const [showDialog, setShowDialog] = useState(false);
   const [countdown, setCountdown] = useState(5);
-  const countdownInterval = useRef<NodeJS.Timeout | null>(null);
+  
+  const handleLiveSos = useCallback(() => {
+    console.log('Live SOS Mode Activated: Starting 30-minute live location sharing and auto-call.');
+    toast({
+      title: '🚨 Live SOS Mode Activated',
+      description: 'Live location sharing has begun. Help is on the way.',
+      variant: 'destructive',
+    });
+  }, [toast]);
+
+  const startHold = () => {
+    setIsHolding(true);
+    let t = 5;
+    setCountdown(t);
+    
+    // Clear any existing timer
+    if (timerRef.current) {
+        clearInterval(timerRef.current);
+    }
+
+    timerRef.current = setInterval(() => {
+        t -= 1;
+        setCountdown(t);
+        if (t <= 0) {
+            if (timerRef.current) clearInterval(timerRef.current);
+            timerRef.current = null;
+            handleLiveSos();
+            setIsHolding(false); // End holding state
+        }
+    }, 1000);
+  };
+
+  const cancelHold = () => {
+    // This function is called on mouse up / touch end.
+    // If the timer is still running, it means it was a short press.
+    if (timerRef.current) {
+      clearInterval(timerRef.current);
+      timerRef.current = null;
+      setShowDialog(true); // Trigger quick SOS dialog
+    }
+    // If timer is null, it means the long press completed, so we do nothing.
+    setIsHolding(false);
+    setCountdown(5);
+  };
 
   const handleQuickSos = () => {
     console.log('Quick SOS Activated: Sending location and profile to emergency contacts.');
@@ -32,55 +75,21 @@ export default function SosButton() {
     setShowDialog(false);
   };
 
-  const handleLiveSos = useCallback(() => {
-    console.log('Live SOS Mode Activated: Starting 30-minute live location sharing and auto-call.');
-    toast({
-      title: '🚨 Live SOS Mode Activated',
-      description: 'Live location sharing has begun. Help is on the way.',
-      variant: 'destructive',
-    });
-    // Add logic for live sharing and auto-call here
-  }, [toast]);
-
-  const startCountdown = useCallback(() => {
-    setIsHolding(true);
-    setCountdown(5);
-    countdownInterval.current = setInterval(() => {
-      setCountdown(prev => prev - 1);
-    }, 1000);
-    holdTimeout.current = setTimeout(() => {
-      if (countdownInterval.current) clearInterval(countdownInterval.current);
-      handleLiveSos();
-      setIsHolding(false);
-    }, 5000); // 5-second hold
-  },[handleLiveSos]);
-
-
-  const cancelCountdown = () => {
-    if (holdTimeout.current) clearTimeout(holdTimeout.current);
-    if (countdownInterval.current) clearInterval(countdownInterval.current);
-    
-    // If it was a short press (not a long hold), trigger quick SOS dialog
-    if (isHolding) {
-      setShowDialog(true);
-    }
-    setIsHolding(false);
-  }
-
   useEffect(() => {
-    return () => { // Cleanup timeouts and intervals on unmount
-      if (holdTimeout.current) clearTimeout(holdTimeout.current);
-      if (countdownInterval.current) clearInterval(countdownInterval.current);
+    return () => { // Cleanup interval on unmount
+      if (timerRef.current) {
+        clearInterval(timerRef.current);
+      }
     };
   }, []);
 
   return (
     <>
       <button
-        onMouseDown={startCountdown}
-        onMouseUp={cancelCountdown}
-        onTouchStart={startCountdown}
-        onTouchEnd={cancelCountdown}
+        onMouseDown={startHold}
+        onMouseUp={cancelHold}
+        onTouchStart={startHold}
+        onTouchEnd={cancelHold}
         className={cn(
           'fixed bottom-20 right-4 h-16 w-16 rounded-full z-50 flex items-center justify-center text-white font-bold text-lg shadow-2xl',
           'bg-[#FF3B30] hover:bg-[#FF3B30]/90 active:scale-95 transition-all duration-200',
@@ -92,7 +101,7 @@ export default function SosButton() {
         }}
         aria-label="SOS Emergency Button"
       >
-        {isHolding ? countdown : 'SOS'}
+        {isHolding && countdown > 0 ? countdown : 'SOS'}
       </button>
 
       {showDialog && (
