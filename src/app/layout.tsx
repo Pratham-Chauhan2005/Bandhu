@@ -1,13 +1,9 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import { Sidebar, SidebarProvider, SidebarTrigger, SidebarInset } from '@/components/ui/sidebar';
-import AppHeader from '@/components/layout/AppHeader';
+import { SidebarProvider } from '@/components/ui/sidebar';
+import AppContainer from '@/components/layout/AppContainer';
 import { Toaster } from '@/components/ui/toaster';
-import BottomNavBar from '@/components/layout/BottomNavBar';
 import { Inter } from 'next/font/google';
-import SosButton from '@/components/layout/SosButton';
-import { AlertDialog } from '@/components/ui/alert-dialog';
-import AppSidebar from '@/components/layout/AppSidebar';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 
@@ -23,23 +19,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`font-sans antialiased ${inter.variable} bg-white`}>
+      <body className={`font-sans antialiased ${inter.variable} bg-background text-foreground`}>
         <SidebarProvider>
-          <AppSidebar />
-          <SidebarInset>
-            <div className="relative flex min-h-screen flex-col">
-              <AppHeader />
-              <div className="flex-1">
-                <main className="container mx-auto p-4 md:p-6 lg:p-8 pb-32">
-                  {children}
-                </main>
-              </div>
-              <AlertDialog>
-                <SosButton />
-              </AlertDialog>
-              <BottomNavBar />
-            </div>
-          </SidebarInset>
+          <AppContainer>
+            {children}
+          </AppContainer>
         </SidebarProvider>
         <Toaster />
       </body>
