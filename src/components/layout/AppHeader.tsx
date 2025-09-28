@@ -9,7 +9,7 @@ export default function AppHeader() {
       <div className="flex w-full items-center justify-between">
         <Button variant="ghost" className="flex items-center gap-1 text-foreground">
           <MapPin className="h-5 w-5 text-primary" />
-          <span className="font-bold">New Delhi</span>
+          <span className="font-bold">Indramani Nagar, Thatipur...</span>
           <ChevronDown className="h-4 w-4" />
         </Button>
         <Button variant="ghost" size="icon" className="rounded-full h-10 w-10 bg-secondary">

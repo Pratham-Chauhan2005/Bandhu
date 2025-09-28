@@ -15,7 +15,6 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from '@/components/ui/alert-dialog';
-import { Button } from '../ui/button';
 
 const navItems = [
   { href: '/tracking', icon: Map, label: 'Tracking' },
@@ -29,7 +28,7 @@ export default function BottomNavBar() {
   const pathname = usePathname();
 
   return (
-    <div className="fixed bottom-0 left-0 z-50 w-full h-20 bg-secondary/95 backdrop-blur-sm border-t md:hidden">
+    <div className="fixed bottom-0 left-0 z-50 w-full h-20 bg-blue-100/80 backdrop-blur-sm border-t md:hidden">
       <div className="grid h-full grid-cols-5 mx-auto">
         {navItems.map((item, index) => {
           const isActive = pathname === item.href;
@@ -38,14 +37,14 @@ export default function BottomNavBar() {
             return (
               <AlertDialog key={item.href}>
                 <AlertDialogTrigger asChild>
-                  <div className="inline-flex flex-col items-center justify-center px-5 hover:bg-muted-foreground/10 group cursor-pointer">
+                  <div className="inline-flex flex-col items-center justify-center px-5 hover:bg-blue-200/50 group cursor-pointer h-full">
                     <Siren
                       className={cn(
-                        'w-7 h-7 mb-1 text-muted-foreground group-hover:text-destructive',
+                        'w-7 h-7 mb-1 text-gray-500 group-hover:text-destructive',
                         isActive ? 'text-destructive' : ''
                       )}
                     />
-                     <span className="text-xs text-muted-foreground group-hover:text-destructive">
+                     <span className="text-xs text-gray-500 group-hover:text-destructive">
                       {item.label}
                     </span>
                   </div>
@@ -77,27 +76,27 @@ export default function BottomNavBar() {
               key={item.href}
               href={item.href}
               className={cn(
-                'inline-flex flex-col items-center justify-center px-2 sm:px-5 hover:bg-muted-foreground/10 group',
+                'inline-flex flex-col items-center justify-center px-2 sm:px-5 hover:bg-blue-200/50 group h-full',
                  isCenter ? 'relative' : ''
               )}
             >
              {isCenter ? (
-                 <div className="absolute -top-5 flex items-center justify-center h-16 w-16 rounded-full bg-primary shadow-lg">
+                 <div className="absolute -top-5 flex items-center justify-center h-16 w-16 rounded-full bg-primary shadow-lg border-4 border-background">
                     <item.icon className="w-8 h-8 text-primary-foreground" />
                  </div>
              ) : (
                 <item.icon
                     className={cn(
-                    'w-7 h-7 mb-1 text-muted-foreground group-hover:text-primary',
+                    'w-7 h-7 mb-1 text-gray-500 group-hover:text-primary',
                     isActive ? 'text-primary' : ''
                     )}
                 />
              )}
               <span
                 className={cn(
-                  'text-xs text-muted-foreground group-hover:text-primary',
+                  'text-xs text-gray-500 group-hover:text-primary',
                   isActive ? 'text-primary' : '',
-                  isCenter ? 'mt-10' : ''
+                   isCenter ? 'pt-8' : ''
                 )}
               >
                 {item.label}

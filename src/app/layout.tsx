@@ -22,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`font-sans antialiased ${inter.variable}`}>
+      <body className={`font-sans antialiased ${inter.variable} bg-white`}>
         <SidebarProvider>
           <div className="relative flex min-h-screen flex-col">
             <AppHeader />

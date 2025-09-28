@@ -22,40 +22,18 @@ type BandhuCardProps = {
 
 export default function BandhuCard({ bandhu }: BandhuCardProps) {
   return (
-    <Link href={`/bandhus/${bandhu.id}`} className="group">
-      <Card className="overflow-hidden h-full flex flex-col transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-1 border-0">
-        <div className="relative">
-          <Image
-            src={bandhu.image}
-            alt={`Profile of ${bandhu.name}`}
-            width={400}
-            height={400}
-            className="w-full h-56 object-cover"
-            data-ai-hint={bandhu.imageHint}
-          />
-          {bandhu.verified && (
-            <div className="absolute top-3 right-3">
-              <VerifiedBadge />
-            </div>
-          )}
-        </div>
-        <CardContent className="p-3 flex-grow flex flex-col justify-between">
-            <div>
-              <h3 className="text-lg font-bold text-foreground truncate">{bandhu.name}</h3>
-              <p className="text-sm text-muted-foreground">{bandhu.service}</p>
-            </div>
-            <div className="flex justify-between items-center text-sm mt-2">
-                <div className="flex items-center gap-1 font-semibold text-foreground">
-                    <Star className="w-4 h-4 text-primary fill-primary" />
-                    <span>{bandhu.rating.toFixed(1)}</span>
-                    <span className="font-normal text-muted-foreground">({bandhu.reviews})</span>
-                </div>
-                <div className="text-base font-bold text-foreground">
-                    ${bandhu.rate}<span className="font-normal text-muted-foreground text-sm">/hr</span>
-                </div>
-            </div>
-        </CardContent>
-      </Card>
+    <Link href={`/bandhus/${bandhu.id}`} className="group block text-center">
+      <div className="w-24 h-24 mx-auto">
+        <Image
+          src={bandhu.image}
+          alt={`Profile of ${bandhu.name}`}
+          width={96}
+          height={96}
+          className="w-full h-full object-cover rounded-lg shadow-md"
+          data-ai-hint={bandhu.imageHint}
+        />
+      </div>
+      <p className="mt-2 text-sm font-medium text-foreground group-hover:text-primary transition-colors truncate">{bandhu.name}</p>
     </Link>
   );
 }

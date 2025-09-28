@@ -72,7 +72,7 @@ export default function AppSidebar() {
       <SidebarFooter className="gap-0">
         <Separator className="mb-2" />
         <div className="p-2 group-data-[collapsible=icon]:p-1">
-          <Button asChild className="w-full justify-start group-data-[collapsible=icon]:justify-center">
+          <Button asChild className="w-full justify-start group-data-[collapsible=icon]:justify-center bg-primary text-primary-foreground hover:bg-primary/90">
             <Link href="/become-a-bandhu">
               <Star />
               <span className="font-bold group-data-[collapsible=icon]:hidden">Become a Bandhu</span>
