@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Home, Map, Zap, User, MessageSquare } from 'lucide-react';
+import { Home, Map, Zap, User, Briefcase } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useScroll } from '@/hooks/use-scroll';
 
@@ -10,7 +10,7 @@ const navItems = [
     { href: '/tracking', icon: Map, label: 'Tracking' },
     { href: '/itinerary', icon: Zap, label: 'Itinerary' },
     { href: '/', icon: Home, label: 'Home' },
-    { href: '/chat', icon: MessageSquare, label: 'Chat' },
+    { href: '/hire', icon: Briefcase, label: 'Hire' },
     { href: '/profile', icon: User, label: 'Profile' },
 ];
 

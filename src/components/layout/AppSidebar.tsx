@@ -22,7 +22,6 @@ import {
   UtensilsCrossed,
   CalendarDays,
   Map,
-  MessageSquare,
   Settings,
   Star,
   Zap,
@@ -44,7 +43,6 @@ const navItems = [
 ];
 
 const bottomNavItems = [
-  { href: '/chat', icon: MessageSquare, label: 'Chat' },
   { href: '/profile', icon: User, label: 'Profile' },
   { href: '/settings', icon: Settings, label: 'Settings' },
 ];
