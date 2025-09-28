@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Home, Map, Zap, User, MessageSquare } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { useScroll } from '@/hooks/use-scroll';
 
 const navItems = [
     { href: '/tracking', icon: Map, label: 'Tracking' },
@@ -15,6 +16,7 @@ const navItems = [
 
 export default function BottomNavBar() {
   const pathname = usePathname();
+  const { scrollDirection } = useScroll(20);
 
   const isNavItemActive = (href: string) => {
     if (href === '/') {
@@ -24,7 +26,10 @@ export default function BottomNavBar() {
   }
 
   return (
-    <div className="fixed bottom-0 left-0 z-50 w-full h-16 bg-background/90 backdrop-blur-sm border-t md:hidden">
+    <div className={cn(
+        "fixed bottom-0 left-0 z-40 w-full h-16 bg-background/90 backdrop-blur-sm border-t md:hidden transition-transform duration-150 ease-out",
+        scrollDirection === 'down' ? 'translate-y-full' : 'translate-y-0'
+    )}>
       <div className="grid h-full grid-cols-5 mx-auto font-medium items-center">
         {navItems.map((item) => (
           <Link

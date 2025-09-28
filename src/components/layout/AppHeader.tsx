@@ -3,10 +3,13 @@ import { Button } from '@/components/ui/button';
 import { User, MapPin, Loader2 } from 'lucide-react';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
+import { useScroll } from '@/hooks/use-scroll';
+import { cn } from '@/lib/utils';
 
 export default function AppHeader() {
   const [location, setLocation] = useState('Detecting location...');
   const [isLoading, setIsLoading] = useState(true);
+  const { isScrolled } = useScroll(60);
 
   useEffect(() => {
     if ('geolocation' in navigator) {
@@ -40,23 +43,35 @@ export default function AppHeader() {
   }, []);
 
   return (
-    <header className="sticky top-0 z-20 flex h-16 items-center justify-between gap-4 border-b bg-background/95 px-4 backdrop-blur-sm md:px-6">
+    <header className={cn(
+      "sticky top-0 z-20 flex items-center justify-between gap-4 border-b bg-background/95 px-4 backdrop-blur-sm md:px-6 transition-all duration-200 ease-out",
+      isScrolled ? 'h-14' : 'h-20'
+    )}>
       <div className="flex items-center gap-2 text-muted-foreground font-semibold w-1/3">
         {isLoading ? (
           <Loader2 className="h-5 w-5 animate-spin text-primary" />
         ) : (
           <MapPin className="h-5 w-5 text-primary" />
         )}
-        <span className="truncate text-sm">{location}</span>
+        <span className={cn(
+          "truncate transition-all duration-200",
+          isScrolled ? 'text-xs' : 'text-sm'
+        )}>{location}</span>
       </div>
       <div className="flex-1 text-center">
-        <Link href="/" className="text-2xl font-bold text-primary font-headline">
+        <Link href="/" className={cn(
+          "font-bold text-primary font-headline transition-all duration-200",
+          isScrolled ? 'text-xl' : 'text-2xl'
+        )}>
           Bandhu
         </Link>
       </div>
       <div className="flex justify-end w-1/3">
         <Link href="/profile">
-          <Button variant="ghost" size="icon" className="rounded-full h-10 w-10">
+          <Button variant="ghost" size="icon" className={cn(
+            "rounded-full transition-all duration-200",
+            isScrolled ? 'h-8 w-8' : 'h-10 w-10'
+          )}>
             <User className="h-5 w-5 text-primary" />
             <span className="sr-only">Profile</span>
           </Button>

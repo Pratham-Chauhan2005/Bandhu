@@ -7,33 +7,46 @@ import { recommendedBandhus, topFoods, nearbyEvents, mustVisitAttractions, categ
 import BandhuCard from '@/components/BandhuCard';
 import ContentCard from '@/components/ContentCard';
 import Link from 'next/link';
+import { useScroll } from '@/hooks/use-scroll';
+import { cn } from '@/lib/utils';
+
 
 export default function Home() {
+  const { isScrolled } = useScroll(60);
 
   return (
     <div className="space-y-8">
-      <div className="relative w-full">
-        <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
-        <Input
-          placeholder="Search services, guides, food..."
-          className="h-12 text-base pl-12 pr-4 rounded-full shadow-sm border-0 bg-gray-100 focus-visible:ring-primary/50"
-        />
+      <div className={cn(
+        "sticky z-10 bg-background/95 backdrop-blur-sm -mx-4 px-4 pb-4 transition-all duration-200",
+        isScrolled ? 'top-14' : 'top-20'
+      )}>
+        <div className="relative w-full">
+          <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+          <Input
+            placeholder="Search services, guides, food..."
+            className={cn(
+              "text-base pl-12 pr-4 rounded-full shadow-sm border-0 bg-gray-100 focus-visible:ring-primary/50 transition-all duration-200",
+              isScrolled ? 'h-10' : 'h-12'
+            )}
+          />
+        </div>
+
+        <div className="flex overflow-x-auto space-x-2 mt-4 -mx-4 px-4 pb-2 no-scrollbar">
+          {categories.map(category => (
+              <Button key={category.name} variant="outline" className="flex items-center gap-2 rounded-full bg-white flex-shrink-0" asChild>
+                  <Link href={category.href}>
+                      <category.icon className="h-4 w-4" />
+                      <span className="font-medium">{category.name}</span>
+                  </Link>
+              </Button>
+          ))}
+        </div>
       </div>
 
-      <div className="flex overflow-x-auto space-x-2 -mx-4 px-4 pb-2">
-        {categories.map(category => (
-            <Button key={category.name} variant="outline" className="flex items-center gap-2 rounded-full bg-white flex-shrink-0" asChild>
-                <Link href={category.href}>
-                    <category.icon className="h-4 w-4" />
-                    <span className="font-medium">{category.name}</span>
-                </Link>
-            </Button>
-        ))}
-      </div>
 
       <section>
         <h2 className="text-xl font-bold mb-4">Recommended for You</h2>
-        <div className="flex space-x-4 overflow-x-auto -mx-4 px-4 pb-4">
+        <div className="flex space-x-4 overflow-x-auto -mx-4 px-4 pb-4 no-scrollbar">
             {recommendedBandhus.map((bandhu) => (
               <div key={bandhu.id} className="w-40 flex-shrink-0">
                 <BandhuCard bandhu={bandhu} />
@@ -44,7 +57,7 @@ export default function Home() {
       
       <section>
         <h2 className="text-xl font-bold mb-4">Top Local Foods</h2>
-        <div className="flex space-x-4 overflow-x-auto -mx-4 px-4 pb-4">
+        <div className="flex space-x-4 overflow-x-auto -mx-4 px-4 pb-4 no-scrollbar">
             {topFoods.map((food) => (
               <div key={food.id} className="w-64 flex-shrink-0">
                 <ContentCard content={food} type="food" />
@@ -72,7 +85,7 @@ export default function Home() {
 
       <section>
         <h2 className="text-xl font-bold mb-4">Must Visit Attractions</h2>
-        <div className="flex space-x-4 overflow-x-auto -mx-4 px-4 pb-4">
+        <div className="flex space-x-4 overflow-x-auto -mx-4 px-4 pb-4 no-scrollbar">
             {mustVisitAttractions.map((attraction) => (
               <div key={attraction.id} className="w-64 flex-shrink-0">
                 <ContentCard content={attraction} type="attraction" />
@@ -80,6 +93,15 @@ export default function Home() {
             ))}
         </div>
       </section>
+      <style jsx global>{`
+        .no-scrollbar::-webkit-scrollbar {
+          display: none;
+        }
+        .no-scrollbar {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+      `}</style>
     </div>
   );
 }
