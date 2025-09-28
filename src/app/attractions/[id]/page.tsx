@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import { notFound, useParams } from 'next/navigation';
 import Image from 'next/image';
-import { Card, CardContent } from '@/components/ui/card';
+import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Clock, IndianRupee, MapPin } from 'lucide-react';
 import type { Attraction } from '@/ai/schemas';
 

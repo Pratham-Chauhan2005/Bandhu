@@ -44,7 +44,7 @@ export default function BandhuProfilePage({ params }: { params: { id: string } }
   return (
     <div className="max-w-4xl mx-auto space-y-8">
       <Card className="overflow-hidden">
-        <CardContent className="p-0 md:p-6 md:flex md:gap-8">
+        <CardContent className="p-0 md:flex md:gap-8">
           <div className="md:w-1/3">
             <Image
               src={bandhu.image}
@@ -55,7 +55,7 @@ export default function BandhuProfilePage({ params }: { params: { id: string } }
               data-ai-hint={bandhu.imageHint}
             />
           </div>
-          <div className="p-6 md:p-0 md:w-2/3 space-y-4">
+          <div className="p-6 md:p-0 md:w-2/3 space-y-4 flex flex-col justify-center">
             <div className="flex items-center gap-4">
               <h1 className="text-4xl font-headline font-bold">{bandhu.name}</h1>
               {bandhu.verified && <VerifiedBadge />}
