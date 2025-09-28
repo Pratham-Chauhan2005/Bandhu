@@ -48,7 +48,7 @@ export default function AppHeader() {
       "sticky top-0 z-20 flex items-center justify-between gap-4 border-b bg-background/95 px-4 backdrop-blur-sm md:px-6 transition-all duration-200 ease-out",
       isScrolled ? 'h-14' : 'h-20'
     )}>
-      <div className="flex items-center gap-2 w-1/3">
+      <div className="flex items-center gap-2">
         <SidebarTrigger className="md:flex hidden" />
         <div className='flex items-center gap-2 text-muted-foreground font-semibold'>
             {isLoading ? (
@@ -62,23 +62,12 @@ export default function AppHeader() {
             )}>{location}</span>
         </div>
       </div>
-      <div className="flex-1 text-center">
+      <div className="flex-1 text-right">
         <Link href="/" className={cn(
           "font-bold text-primary font-headline transition-all duration-200",
           isScrolled ? 'text-xl' : 'text-2xl'
         )}>
           Bandhu
-        </Link>
-      </div>
-      <div className="flex justify-end w-1/3">
-        <Link href="/profile">
-          <Button variant="ghost" size="icon" className={cn(
-            "rounded-full transition-all duration-200",
-            isScrolled ? 'h-8 w-8' : 'h-10 w-10'
-          )}>
-            <User className="h-5 w-5 text-primary" />
-            <span className="sr-only">Profile</span>
-          </Button>
         </Link>
       </div>
     </header>
