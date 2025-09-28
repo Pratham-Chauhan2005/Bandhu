@@ -189,10 +189,10 @@ export const mustVisitAttractions = [
 ];
 
 export const homestays = [
-  { id: '1', name: 'Cozy Garden Retreat', price: 45, rating: 4.8, image: getImage('homestay1'), imageHint: getHint('homestay1'), latitude: 26.22, longitude: 78.18 },
-  { id: '2', name: 'Urban Oasis Studio', price: 60, rating: 4.9, image: getImage('homestay2'), imageHint: getHint('homestay2'), latitude: 26.21, longitude: 78.17 },
-  { id: '3', name: 'Riverside Cottage', price: 75, rating: 4.7, image: getImage('homestay3'), imageHint: getHint('homestay3'), latitude: 26.24, longitude: 78.23 },
-  { id: '4', name: 'The Artist\'s Loft', price: 55, rating: 4.6, image: getImage('homestay4'), imageHint: getHint('homestay4'), latitude: 26.23, longitude: 78.20 },
+  { id: '1', name: 'The Singh Residence', price: 45, rating: 4.8, image: getImage('homestay1'), imageHint: getHint('homestay1'), latitude: 26.22, longitude: 78.18 },
+  { id: '2', name: 'Patel Family Home', price: 60, rating: 4.9, image: getImage('homestay2'), imageHint: getHint('homestay2'), latitude: 26.21, longitude: 78.17 },
+  { id: '3', name: 'Gupta\'s Guest Room', price: 75, rating: 4.7, image: getImage('homestay3'), imageHint: getHint('homestay3'), latitude: 26.24, longitude: 78.23 },
+  { id: '4', name: 'Sharma Homestay', price: 55, rating: 4.6, image: getImage('homestay4'), imageHint: getHint('homestay4'), latitude: 26.23, longitude: 78.20 },
 ];
 
 export const localFoodShops = [
@@ -207,4 +207,5 @@ export const localFoodShops = [
     { id: '9', name: 'Victorian Vantage', location: 'Jayendraganj, Lashkar', rating: 4.4, reviews: 800, image: getImage('gwalior_shop9'), imageHint: getHint('gwalior_shop9'), latitude: 26.207, longitude: 78.171 },
     { id: '10', name: 'Captain\'s Cafe', location: 'Phool Bagh, Gwalior', rating: 4.9, reviews: 4100, image: getImage('gwalior_shop10'), imageHint: getHint('gwalior_shop10'), latitude: 26.217, longitude: 78.181 },
 ];
+
 
