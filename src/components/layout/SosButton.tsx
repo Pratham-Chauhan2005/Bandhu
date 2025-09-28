@@ -12,7 +12,7 @@ import {
   AlertDialogTrigger,
 } from '@/components/ui/alert-dialog';
 import { Button } from '@/components/ui/button';
-import { Siren } from 'lucide-react';
+import { AlertTriangle, Siren } from 'lucide-react';
 
 export default function SosButton() {
   return (
@@ -21,7 +21,7 @@ export default function SosButton() {
         <Button
           variant="destructive"
           size="icon"
-          className="fixed bottom-24 right-6 h-16 w-16 rounded-full shadow-2xl z-40 bg-red-600 hover:bg-red-700 animate-pulse hidden md:flex"
+          className="fixed bottom-24 right-6 h-16 w-16 rounded-full shadow-2xl z-40 bg-red-600 hover:bg-red-700 animate-pulse flex"
           aria-label="SOS Emergency Button"
         >
           <Siren className="h-8 w-8" />
