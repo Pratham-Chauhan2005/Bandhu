@@ -24,6 +24,7 @@ import {
   Settings,
   Star,
   Zap,
+  Map,
 } from 'lucide-react';
 import Link from 'next/link';
 
@@ -35,6 +36,7 @@ const navItems = [
   { href: '/events', icon: CalendarDays, label: 'Events & Attractions' },
   { href: '/history', icon: History, label: 'Bookings/History' },
   { href: '/itinerary', icon: Zap, label: 'Itinerary AI' },
+  { href: '/tracking', icon: Map, label: 'Tracking' },
 ];
 
 const bottomNavItems = [
