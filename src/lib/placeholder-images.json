@@ -1,3 +1,154 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "bandhu1",
+      "description": "Portrait of Rohan Sharma",
+      "imageUrl": "https://images.unsplash.com/photo-1607346256330-dee7af15f7c5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxpbmRpYW4lMjBtYW58ZW58MHx8fHwxNzU4OTgzMjE2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "indian man"
+    },
+    {
+      "id": "bandhu2",
+      "description": "Portrait of Priya Singh",
+      "imageUrl": "https://images.unsplash.com/photo-1558377235-76f53857000b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxpbmRpYW4lMjB3b21hbnxlbnwwfHx8fDE3NTkwMzIwMDB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "indian woman"
+    },
+    {
+      "id": "bandhu3",
+      "description": "Portrait of Ankit Desai",
+      "imageUrl": "https://images.unsplash.com/photo-1648332655255-219515fb2d1e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxtYW4lMjBwYWludGluZ3xlbnwwfHx8fDE3NTkwNTM0MjR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "man painting"
+    },
+    {
+      "id": "bandhu4",
+      "description": "Portrait of Sunita Gupta",
+      "imageUrl": "https://images.unsplash.com/photo-1556911073-52527ac43761?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHx3b21hbiUyMGNvb2tpbmd8ZW58MHx8fHwxNzU5MDUzNDI0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "woman cooking"
+    },
+    {
+      "id": "food1",
+      "description": "Chole Bhature",
+      "imageUrl": "https://images.unsplash.com/photo-1517244683847-7456b63c5969?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxpbmRpYW4lMjBmb29kfGVufDB8fHx8MTc1ODkzMzU1MHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "indian food"
+    },
+    {
+      "id": "food2",
+      "description": "Masala Dosa",
+      "imageUrl": "https://images.unsplash.com/photo-1743517894265-c86ab035adef?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxkb3NhfGVufDB8fHx8MTc1OTA0MjMwMnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "dosa"
+    },
+    {
+      "id": "food3",
+      "description": "Vada Pav",
+      "imageUrl": "https://images.unsplash.com/photo-1440427810006-0e4109fd4abe?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8c3RyZWV0JTIwZm9vZHxlbnwwfHx8fDE3NTg5NTU1NzJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "street food"
+    },
+    {
+      "id": "food4",
+      "description": "Jalebi",
+      "imageUrl": "https://images.unsplash.com/photo-1707387312941-ac872ffde2c2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxpbmRpYW4lMjBkZXNzZXJ0fGVufDB8fHx8MTc1OTA0MTUyNnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "indian dessert"
+    },
+    {
+      "id": "event1",
+      "description": "Diwali Festival",
+      "imageUrl": "https://images.unsplash.com/photo-1605292356183-a77d0a9c9d1d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxkaXdhbGklMjBmZXN0aXZhbHxlbnwwfHx8fDE3NTkwNDA1OTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "diwali festival"
+    },
+    {
+      "id": "event2",
+      "description": "Sufi Music Night",
+      "imageUrl": "https://images.unsplash.com/photo-1657404377553-4a1dfeafd91f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxzdWZpJTIwbXVzaWN8ZW58MHx8fHwxNzU5MDUzNDI0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "sufi music"
+    },
+    {
+      "id": "event3",
+      "description": "India Art Fair",
+      "imageUrl": "https://images.unsplash.com/photo-1565876427310-0695a4ff03b7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxhcnQlMjBnYWxsZXJ5fGVufDB8fHx8MTc1OTAwODgzOXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "art gallery"
+    },
+    {
+      "id": "event4",
+      "description": "Qutub Festival",
+      "imageUrl": "https://images.unsplash.com/photo-1479812627010-aa5bd9d173b1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxpbmRpYW4lMjBkYW5jZXxlbnwwfHx8fDE3NTg5NDg5MDh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "indian dance"
+    },
+    {
+      "id": "attraction1",
+      "description": "Taj Mahal",
+      "imageUrl": "https://images.unsplash.com/photo-1587135941948-670b381f08ce?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHx0YWolMjBtYWhhbHxlbnwwfHx8fDE3NTg5NTM3NTZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "taj mahal"
+    },
+    {
+      "id": "attraction2",
+      "description": "Humayun's Tomb",
+      "imageUrl": "https://images.unsplash.com/photo-1678304633299-fb128a0639d4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxtdWdoYWwlMjBhcmNoaXRlY3R1cmV8ZW58MHx8fHwxNzU5MDUzNDI0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "mughal architecture"
+    },
+    {
+      "id": "attraction3",
+      "description": "Qutub Minar",
+      "imageUrl": "https://images.unsplash.com/photo-1716747713343-24b1c7c22482?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxkZWxoaSUyMG1vbnVtZW50fGVufDB8fHx8MTc1OTA1MzQyNXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "delhi monument"
+    },
+    {
+      "id": "gallery1",
+      "imageUrl": "https://images.unsplash.com/photo-1512759925926-28b2607d28fe?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxkZWxoaSUyMHN0cmVldHxlbnwwfHx8fDE3NTkwNTM0MjV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "delhi street"
+    },
+    {
+      "id": "gallery2",
+      "imageUrl": "https://images.unsplash.com/photo-1581502304218-e3ff4399d46b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxpbmRpYW4lMjBtYXJrZXR8ZW58MHx8fHwxNzU4OTk2NDIxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "indian market"
+    },
+    {
+      "id": "gallery3",
+      "imageUrl": "https://images.unsplash.com/photo-1573540374799-d527e9ee392b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxhbmNpZW50JTIwcnVpbnN8ZW58MHx8fHwxNzU4OTk1NDU0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "ancient ruins"
+    },
+    {
+      "id": "gallery4",
+      "imageUrl": "https://images.unsplash.com/photo-1563170446-9c3c0622d8a9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxwb3J0cmFpdCUyMHBob3RvZ3JhcGh5fGVufDB8fHx8MTc1ODk4OTA3NXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "portrait photography"
+    },
+    {
+      "id": "gallery5",
+      "imageUrl": "https://images.unsplash.com/photo-1604017011826-d3b4c23f8914?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHx3ZWRkaW5nJTIwcGhvdG9ncmFwaHl8ZW58MHx8fHwxNzU5MDUzNDI0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "wedding photography"
+    },
+    {
+      "id": "gallery6",
+      "imageUrl": "https://images.unsplash.com/photo-1680263299025-48b750a452f6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjaXR5c2NhcGUlMjBwaG90b2dyYXBoeXxlbnwwfHx8fDE3NTkwNTM0MjR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "cityscape photography"
+    },
+    {
+      "id": "gallery7",
+      "imageUrl": "https://images.unsplash.com/photo-1595351298020-038700609878?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxwb3R0ZXJ5JTIwd2hlZWx8ZW58MHx8fHwxNzU5MDExNDMxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "pottery wheel"
+    },
+    {
+      "id": "gallery8",
+      "imageUrl": "https://images.unsplash.com/photo-1599009432031-ba5d3a794aec?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8cGFpbnRpbmclMjBjYW52YXN8ZW58MHx8fHwxNzU5MDUzNDI0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "painting canvas"
+    },
+    {
+      "id": "gallery9",
+      "imageUrl": "https://images.unsplash.com/photo-1613463251864-2a2bc3952817?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxhcnRpc3QlMjBzdHVkaW98ZW58MHx8fHwxNzU4OTY1MDU2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "artist studio"
+    },
+    {
+      "id": "gallery10",
+      "imageUrl": "https://images.unsplash.com/photo-1592457711340-2412dc07b733?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxpbmRpYW4lMjBzcGljZXN8ZW58MHx8fHwxNzU5MDI3OTEyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "indian spices"
+    },
+    {
+      "id": "gallery11",
+      "imageUrl": "https://images.unsplash.com/photo-1653233797467-1a528819fd4f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxjb29raW5nJTIwY2xhc3N8ZW58MHx8fHwxNzU4OTYwMDAyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "cooking class"
+    },
+    {
+      "id": "gallery12",
+      "imageUrl": "https://images.unsplash.com/photo-1604200657090-ae45994b2451?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxmb29kJTIwbWFya2V0fGVufDB8fHx8MTc1ODk1OTc5OHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "food market"
+    }
+  ]
 }

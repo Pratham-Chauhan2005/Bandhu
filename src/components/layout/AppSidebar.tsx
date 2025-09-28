@@ -1,0 +1,98 @@
+'use client';
+import { usePathname } from 'next/navigation';
+import {
+  Sidebar,
+  SidebarHeader,
+  SidebarContent,
+  SidebarFooter,
+  SidebarMenu,
+  SidebarMenuItem,
+  SidebarMenuButton,
+  SidebarGroupLabel,
+} from '@/components/ui/sidebar';
+import { Button } from '@/components/ui/button';
+import { Separator } from '@/components/ui/separator';
+import {
+  Home,
+  Search,
+  Briefcase,
+  UtensilsCrossed,
+  CalendarDays,
+  History,
+  MessageSquare,
+  HelpCircle,
+  Settings,
+  Star,
+  Zap,
+} from 'lucide-react';
+import Link from 'next/link';
+
+const navItems = [
+  { href: '/', icon: Home, label: 'Home' },
+  { href: '/explore', icon: Search, label: 'Explore' },
+  { href: '/hire', icon: Briefcase, label: 'Hire a Bandhu' },
+  { href: '/food', icon: UtensilsCrossed, label: 'Local Foods' },
+  { href: '/events', icon: CalendarDays, label: 'Events & Attractions' },
+  { href: '/history', icon: History, label: 'Bookings/History' },
+  { href: '/itinerary', icon: Zap, label: 'Itinerary AI' },
+];
+
+const bottomNavItems = [
+  { href: '/chat', icon: MessageSquare, label: 'Chat' },
+  { href: '/support', icon: HelpCircle, label: 'Help & Support' },
+  { href: '/settings', icon: Settings, label: 'Settings' },
+];
+
+export default function AppSidebar() {
+  const pathname = usePathname();
+
+  return (
+    <Sidebar>
+      <SidebarHeader>
+        <Link href="/" className="flex items-center gap-2 text-primary font-headline font-bold text-lg">
+          <Zap className="h-6 w-6" />
+          <span className="group-data-[collapsible=icon]:hidden">Bandhu Local</span>
+        </Link>
+      </SidebarHeader>
+      <SidebarContent>
+        <SidebarMenu>
+          <SidebarGroupLabel>Menu</SidebarGroupLabel>
+          {navItems.map((item) => (
+            <SidebarMenuItem key={item.href}>
+              <SidebarMenuButton asChild isActive={pathname === item.href} tooltip={item.label}>
+                <Link href={item.href}>
+                  <item.icon />
+                  <span>{item.label}</span>
+                </Link>
+              </SidebarMenuButton>
+            </SidebarMenuItem>
+          ))}
+        </SidebarMenu>
+      </SidebarContent>
+      <SidebarFooter className="gap-0">
+        <Separator className="mb-2" />
+        <div className="p-2 group-data-[collapsible=icon]:p-0 group-data-[collapsible=icon]:-space-y-1">
+          <Button asChild className="w-full justify-start group-data-[collapsible=icon]:justify-center" variant="ghost">
+            <Link href="/become-a-bandhu">
+              <Star className="text-primary" />
+              <span className="font-bold text-primary group-data-[collapsible=icon]:hidden">Become a Bandhu</span>
+            </Link>
+          </Button>
+        </div>
+        <Separator className="my-2" />
+        <SidebarMenu>
+          {bottomNavItems.map((item) => (
+            <SidebarMenuItem key={item.href}>
+              <SidebarMenuButton asChild isActive={pathname === item.href} tooltip={item.label}>
+                <Link href={item.href}>
+                  <item.icon />
+                  <span>{item.label}</span>
+                </Link>
+              </SidebarMenuButton>
+            </SidebarMenuItem>
+          ))}
+        </SidebarMenu>
+      </SidebarFooter>
+    </Sidebar>
+  );
+}
