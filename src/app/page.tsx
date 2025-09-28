@@ -18,6 +18,7 @@ export default function Home() {
   const { isScrolled } = useScroll(60);
   const [attractions, setAttractions] = useState<Attraction[]>([]);
   const [location, setLocation] = useState<string | null>(null);
+  const [userCoords, setUserCoords] = useState<{latitude: number, longitude: number} | null>(null);
 
   useEffect(() => {
     if ('geolocation' in navigator) {
@@ -25,6 +26,7 @@ export default function Home() {
         async (position) => {
           try {
             const { latitude, longitude } = position.coords;
+            setUserCoords({ latitude, longitude });
             const response = await fetch(
               `https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`
             );
@@ -50,11 +52,12 @@ export default function Home() {
         const result = await getAttractionsByLocation({ location });
         const attractionsWithIds = result.attractions.map((att, index) => ({
           ...att,
-          id: `${index + 1}`,
+          id: `${att.title.toLowerCase().replace(/\s/g, '-')}`,
           image: att.image || `https://picsum.photos/seed/attraction${index}/${600}/${400}`,
           imageHint: att.imageHint || att.title.toLowerCase().split(' ').slice(0,2).join(' '),
         }));
         setAttractions(attractionsWithIds);
+        sessionStorage.setItem('attractions', JSON.stringify(attractionsWithIds));
       };
       fetchAttractions();
     }
@@ -106,7 +109,7 @@ export default function Home() {
         <div className="flex space-x-4 overflow-x-auto -mx-4 px-4 pb-4 no-scrollbar">
             {topFoods.map((food) => (
               <div key={food.id} className="w-64 flex-shrink-0">
-                <ContentCard content={food} type="food" />
+                <ContentCard content={food} type="food" userCoords={userCoords} />
               </div>
             ))}
         </div>
@@ -134,7 +137,7 @@ export default function Home() {
         <div className="flex space-x-4 overflow-x-auto -mx-4 px-4 pb-4 no-scrollbar">
             {attractions.length > 0 ? attractions.map((attraction) => (
               <div key={attraction.id} className="w-64 flex-shrink-0">
-                <ContentCard content={attraction} type="attraction" />
+                <ContentCard content={attraction} type="attraction" userCoords={userCoords} />
               </div>
             )) : <p>Loading attractions...</p>}
         </div>
