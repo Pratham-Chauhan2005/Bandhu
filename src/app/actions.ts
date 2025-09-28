@@ -2,6 +2,7 @@
 
 import { intelligentItinerarySuggestions, type IntelligentItinerarySuggestionsInput, type IntelligentItinerarySuggestionsOutput } from '@/ai/flows/intelligent-itinerary-suggestions';
 import { languageTranslationForBandhuProfiles, type LanguageTranslationForBandhuProfilesInput } from '@/ai/flows/language-translation-for-bandhu-profiles';
+import { getAttractions, type GetAttractionsInput, type GetAttractionsOutput } from '@/ai/flows/get-attractions-flow';
 
 export async function getItinerary(input: IntelligentItinerarySuggestionsInput): Promise<IntelligentItinerarySuggestionsOutput> {
     try {
@@ -20,5 +21,15 @@ export async function getTranslation(input: LanguageTranslationForBandhuProfiles
     } catch (error) {
         console.error(error);
         return 'Translation failed.';
+    }
+}
+
+export async function getAttractionsByLocation(input: GetAttractionsInput): Promise<GetAttractionsOutput> {
+    try {
+        const result = await getAttractions(input);
+        return result;
+    } catch (error) {
+        console.error(error);
+        return { attractions: [] };
     }
 }
