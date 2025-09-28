@@ -5,7 +5,8 @@ import AppHeader from '@/components/layout/AppHeader';
 import { Toaster } from '@/components/ui/toaster';
 import BottomNavBar from '@/components/layout/BottomNavBar';
 import { Inter } from 'next/font/google';
-import FloatingHomestayButton from '@/components/layout/FloatingHomestayButton';
+import SosButton from '@/components/layout/SosButton';
+import { AlertDialog } from '@/components/ui/alert-dialog';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 
@@ -30,7 +31,9 @@ export default function RootLayout({
                 {children}
               </main>
             </div>
-            <FloatingHomestayButton />
+            <AlertDialog>
+              <SosButton />
+            </AlertDialog>
             <BottomNavBar />
           </div>
         </SidebarProvider>
