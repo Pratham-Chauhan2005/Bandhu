@@ -1,5 +1,5 @@
 import { PlaceHolderImages } from './placeholder-images';
-import { Users, Camera, Palette, UtensilsCrossed, CalendarDays, Landmark } from 'lucide-react';
+import { Users, Camera, Palette, UtensilsCrossed, CalendarDays, Landmark, Home } from 'lucide-react';
 
 const getImage = (id: string) => PlaceHolderImages.find(img => img.id === id)?.imageUrl || 'https://picsum.photos/seed/placeholder/600/400';
 const getHint = (id: string) => PlaceHolderImages.find(img => img.id === id)?.imageHint || 'placeholder';
@@ -94,4 +94,11 @@ export const mustVisitAttractions = [
   { id: '1', title: 'Taj Mahal', description: 'An ivory-white marble mausoleum.', image: getImage('attraction1'), imageHint: getHint('attraction1') },
   { id: '2', title: 'Humayun\'s Tomb', description: 'The tomb of the Mughal Emperor.', image: getImage('attraction2'), imageHint: getHint('attraction2') },
   { id: '3', title: 'Qutub Minar', description: 'A towering minaret and victory tower.', image: getImage('attraction3'), imageHint: getHint('attraction3') },
+];
+
+export const homestays = [
+  { id: '1', name: 'Cozy Garden Retreat', price: 45, distance: 2.5, rating: 4.8, image: getImage('homestay1'), imageHint: getHint('homestay1') },
+  { id: '2', name: 'Urban Oasis Studio', price: 60, distance: 1.2, rating: 4.9, image: getImage('homestay2'), imageHint: getHint('homestay2') },
+  { id: '3', name: 'Riverside Cottage', price: 75, distance: 5.1, rating: 4.7, image: getImage('homestay3'), imageHint: getHint('homestay3') },
+  { id: '4', name: 'The Artist\'s Loft', price: 55, distance: 3.0, rating: 4.6, image: getImage('homestay4'), imageHint: getHint('homestay4') },
 ];

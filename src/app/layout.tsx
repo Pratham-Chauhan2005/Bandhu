@@ -2,12 +2,12 @@ import type { Metadata } from 'next';
 import './globals.css';
 import { SidebarProvider } from '@/components/ui/sidebar';
 import AppHeader from '@/components/layout/AppHeader';
-import SosButton from '@/components/layout/SosButton';
 import { Toaster } from '@/components/ui/toaster';
 import BottomNavBar from '@/components/layout/BottomNavBar';
-import { Inter } from 'next/font/google'
+import { Inter } from 'next/font/google';
+import FloatingHomestayButton from '@/components/layout/FloatingHomestayButton';
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-sans' })
+const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 
 export const metadata: Metadata = {
   title: 'Bandhu Local',
@@ -30,7 +30,7 @@ export default function RootLayout({
                 {children}
               </main>
             </div>
-            <SosButton />
+            <FloatingHomestayButton />
             <BottomNavBar />
           </div>
         </SidebarProvider>
