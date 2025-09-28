@@ -35,7 +35,7 @@ export default function Home() {
   return (
     <div className="space-y-8">
       <div className={cn(
-        "sticky z-10 bg-background/95 backdrop-blur-sm -mx-4 px-4 pb-4 transition-all duration-200",
+        "sticky z-20 bg-background/95 backdrop-blur-sm px-4 pb-4 transition-all duration-200",
         isScrolled ? 'top-14' : 'top-20'
       )}>
         <div className="relative w-full">
@@ -49,7 +49,7 @@ export default function Home() {
           />
         </div>
 
-        <div className="overflow-x-auto space-x-2 mt-2 pb-2 no-scrollbar">
+        <div className="overflow-x-auto space-x-2 mt-4 pb-2 no-scrollbar">
           <div className="flex space-x-2">
             {categories.map(category => (
                 <Button key={category.name} variant="outline" className="flex items-center gap-2 rounded-full bg-white flex-shrink-0" asChild>
@@ -65,7 +65,7 @@ export default function Home() {
 
       <section className="overflow-x-hidden">
         <h2 className="text-xl font-bold mb-4">Recommended for You</h2>
-        <div className="overflow-x-auto pb-4 -mx-4 px-4 no-scrollbar">
+        <div className="overflow-x-auto pb-4 no-scrollbar">
             <div className="flex space-x-4">
               {recommendedBandhus.map((bandhu) => (
                 <div key={bandhu.id} className="w-40 flex-shrink-0">
@@ -78,7 +78,7 @@ export default function Home() {
       
       <section className="overflow-x-hidden">
         <h2 className="text-xl font-bold mb-4">Top Local Foods</h2>
-        <div className="overflow-x-auto pb-4 -mx-4 px-4 no-scrollbar">
+        <div className="overflow-x-auto pb-4 no-scrollbar">
           <div className="flex space-x-4">
             {topFoods.map((food) => (
               <div key={food.id} className="w-64 flex-shrink-0">
@@ -108,7 +108,7 @@ export default function Home() {
 
       <section className="overflow-x-hidden">
         <h2 className="text-xl font-bold mb-4">Must Visit Attractions</h2>
-        <div className="overflow-x-auto pb-4 -mx-4 px-4 no-scrollbar">
+        <div className="overflow-x-auto pb-4 no-scrollbar">
           <div className="flex space-x-4">
             {attractions.map((attraction) => (
               <div key={attraction.id} className="w-64 flex-shrink-0">

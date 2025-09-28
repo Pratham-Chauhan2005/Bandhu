@@ -1,3 +1,4 @@
+
 'use client';
 import { Button } from '@/components/ui/button';
 import { User, MapPin, Loader2 } from 'lucide-react';
@@ -5,12 +6,13 @@ import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { useScroll } from '@/hooks/use-scroll';
 import { cn } from '@/lib/utils';
-import { SidebarTrigger } from '../ui/sidebar';
+import { SidebarTrigger, useSidebar } from '../ui/sidebar';
 
 export default function AppHeader() {
   const [location, setLocation] = useState('Detecting location...');
   const [isLoading, setIsLoading] = useState(true);
   const { isScrolled } = useScroll(60);
+  const { isMobile } = useSidebar();
 
   useEffect(() => {
     if ('geolocation' in navigator) {
@@ -45,12 +47,15 @@ export default function AppHeader() {
 
   return (
     <header className={cn(
-      "sticky top-0 z-20 flex items-center justify-between gap-4 border-b bg-background/95 px-4 backdrop-blur-sm md:px-6 transition-all duration-200 ease-out",
+      "sticky top-0 z-30 flex items-center justify-between gap-4 border-b bg-background/95 px-4 backdrop-blur-sm md:px-6 transition-all duration-200 ease-out",
       isScrolled ? 'h-14' : 'h-20'
     )}>
       <div className="flex items-center gap-2">
         <SidebarTrigger />
-        <div className='hidden md:flex items-center gap-2 text-muted-foreground font-semibold'>
+        <div className={cn(
+            'flex items-center gap-2 text-muted-foreground font-semibold',
+            !isMobile && 'hidden'
+        )}>
             {isLoading ? (
             <Loader2 className="h-5 w-5 animate-spin text-primary" />
             ) : (
