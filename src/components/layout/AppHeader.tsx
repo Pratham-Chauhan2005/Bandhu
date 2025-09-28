@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { useScroll } from '@/hooks/use-scroll';
 import { cn } from '@/lib/utils';
+import { SidebarTrigger } from '../ui/sidebar';
 
 export default function AppHeader() {
   const [location, setLocation] = useState('Detecting location...');
@@ -47,16 +48,19 @@ export default function AppHeader() {
       "sticky top-0 z-20 flex items-center justify-between gap-4 border-b bg-background/95 px-4 backdrop-blur-sm md:px-6 transition-all duration-200 ease-out",
       isScrolled ? 'h-14' : 'h-20'
     )}>
-      <div className="flex items-center gap-2 text-muted-foreground font-semibold w-1/3">
-        {isLoading ? (
-          <Loader2 className="h-5 w-5 animate-spin text-primary" />
-        ) : (
-          <MapPin className="h-5 w-5 text-primary" />
-        )}
-        <span className={cn(
-          "truncate transition-all duration-200",
-          isScrolled ? 'text-xs' : 'text-sm'
-        )}>{location}</span>
+      <div className="flex items-center gap-2 w-1/3">
+        <SidebarTrigger className="md:flex hidden" />
+        <div className='flex items-center gap-2 text-muted-foreground font-semibold'>
+            {isLoading ? (
+            <Loader2 className="h-5 w-5 animate-spin text-primary" />
+            ) : (
+            <MapPin className="h-5 w-5 text-primary" />
+            )}
+            <span className={cn(
+            "truncate transition-all duration-200",
+            isScrolled ? 'text-xs' : 'text-sm'
+            )}>{location}</span>
+        </div>
       </div>
       <div className="flex-1 text-center">
         <Link href="/" className={cn(
