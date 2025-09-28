@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Home, Map, Siren, Zap, User } from 'lucide-react';
+import { Home, Map, Compass, Briefcase, User, MessageSquare, HelpCircle, Settings } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import {
   AlertDialog,
@@ -17,10 +17,10 @@ import {
 } from '@/components/ui/alert-dialog';
 
 const navItems = [
-  { href: '/tracking', icon: Map, label: 'Tracking' },
-  { href: '/sos', icon: Siren, label: 'SOS', isSos: true },
   { href: '/', icon: Home, label: 'Home' },
-  { href: '/itinerary', icon: Zap, label: 'AI Itinerary' },
+  { href: '/explore', icon: Compass, label: 'Explore' },
+  { href: '/hire', icon: Briefcase, label: 'Hire' },
+  { href: '/chat', icon: MessageSquare, label: 'Chat' },
   { href: '/profile', icon: User, label: 'Profile' },
 ];
 
@@ -28,75 +28,28 @@ export default function BottomNavBar() {
   const pathname = usePathname();
 
   return (
-    <div className="fixed bottom-0 left-0 z-50 w-full h-20 bg-blue-100/80 backdrop-blur-sm border-t md:hidden">
+    <div className="fixed bottom-0 left-0 z-50 w-full h-16 bg-background border-t md:hidden">
       <div className="grid h-full grid-cols-5 mx-auto">
-        {navItems.map((item, index) => {
+        {navItems.map((item) => {
           const isActive = pathname === item.href;
-
-          if (item.isSos) {
-            return (
-              <AlertDialog key={item.href}>
-                <AlertDialogTrigger asChild>
-                  <div className="inline-flex flex-col items-center justify-center px-5 hover:bg-blue-200/50 group cursor-pointer h-full">
-                    <Siren
-                      className={cn(
-                        'w-7 h-7 mb-1 text-gray-500 group-hover:text-destructive',
-                        isActive ? 'text-destructive' : ''
-                      )}
-                    />
-                     <span className="text-xs text-gray-500 group-hover:text-destructive">
-                      {item.label}
-                    </span>
-                  </div>
-                </AlertDialogTrigger>
-                <AlertDialogContent>
-                  <AlertDialogHeader>
-                    <AlertDialogTitle>Are you in an emergency?</AlertDialogTitle>
-                    <AlertDialogDescription>
-                      Pressing "Confirm" will immediately send your live location and personal details to our 24/7 support team and your emergency contacts.
-                      <br /><br />
-                      <strong>Only use this in a genuine emergency.</strong>
-                    </AlertDialogDescription>
-                  </AlertDialogHeader>
-                  <AlertDialogFooter>
-                    <AlertDialogCancel>Cancel</AlertDialogCancel>
-                    <AlertDialogAction className="bg-red-600 hover:bg-red-700">
-                      Confirm Emergency
-                    </AlertDialogAction>
-                  </AlertDialogFooter>
-                </AlertDialogContent>
-              </AlertDialog>
-            );
-          }
-          
-          const isCenter = index === 2;
-
           return (
             <Link
               key={item.href}
               href={item.href}
               className={cn(
-                'inline-flex flex-col items-center justify-center px-2 sm:px-5 hover:bg-blue-200/50 group h-full',
-                 isCenter ? 'relative' : ''
+                'inline-flex flex-col items-center justify-center px-2 sm:px-5 hover:bg-muted/50 group h-full',
               )}
             >
-             {isCenter ? (
-                 <div className="absolute -top-5 flex items-center justify-center h-16 w-16 rounded-full bg-primary shadow-lg border-4 border-background">
-                    <item.icon className="w-8 h-8 text-primary-foreground" />
-                 </div>
-             ) : (
-                <item.icon
-                    className={cn(
-                    'w-7 h-7 mb-1 text-gray-500 group-hover:text-primary',
-                    isActive ? 'text-primary' : ''
-                    )}
-                />
-             )}
+              <item.icon
+                className={cn(
+                  'w-6 h-6 mb-1 text-muted-foreground group-hover:text-primary',
+                  isActive ? 'text-primary' : ''
+                )}
+              />
               <span
                 className={cn(
-                  'text-xs text-gray-500 group-hover:text-primary',
-                  isActive ? 'text-primary' : '',
-                   isCenter ? 'pt-8' : ''
+                  'text-xs text-muted-foreground group-hover:text-primary',
+                  isActive ? 'text-primary' : ''
                 )}
               >
                 {item.label}

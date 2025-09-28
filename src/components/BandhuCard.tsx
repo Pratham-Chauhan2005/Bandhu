@@ -23,17 +23,22 @@ type BandhuCardProps = {
 export default function BandhuCard({ bandhu }: BandhuCardProps) {
   return (
     <Link href={`/bandhus/${bandhu.id}`} className="group block text-center">
-      <div className="w-24 h-24 mx-auto">
+      <Card className="overflow-hidden h-full transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-1 rounded-xl">
         <Image
           src={bandhu.image}
           alt={`Profile of ${bandhu.name}`}
-          width={96}
-          height={96}
-          className="w-full h-full object-cover rounded-lg shadow-md"
+          width={150}
+          height={150}
+          className="w-full h-32 object-cover"
           data-ai-hint={bandhu.imageHint}
         />
-      </div>
-      <p className="mt-2 text-sm font-medium text-foreground group-hover:text-primary transition-colors truncate">{bandhu.name}</p>
+        <CardContent className="p-3 text-left">
+          <p className="text-sm font-semibold text-foreground truncate">{bandhu.name}</p>
+          <div className="text-xs text-muted-foreground">
+            <span>₹{bandhu.rate}/hr</span>
+          </div>
+        </CardContent>
+      </Card>
     </Link>
   );
 }

@@ -1,14 +1,15 @@
 'use client';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Card } from '@/components/ui/card';
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
-import { Search, MapPin, Loader2 } from 'lucide-react';
-import { recommendedBandhus, topFoods, nearbyEvents, mustVisitAttractions } from '@/lib/data';
+import { Card, CardContent } from '@/components/ui/card';
+import { Search, MapPin, Loader2, Star, Users, Camera, Palette, UtensilsCrossed, CalendarDays, Landmark } from 'lucide-react';
+import { recommendedBandhus, topFoods, nearbyEvents, mustVisitAttractions, categories } from '@/lib/data';
 import BandhuCard from '@/components/BandhuCard';
 import ContentCard from '@/components/ContentCard';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Home() {
   const [location, setLocation] = useState('Detecting location...');
@@ -57,61 +58,95 @@ export default function Home() {
         <span className="truncate">{location}</span>
       </div>
 
-      <div className="relative max-w-2xl mx-auto">
-        <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+      <div className="relative w-full">
+        <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
         <Input
-          placeholder="Search for local food, guide, places..."
-          className="h-14 text-lg pl-12 pr-4 rounded-xl shadow-sm border-2 border-border focus-visible:ring-primary focus-visible:border-primary"
+          placeholder="Search services, guides, food..."
+          className="h-12 text-base pl-10 pr-4 rounded-lg shadow-sm border focus-visible:ring-primary/50"
         />
       </div>
 
-      <section>
-        <h2 className="text-xl font-bold mb-4 inline-block px-4 py-1 bg-primary/20 text-primary rounded-md">Local Foods</h2>
-        <Carousel opts={{ align: "start" }} className="w-full mt-2">
-          <CarouselContent className="-ml-4">
-            {topFoods.map((food) => (
-              <CarouselItem key={food.id} className="pl-4 basis-1/3 sm:basis-1/4 md:basis-1/5 lg:basis-1/6">
-                 <ContentCard content={food} type="food" />
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-        </Carousel>
-      </section>
+      <div className="flex flex-wrap gap-2">
+        {categories.map(category => (
+            <Button key={category.name} variant="outline" className="flex items-center gap-2 rounded-lg" asChild>
+                <Link href={category.href}>
+                    <category.icon className="h-4 w-4" />
+                    <span>{category.name}</span>
+                </Link>
+            </Button>
+        ))}
+      </div>
 
       <section>
-         <h2 className="text-xl font-bold mb-4 inline-block px-4 py-1 bg-primary/20 text-primary rounded-md">Local Guides</h2>
-         <Carousel opts={{ align: "start" }} className="w-full mt-2">
-          <CarouselContent className="-ml-4">
+        <h2 className="text-xl font-bold mb-4">Recommended for You</h2>
+        <div className="space-y-4">
             {recommendedBandhus.map((bandhu) => (
-              <CarouselItem key={bandhu.id} className="pl-4 basis-1/2 sm:basis-1/3 md:basis-1/4 lg:basis-1/5">
-                <BandhuCard bandhu={bandhu} />
-              </CarouselItem>
+              <Card key={bandhu.id} className="overflow-hidden">
+                <Link href={`/bandhus/${bandhu.id}`} className="block">
+                  <CardContent className="p-4 flex items-center gap-4">
+                      <Image 
+                        src={bandhu.image}
+                        alt={bandhu.name}
+                        width={64}
+                        height={64}
+                        className="w-16 h-16 rounded-lg object-cover"
+                        data-ai-hint={bandhu.imageHint}
+                      />
+                      <div className="flex-grow">
+                          <p className="font-semibold text-foreground">{bandhu.name}</p>
+                          <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                              <div className="flex items-center gap-1">
+                                <Star className="w-4 h-4 fill-primary text-primary" />
+                                <span>{bandhu.rating.toFixed(1)}</span>
+                              </div>
+                              <span>•</span>
+                              <span>₹{bandhu.rate}/hr</span>
+                          </div>
+                      </div>
+                  </CardContent>
+                </Link>
+              </Card>
             ))}
-          </CarouselContent>
-        </Carousel>
+        </div>
       </section>
       
       <section>
-        <Tabs defaultValue="attractions">
-          <TabsList className="grid w-full max-w-md mx-auto grid-cols-2 bg-transparent p-0">
-            <TabsTrigger value="attractions" className="text-base data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:rounded-lg rounded-lg">Nearby Attractions</TabsTrigger>
-            <TabsTrigger value="events" className="text-base data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:rounded-lg rounded-lg">Local Events Today!</TabsTrigger>
-          </TabsList>
-          <TabsContent value="attractions">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
-              {mustVisitAttractions.map((attraction) => (
-                <ContentCard key={attraction.id} content={attraction} type="attraction" />
-              ))}
-            </div>
-          </TabsContent>
-          <TabsContent value="events">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
-              {nearbyEvents.map((event) => (
-                <ContentCard key={event.id} content={event} type="attraction" />
-              ))}
-            </div>
-          </TabsContent>
-        </Tabs>
+        <h2 className="text-xl font-bold mb-4">Top Local Foods</h2>
+        <div className="grid grid-cols-2 gap-4">
+            {topFoods.map((food) => (
+              <Card key={food.id}>
+                  <CardContent className="p-4 flex items-center justify-center">
+                    <p className="font-medium text-center">{food.title}</p>
+                  </CardContent>
+              </Card>
+            ))}
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold mb-4">Nearby Events</h2>
+        <div className="grid grid-cols-2 gap-4">
+            {nearbyEvents.map((event) => (
+              <Card key={event.id} className="bg-green-100/50">
+                  <CardContent className="p-4 flex items-center justify-center">
+                    <p className="font-medium text-center">{event.title}</p>
+                  </CardContent>
+              </Card>
+            ))}
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-bold mb-4">Must Visit Attractions</h2>
+        <div className="grid grid-cols-2 gap-4">
+            {mustVisitAttractions.map((attraction) => (
+              <Card key={attraction.id} className="bg-blue-100/50">
+                  <CardContent className="p-4 flex items-center justify-center">
+                    <p className="font-medium text-center">{attraction.title}</p>
+                  </CardContent>
+              </Card>
+            ))}
+        </div>
       </section>
     </div>
   );
