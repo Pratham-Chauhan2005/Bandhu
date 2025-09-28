@@ -49,7 +49,7 @@ export default function AppSidebar() {
   const pathname = usePathname();
 
   return (
-    <Sidebar>
+    <Sidebar variant="floating">
       <SidebarHeader>
         <Link href="/" className="flex items-center gap-2 text-primary font-headline font-bold text-lg">
           <Zap className="h-6 w-6" />

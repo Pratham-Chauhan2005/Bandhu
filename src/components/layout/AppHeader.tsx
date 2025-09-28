@@ -49,8 +49,8 @@ export default function AppHeader() {
       isScrolled ? 'h-14' : 'h-20'
     )}>
       <div className="flex items-center gap-2">
-        <SidebarTrigger className="md:flex hidden" />
-        <div className='flex items-center gap-2 text-muted-foreground font-semibold'>
+        <SidebarTrigger />
+        <div className='hidden md:flex items-center gap-2 text-muted-foreground font-semibold'>
             {isLoading ? (
             <Loader2 className="h-5 w-5 animate-spin text-primary" />
             ) : (
@@ -62,7 +62,7 @@ export default function AppHeader() {
             )}>{location}</span>
         </div>
       </div>
-      <div className="flex-1 text-right">
+      <div className="flex-1 text-center md:text-right">
         <Link href="/" className={cn(
           "font-bold text-primary font-headline transition-all duration-200",
           isScrolled ? 'text-xl' : 'text-2xl'
@@ -70,6 +70,7 @@ export default function AppHeader() {
           Bandhu
         </Link>
       </div>
+       <div className='md:hidden flex-1'></div>
     </header>
   );
 }
