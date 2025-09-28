@@ -48,14 +48,13 @@ export default function Home() {
     if (location) {
       const fetchAttractions = async () => {
         const result = await getAttractionsByLocation({ location });
-        // Since the AI doesn't give us images, we'll use placeholders.
-        const attractionsWithPlaceholders = result.attractions.map((att, index) => ({
+        const attractionsWithIds = result.attractions.map((att, index) => ({
           ...att,
           id: `${index + 1}`,
-          image: `https://picsum.photos/seed/attraction${index}/${600}/${400}`,
-          imageHint: att.title.toLowerCase().split(' ').slice(0,2).join(' '),
+          image: att.image || `https://picsum.photos/seed/attraction${index}/${600}/${400}`,
+          imageHint: att.imageHint || att.title.toLowerCase().split(' ').slice(0,2).join(' '),
         }));
-        setAttractions(attractionsWithPlaceholders);
+        setAttractions(attractionsWithIds);
       };
       fetchAttractions();
     }

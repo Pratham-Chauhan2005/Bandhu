@@ -35,7 +35,7 @@ const prompt = ai.definePrompt({
 
   Location: {{{location}}}
 
-  Generate a list of 3 attractions. For each attraction, provide a title and a short description.
+  Generate a list of 3 attractions. For each attraction, provide a title, a short description, and a beautiful, high-quality image URL from Unsplash.
   `,
 });
 
