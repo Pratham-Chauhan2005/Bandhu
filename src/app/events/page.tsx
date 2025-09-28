@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -62,7 +63,7 @@ export default function EventsPage() {
       </div>
       
       {isLoading ? (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 gap-6">
           {Array.from({ length: 3 }).map((_, index) => (
             <Card key={index} className="overflow-hidden">
                 <Skeleton className="w-full h-48" />
@@ -76,7 +77,7 @@ export default function EventsPage() {
           ))}
         </div>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 gap-6">
           {nearbyEvents.map((event) => (
             <EventCard key={event.id} event={event} />
           ))}

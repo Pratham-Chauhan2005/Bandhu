@@ -76,7 +76,7 @@ export default function HomestaysPage() {
   const renderContent = () => {
     if (isLoading) {
       return (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 tablet:grid-cols-2 gap-6">
           {Array.from({ length: 4 }).map((_, index) => (
             <Card key={index} className="overflow-hidden">
                 <Skeleton className="w-full h-48" />
@@ -94,7 +94,7 @@ export default function HomestaysPage() {
     }
 
     return (
-       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+       <div className="grid grid-cols-1 tablet:grid-cols-2 gap-6">
         {sortedHomestays.map((stay) => (
           <Card key={stay.id} className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
             <Image

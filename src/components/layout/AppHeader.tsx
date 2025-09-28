@@ -47,12 +47,13 @@ export default function AppHeader() {
 
   return (
     <header className={cn(
-      "sticky top-0 z-30 flex items-center justify-between gap-4 border-b bg-background/95 px-4 backdrop-blur-sm md:px-6 transition-all duration-200 ease-out",
-      isScrolled ? 'h-14' : 'h-20'
+      "sticky top-0 z-30 flex items-center justify-between gap-4 border-b bg-background/95 px-4 backdrop-blur-sm transition-all duration-200 ease-out",
+      isScrolled ? 'h-14' : 'h-20',
+      'tablet:px-6'
     )}>
       <div className="flex items-center gap-2">
         <SidebarTrigger />
-        <div className='hidden md:flex items-center gap-2 text-muted-foreground font-semibold'>
+        <div className='hidden tablet:flex items-center gap-2 text-muted-foreground font-semibold'>
             {isLoading ? (
             <Loader2 className="h-5 w-5 animate-spin text-primary" />
             ) : (
@@ -64,14 +65,15 @@ export default function AppHeader() {
             )}>{location}</span>
         </div>
       </div>
-      <div className="flex-1"></div>
-      <div className="flex items-center">
-        <Link href="/" className={cn(
-          "font-bold text-primary font-headline transition-all duration-200",
-          isScrolled ? 'text-xl' : 'text-2xl'
-        )}>
-          <Logo />
-        </Link>
+      <div className="flex-1 flex justify-center tablet:justify-start">
+        <div className="flex items-center">
+            <Link href="/" className={cn(
+            "font-bold text-primary font-headline transition-all duration-200",
+            isScrolled ? 'text-xl' : 'text-2xl'
+            )}>
+            <Logo />
+            </Link>
+        </div>
       </div>
     </header>
   );

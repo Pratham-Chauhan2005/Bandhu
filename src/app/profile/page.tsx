@@ -1,3 +1,4 @@
+
 'use client';
 
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
@@ -59,7 +60,7 @@ export default function ProfilePage() {
           </Button>
         </CardHeader>
         <CardContent className="space-y-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 tablet:grid-cols-2 gap-6">
             <div className="space-y-2">
               <Label htmlFor="name">Full Name</Label>
               <Input id="name" name="name" value={user.name} onChange={handleUserChange} readOnly={!isEditing} />

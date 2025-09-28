@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useEffect, useState } from 'react';
@@ -52,7 +53,7 @@ export default function AttractionPage() {
           <div className="p-6 space-y-4">
             <h1 className="text-4xl font-headline font-bold">{title}</h1>
             <p className="text-lg text-muted-foreground">{description}</p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4">
+            <div className="grid grid-cols-1 tablet:grid-cols-2 gap-4 pt-4">
               {hours && (
                 <div className="flex items-center gap-3">
                   <Clock className="h-6 w-6 text-primary" />

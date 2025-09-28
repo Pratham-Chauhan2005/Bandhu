@@ -30,7 +30,7 @@ export default function CategoryPage() {
       case 'artists':
         const bandhus = recommendedBandhus.filter(b => serviceToCategory[b.service]?.toLowerCase() === slug);
         return (
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 mobile-lg:grid-cols-3 tablet:grid-cols-4 laptop:grid-cols-5 desktop:grid-cols-6 gap-4">
             {bandhus.map(bandhu => (
               <BandhuCard key={bandhu.id} bandhu={bandhu} />
             ))}
@@ -38,7 +38,7 @@ export default function CategoryPage() {
         );
       case 'food':
         return (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 mobile-lg:grid-cols-2 tablet:grid-cols-3 laptop:grid-cols-4 gap-6">
             {topFoods.map(food => (
               <Card key={food.id} className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
                 <Image
@@ -60,7 +60,7 @@ export default function CategoryPage() {
         );
       case 'events':
         return (
-            <div className="grid grid-cols-1 gap-4">
+            <div className="grid grid-cols-1 tablet:grid-cols-2 gap-4">
                 {nearbyEvents.map((event) => (
                   <Card key={event.id} className="shadow-md rounded-xl">
                       <CardContent className="p-4 flex items-center justify-between">
@@ -77,7 +77,7 @@ export default function CategoryPage() {
         );
       case 'attractions':
         return (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 mobile-lg:grid-cols-2 tablet:grid-cols-3 gap-4">
             {mustVisitAttractions.map(attraction => (
               <div key={attraction.id} className="w-full flex-shrink-0">
                 <ContentCard content={attraction} type="attraction" />

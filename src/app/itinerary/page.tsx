@@ -1,3 +1,4 @@
+
 'use client';
 import { useState, useTransition } from 'react';
 import { useForm } from 'react-hook-form';
@@ -64,7 +65,7 @@ export default function ItineraryPage() {
         <p className="text-muted-foreground">Let our AI craft the perfect trip for you based on your interests.</p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 laptop:grid-cols-2 gap-8">
         <Card>
           <CardHeader>
             <CardTitle>Plan Your Trip</CardTitle>
