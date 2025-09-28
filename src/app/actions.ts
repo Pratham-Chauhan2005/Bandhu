@@ -1,15 +1,15 @@
 'use server';
 
-import { intelligentItinerarySuggestions, type IntelligentItinerarySuggestionsInput } from '@/ai/flows/intelligent-itinerary-suggestions';
+import { intelligentItinerarySuggestions, type IntelligentItinerarySuggestionsInput, type IntelligentItinerarySuggestionsOutput } from '@/ai/flows/intelligent-itinerary-suggestions';
 import { languageTranslationForBandhuProfiles, type LanguageTranslationForBandhuProfilesInput } from '@/ai/flows/language-translation-for-bandhu-profiles';
 
-export async function getItinerary(input: IntelligentItinerarySuggestionsInput) {
+export async function getItinerary(input: IntelligentItinerarySuggestionsInput): Promise<IntelligentItinerarySuggestionsOutput> {
     try {
         const result = await intelligentItinerarySuggestions(input);
-        return result.itinerary;
+        return result;
     } catch (error) {
         console.error(error);
-        return 'Sorry, I was unable to generate an itinerary at this time. Please try again later.';
+        return { title: 'Error', itinerary: [{ time: 'Now', title: 'Could not generate itinerary', description: 'Sorry, I was unable to generate an itinerary at this time. Please try again later.' }] };
     }
 }
 

@@ -29,8 +29,15 @@ export type IntelligentItinerarySuggestionsInput = z.infer<
   typeof IntelligentItinerarySuggestionsInputSchema
 >;
 
+const ItineraryItemSchema = z.object({
+  time: z.string().describe("The suggested time for the activity (e.g., '9:00 AM', '1:00 PM - 3:00 PM')."),
+  title: z.string().describe("A short, descriptive title for the itinerary item."),
+  description: z.string().describe("A more detailed description of the activity or place."),
+});
+
 const IntelligentItinerarySuggestionsOutputSchema = z.object({
-  itinerary: z.string().describe('A personalized itinerary for the traveler.'),
+  title: z.string().describe("A title for the overall itinerary (e.g., 'A Day of Adventure in New Delhi')."),
+  itinerary: z.array(ItineraryItemSchema).describe('A personalized, time-ordered itinerary for the traveler.'),
 });
 export type IntelligentItinerarySuggestionsOutput = z.infer<
   typeof IntelligentItinerarySuggestionsOutputSchema
@@ -46,16 +53,16 @@ const prompt = ai.definePrompt({
   name: 'intelligentItinerarySuggestionsPrompt',
   input: {schema: IntelligentItinerarySuggestionsInputSchema},
   output: {schema: IntelligentItinerarySuggestionsOutputSchema},
-  prompt: `You are an expert travel guide specializing in creating personalized itineraries.
+  prompt: `You are an expert travel guide specializing in creating personalized, systematic, and time-ordered itineraries.
 
-  Based on the traveler's interests, location, desired duration, and travel style, create a unique and authentic itinerary.
+  Based on the traveler's interests, location, desired duration, and travel style, create a unique and authentic itinerary. The itinerary should be a chronologically ordered list of activities.
 
   Interests: {{{interests}}}
   Location: {{{location}}}
   Duration: {{{duration}}}
   Travel Style: {{{travelStyle}}}
 
-  Itinerary:`,
+  Generate an itinerary with a clear title and a sequence of events.`,
 });
 
 const intelligentItinerarySuggestionsFlow = ai.defineFlow(

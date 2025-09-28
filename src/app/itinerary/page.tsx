@@ -20,10 +20,11 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { getItinerary } from '@/app/actions';
 import { Loader2, Zap } from 'lucide-react';
+import type { IntelligentItinerarySuggestionsOutput } from '@/ai/flows/intelligent-itinerary-suggestions';
+import { Separator } from '@/components/ui/separator';
 
 const formSchema = z.object({
   interests: z.string().min(3, 'Please list at least one interest.'),
@@ -35,7 +36,7 @@ const formSchema = z.object({
 type FormValues = z.infer<typeof formSchema>;
 
 export default function ItineraryPage() {
-  const [itinerary, setItinerary] = useState('');
+  const [itinerary, setItinerary] = useState<IntelligentItinerarySuggestionsOutput | null>(null);
   const [isPending, startTransition] = useTransition();
 
   const form = useForm<FormValues>({
@@ -49,7 +50,7 @@ export default function ItineraryPage() {
   });
 
   const onSubmit = (values: FormValues) => {
-    setItinerary('');
+    setItinerary(null);
     startTransition(async () => {
       const result = await getItinerary(values);
       setItinerary(result);
@@ -154,7 +155,7 @@ export default function ItineraryPage() {
         
         <Card className="flex flex-col">
           <CardHeader>
-            <CardTitle>Your Personalized Itinerary</CardTitle>
+            <CardTitle>{itinerary?.title || 'Your Personalized Itinerary'}</CardTitle>
           </CardHeader>
           <CardContent className="flex-grow">
             {isPending && (
@@ -165,16 +166,23 @@ export default function ItineraryPage() {
               </div>
             )}
             {!isPending && itinerary && (
-              <div className="prose prose-sm md:prose-base prose-invert max-w-none h-full overflow-y-auto rounded-md bg-card p-4 border border-border">
-                {itinerary.split('\n').map((line, index) => {
-                    if (line.startsWith('**') && line.endsWith('**')) {
-                        return <h3 key={index} className="font-bold text-primary">{line.replace(/\*\*/g, '')}</h3>;
-                    }
-                    if (line.startsWith('*')) {
-                        return <h4 key={index} className="font-semibold mt-4">{line.replace(/\*/g, '')}</h4>
-                    }
-                    return <p key={index}>{line}</p>;
-                })}
+              <div className="h-full overflow-y-auto rounded-md bg-card p-4 border border-border space-y-4">
+                {itinerary.itinerary.map((item, index) => (
+                  <div key={index} className="flex gap-4">
+                    <div className="flex flex-col items-center">
+                        <div className="w-24 text-right pr-4">
+                            <p className="font-bold text-sm text-primary">{item.time}</p>
+                        </div>
+                        {index < itinerary.itinerary.length - 1 && (
+                          <div className="flex-grow w-px bg-border my-2"></div>
+                        )}
+                    </div>
+                    <div>
+                        <h4 className="font-semibold text-foreground">{item.title}</h4>
+                        <p className="text-sm text-muted-foreground">{item.description}</p>
+                    </div>
+                  </div>
+                ))}
               </div>
             )}
             {!isPending && !itinerary && (
