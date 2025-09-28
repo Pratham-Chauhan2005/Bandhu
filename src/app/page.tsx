@@ -11,11 +11,14 @@ import { useScroll } from '@/hooks/use-scroll';
 import { cn } from '@/lib/utils';
 import { useState, useEffect } from 'react';
 import type { Attraction } from '@/ai/schemas';
+import { getAttractionsByLocation } from '@/app/actions';
 
 
 export default function Home() {
   const { isScrolled } = useScroll(60);
   const [userCoords, setUserCoords] = useState<{latitude: number, longitude: number} | null>(null);
+  const [attractions, setAttractions] = useState<Attraction[]>(mustVisitAttractions);
+
 
   useEffect(() => {
     if ('geolocation' in navigator) {
@@ -49,38 +52,44 @@ export default function Home() {
           />
         </div>
 
-        <div className="flex overflow-x-auto space-x-2 mt-4 -mx-4 px-4 pb-2 no-scrollbar">
-          {categories.map(category => (
-              <Button key={category.name} variant="outline" className="flex items-center gap-2 rounded-full bg-white flex-shrink-0" asChild>
-                  <Link href={category.href}>
-                      <category.icon className="h-4 w-4" />
-                      <span className="font-medium">{category.name}</span>
-                  </Link>
-              </Button>
-          ))}
+        <div className="overflow-x-auto space-x-2 mt-4 pb-2 no-scrollbar">
+          <div className="flex space-x-2">
+            {categories.map(category => (
+                <Button key={category.name} variant="outline" className="flex items-center gap-2 rounded-full bg-white flex-shrink-0" asChild>
+                    <Link href={category.href}>
+                        <category.icon className="h-4 w-4" />
+                        <span className="font-medium">{category.name}</span>
+                    </Link>
+                </Button>
+            ))}
+          </div>
         </div>
       </div>
 
 
       <section>
         <h2 className="text-xl font-bold mb-4">Recommended for You</h2>
-        <div className="flex space-x-4 overflow-x-auto -mx-4 px-4 pb-4 no-scrollbar">
-            {recommendedBandhus.map((bandhu) => (
-              <div key={bandhu.id} className="w-40 flex-shrink-0">
-                <BandhuCard bandhu={bandhu} />
-              </div>
-            ))}
+        <div className="overflow-x-auto pb-4 no-scrollbar">
+            <div className="flex space-x-4">
+              {recommendedBandhus.map((bandhu) => (
+                <div key={bandhu.id} className="w-40 flex-shrink-0">
+                  <BandhuCard bandhu={bandhu} />
+                </div>
+              ))}
+            </div>
         </div>
       </section>
       
       <section>
         <h2 className="text-xl font-bold mb-4">Top Local Foods</h2>
-        <div className="flex space-x-4 overflow-x-auto -mx-4 px-4 pb-4 no-scrollbar">
+        <div className="overflow-x-auto pb-4 no-scrollbar">
+          <div className="flex space-x-4">
             {topFoods.map((food) => (
               <div key={food.id} className="w-64 flex-shrink-0">
                 <ContentCard content={food} type="food" userCoords={userCoords} />
               </div>
             ))}
+          </div>
         </div>
       </section>
 
@@ -103,12 +112,14 @@ export default function Home() {
 
       <section>
         <h2 className="text-xl font-bold mb-4">Must Visit Attractions</h2>
-        <div className="flex space-x-4 overflow-x-auto -mx-4 px-4 pb-4 no-scrollbar">
-            {mustVisitAttractions.map((attraction) => (
+        <div className="overflow-x-auto pb-4 no-scrollbar">
+          <div className="flex space-x-4">
+            {attractions.map((attraction) => (
               <div key={attraction.id} className="w-64 flex-shrink-0">
                 <ContentCard content={attraction} type="attraction" userCoords={userCoords} />
               </div>
             ))}
+          </div>
         </div>
       </section>
       <style jsx global>{`
