@@ -1,3 +1,4 @@
+
 import { PlaceHolderImages } from './placeholder-images';
 import { Users, Camera, Palette, UtensilsCrossed, CalendarDays, Landmark, Home } from 'lucide-react';
 
@@ -181,7 +182,7 @@ export const nearbyEvents = [
 ];
 
 export const mustVisitAttractions = [
-  { id: '1', title: 'Taj Mahal', description: 'An ivory-white marble mausoleum.', image: getImage('attraction1'), imageHint: getHint('attraction1') },
+  { id: '1', title: 'Gwalior Fort', description: 'A hill fort in Gwalior, Madhya Pradesh.', image: getImage('attractionGwalior'), imageHint: getHint('attractionGwalior') },
   { id: '2', title: 'Humayun\'s Tomb', description: 'The tomb of the Mughal Emperor.', image: getImage('attraction2'), imageHint: getHint('attraction2') },
   { id: '3', title: 'Qutub Minar', description: 'A towering minaret and victory tower.', image: getImage('attraction3'), imageHint: getHint('attraction3') },
 ];
@@ -191,4 +192,17 @@ export const homestays = [
   { id: '2', name: 'Urban Oasis Studio', price: 60, distance: 1.2, rating: 4.9, image: getImage('homestay2'), imageHint: getHint('homestay2') },
   { id: '3', name: 'Riverside Cottage', price: 75, distance: 5.1, rating: 4.7, image: getImage('homestay3'), imageHint: getHint('homestay3') },
   { id: '4', name: 'The Artist\'s Loft', price: 55, distance: 3.0, rating: 4.6, image: getImage('homestay4'), imageHint: getHint('homestay4') },
+];
+
+export const localFoodShops = [
+    { id: '1', name: 'Paranthe Wali Gali', location: 'Chandni Chowk, Delhi', rating: 4.5, reviews: 2300, image: getImage('shop1'), imageHint: getHint('shop1') },
+    { id: '2', name: 'Karim\'s', location: 'Jama Masjid, Delhi', rating: 4.7, reviews: 3500, image: getImage('shop2'), imageHint: getHint('shop2') },
+    { id: '3', name: 'Indian Coffee House', location: 'Connaught Place, Delhi', rating: 4.4, reviews: 1800, image: getImage('shop3'), imageHint: getHint('shop3') },
+    { id: '4', name: 'Kuremal Mohan Lal Kulfi Wale', location: 'Chawri Bazar, Delhi', rating: 4.8, reviews: 1500, image: getImage('shop4'), imageHint: getHint('shop4') },
+    { id: '5', name: 'Sita Ram Diwan Chand', location: 'Paharganj, Delhi', rating: 4.6, reviews: 2100, image: getImage('shop5'), imageHint: getHint('shop5') },
+    { id: '6', name: 'Moti Mahal Delux', location: 'Daryaganj, Delhi', rating: 4.3, reviews: 2800, image: getImage('shop6'), imageHint: getHint('shop6') },
+    { id: '7', name: 'Saravana Bhavan', location: 'Connaught Place, Delhi', rating: 4.5, reviews: 4200, image: getImage('shop7'), imageHint: getHint('shop7') },
+    { id: '8', name: 'Gali Parathe Wali', location: 'Chandni Chowk, Delhi', rating: 4.2, reviews: 1200, image: getImage('shop8'), imageHint: getHint('shop8') },
+    { id: '9', name: 'Khan Chacha', location: 'Khan Market, Delhi', rating: 4.4, reviews: 3100, image: getImage('shop9'), imageHint: getHint('shop9') },
+    { id: '10', name: 'Dolma Aunty Momos', location: 'Lajpat Nagar, Delhi', rating: 4.9, reviews: 5600, image: getImage('shop10'), imageHint: getHint('shop10') },
 ];

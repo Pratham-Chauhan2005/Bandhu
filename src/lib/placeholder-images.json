@@ -21,7 +21,7 @@
     {
       "id": "bandhu4",
       "description": "Portrait of Sunita Gupta",
-      "imageUrl": "https://images.unsplash.com/photo-1556911073-52527ac43761?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHx3b21hbiUyMGNvb2tpbmd8ZW58MHx8fHwxNzU5MDUzNDI0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1556911073-52527ac43761?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHx3b21hbiUyMGNvb2tpbmd8ZW58MHx8fHwxNzU5MDUzNDI0fDA&ixlib-rb-4.1.0&q=80&w=1080",
       "imageHint": "woman cooking"
     },
     {
@@ -33,19 +33,19 @@
     {
       "id": "bandhu6",
       "description": "Portrait of Isha Verma",
-      "imageUrl": "https://images.unsplash.com/photo-1582126225439-de68f5c9e2c6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxpbmRpYW4lMjBhcnRpc3R8ZW58MHx8fHwxNzU5MDUzNDI0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1582126225439-de68f5c9e2c6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxpbmRpYW4lMjBhcnRpc3R8ZW58MHx8fHwxNzU5MDUzNDI0fDA&ixlib-rb-4.1.0&q=80&w=1080",
       "imageHint": "indian artist"
     },
     {
       "id": "bandhu7",
       "description": "Portrait of Vikram Singh",
-      "imageUrl": "https://images.unsplash.com/photo-1560250097-0b93528c311a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxpbmRpYW4lMjBwaG90b2dyYXBoZXJ8ZW58MHx8fHwxNzU5MDUzNDI0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1560250097-0b93528c311a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxpbmRpYW4lMjBwaG90b2dyYXBoZXJ8ZW58MHx8fHwxNzU5MDUzNDI0fDA&ixlib-rb-4.1.0&q=80&w=1080",
       "imageHint": "indian photographer"
     },
     {
       "id": "bandhu8",
       "description": "Portrait of Mira Kapoor",
-      "imageUrl": "https://images.unsplash.com/photo-1596541295298-9c4a243d489c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxmb29kJTIwY3JpdGljfGVufDB8fHx8MTc1OTA1MzQyNHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1596541295298-9c4a243d489c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxmb29kJTIwY3JpdGljfGVufDB8fHx8MTc1OTA1MzQyNHww&ixlib-rb-4.1.0&q=80&w=1080",
       "imageHint": "food critic"
     },
     {
@@ -109,10 +109,10 @@
       "imageHint": "indian dance"
     },
     {
-      "id": "attraction1",
-      "description": "Taj Mahal",
-      "imageUrl": "https://images.unsplash.com/photo-1587135941948-670b381f08ce?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHx0YWolMjBtYWhhbHxlbnwwfHx8fDE3NTg5NTM3NTZ8MA&ixlib.rb-4.1.0&q=80&w=1080",
-      "imageHint": "taj mahal"
+      "id": "attractionGwalior",
+      "description": "Gwalior Fort",
+      "imageUrl": "https://images.unsplash.com/photo-1624669894451-f3b1a5a0d33c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxhZ3JhJTIwZm9ydHxlbnwwfHx8fDE3NTkwNTU1NTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "agra fort"
     },
     {
       "id": "attraction2",
@@ -295,6 +295,56 @@
       "id": "homestay4",
       "imageUrl": "https://images.unsplash.com/photo-1630908932803-1f6891bfab3f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxhcnRpc3RpYyUyMGxvZnR8ZW58MHx8fHwxNzU4OTgzNTc0fDA&ixlib.rb-4.1.0&q=80&w=1080",
       "imageHint": "artistic loft"
+    },
+    {
+      "id": "shop1",
+      "imageUrl": "https://images.unsplash.com/photo-1599557041284-7e2a1581e189?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzdHJlZXQlMjBmb29kJTIwc3RhbGx8ZW58MHx8fHwxNzU5MDYzMjY3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "street food stall"
+    },
+    {
+      "id": "shop2",
+      "imageUrl": "https://images.unsplash.com/photo-1579631542720-3a8383299788?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxpbmRpYW4lMjByZXN0YXVyYW50fGVufDB8fHx8MTc1OTA2MzI2N3ww&ixlib.rb-4.1.0&q=80&w=1080",
+      "imageHint": "indian restaurant"
+    },
+    {
+      "id": "shop3",
+      "imageUrl": "https://images.unsplash.com/photo-1511920170033-f832d754ca33?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjb2ZmZWUlMjBzaG9wfGVufDB8fHx8MTc1OTA2MzI2N3ww&ixlib.rb-4.1.0&q=80&w=1080",
+      "imageHint": "coffee shop"
+    },
+    {
+      "id": "shop4",
+      "imageUrl": "https://images.unsplash.com/photo-1628579434199-73c33de34415?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxpY2UlMjBjcmVhbSUyMHNob3B8ZW58MHx8fHwxNzU5MDYzMjY4fDA&ixlib.rb-4.1.0&q=80&w=1080",
+      "imageHint": "ice cream shop"
+    },
+    {
+      "id": "shop5",
+      "imageUrl": "https://images.unsplash.com/photo-1565557623262-b27c25248a48?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxpbmRpYW4lMjBicmVha2Zhc3R8ZW58MHx8fHwxNzU5MDYzMjY4fDA&ixlib.rb-4.1.0&q=80&w=1080",
+      "imageHint": "indian breakfast"
+    },
+    {
+      "id": "shop6",
+      "imageUrl": "https://images.unsplash.com/photo-1574936145849-0f46159a35c5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxidXR0ZXIlMjBjaGlja2VufGVufDB8fHx8MTc1OTA2MzI2OHww&ixlib.rb-4.1.0&q=80&w=1080",
+      "imageHint": "butter chicken"
+    },
+    {
+      "id": "shop7",
+      "imageUrl": "https://images.unsplash.com/photo-1590846406792-0adc7f938f1d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzb3V0aCUyMGluZGlhbiUyMHJlc3RhdXJhbnR8ZW58MHx8fHwxNzU5MDYzMjY4fDA&ixlib.rb-4.1.0&q=80&w=1080",
+      "imageHint": "south indian restaurant"
+    },
+    {
+      "id": "shop8",
+      "imageUrl": "https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwYXJhbnRoYXxlbnwwfHx8fDE3NTkwNjMyNjh8MA&ixlib.rb-4.1.0&q=80&w=1080",
+      "imageHint": "parantha"
+    },
+    {
+      "id": "shop9",
+      "imageUrl": "https://images.unsplash.com/photo-1625813532892-454533035a4b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxrZWJhYnxlbnwwfHx8fDE3NTkwNjMyNjl8MA&ixlib.rb-4.1.0&q=80&w=1080",
+      "imageHint": "kebab"
+    },
+    {
+      "id": "shop10",
+      "imageUrl": "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxtb21vc3xlbnwwfHx8fDE3NTkwNjMyNjl8MA&ixlib.rb-4.1.0&q=80&w=1080",
+      "imageHint": "momos"
     }
   ]
 }
