@@ -51,7 +51,7 @@ export default function AppHeader() {
       isScrolled ? 'h-14' : 'h-20',
       'tablet:px-6'
     )}>
-      <div className="flex items-center gap-2">
+      <div className="flex flex-1 items-center gap-2">
         <SidebarTrigger />
         <div className='hidden tablet:flex items-center gap-2 text-muted-foreground font-semibold'>
             {isLoading ? (
@@ -65,15 +65,14 @@ export default function AppHeader() {
             )}>{location}</span>
         </div>
       </div>
-      <div className="flex-1 flex justify-center tablet:justify-start">
-        <div className="flex items-center">
-            <Link href="/" className={cn(
-            "font-bold text-primary font-headline transition-all duration-200",
-            isScrolled ? 'text-xl' : 'text-2xl'
-            )}>
-            <Logo />
-            </Link>
-        </div>
+      
+      <div className="flex items-center">
+        <Link href="/" className={cn(
+        "font-bold text-primary font-headline transition-all duration-200",
+        isScrolled ? 'text-xl' : 'text-2xl'
+        )}>
+        <Logo />
+        </Link>
       </div>
     </header>
   );
