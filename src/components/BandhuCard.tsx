@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Card, CardContent } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
 import { Star } from 'lucide-react';
 import VerifiedBadge from './VerifiedBadge';
 
@@ -24,7 +23,7 @@ type BandhuCardProps = {
 export default function BandhuCard({ bandhu }: BandhuCardProps) {
   return (
     <Link href={`/bandhus/${bandhu.id}`} className="group">
-      <Card className="overflow-hidden h-full flex flex-col transition-all duration-300 hover:shadow-primary/20 hover:shadow-lg hover:-translate-y-1">
+      <Card className="overflow-hidden h-full flex flex-col transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-1 border-0">
         <div className="relative">
           <Image
             src={bandhu.image}
@@ -39,21 +38,21 @@ export default function BandhuCard({ bandhu }: BandhuCardProps) {
               <VerifiedBadge />
             </div>
           )}
-          <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/70 to-transparent">
-             <h3 className="text-xl font-bold text-white">{bandhu.name}</h3>
-             <p className="text-sm text-primary-foreground/80">{bandhu.service}</p>
-          </div>
         </div>
-        <CardContent className="p-4 flex-grow flex flex-col justify-between">
-            <div className="flex justify-between items-center text-sm">
-                <div className="flex items-center gap-1 font-bold text-primary">
-                    <Star className="w-4 h-4 fill-primary" />
+        <CardContent className="p-3 flex-grow flex flex-col justify-between">
+            <div>
+              <h3 className="text-lg font-bold text-foreground truncate">{bandhu.name}</h3>
+              <p className="text-sm text-muted-foreground">{bandhu.service}</p>
+            </div>
+            <div className="flex justify-between items-center text-sm mt-2">
+                <div className="flex items-center gap-1 font-semibold text-foreground">
+                    <Star className="w-4 h-4 text-primary fill-primary" />
                     <span>{bandhu.rating.toFixed(1)}</span>
-                    <span className="font-normal text-muted-foreground">({bandhu.reviews} reviews)</span>
+                    <span className="font-normal text-muted-foreground">({bandhu.reviews})</span>
                 </div>
-                <Badge variant="secondary" className="text-base">
-                    ${bandhu.rate}/hr
-                </Badge>
+                <div className="text-base font-bold text-foreground">
+                    ${bandhu.rate}<span className="font-normal text-muted-foreground text-sm">/hr</span>
+                </div>
             </div>
         </CardContent>
       </Card>

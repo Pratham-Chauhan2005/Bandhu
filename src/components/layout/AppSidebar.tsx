@@ -61,7 +61,7 @@ export default function AppSidebar() {
             <SidebarMenuItem key={item.href}>
               <SidebarMenuButton asChild isActive={pathname === item.href} tooltip={item.label}>
                 <Link href={item.href}>
-                  <item.icon />
+                  <item.icon className="text-primary" />
                   <span>{item.label}</span>
                 </Link>
               </SidebarMenuButton>
@@ -71,11 +71,11 @@ export default function AppSidebar() {
       </SidebarContent>
       <SidebarFooter className="gap-0">
         <Separator className="mb-2" />
-        <div className="p-2 group-data-[collapsible=icon]:p-0 group-data-[collapsible=icon]:-space-y-1">
-          <Button asChild className="w-full justify-start group-data-[collapsible=icon]:justify-center" variant="ghost">
+        <div className="p-2 group-data-[collapsible=icon]:p-1">
+          <Button asChild className="w-full justify-start group-data-[collapsible=icon]:justify-center">
             <Link href="/become-a-bandhu">
-              <Star className="text-primary" />
-              <span className="font-bold text-primary group-data-[collapsible=icon]:hidden">Become a Bandhu</span>
+              <Star />
+              <span className="font-bold group-data-[collapsible=icon]:hidden">Become a Bandhu</span>
             </Link>
           </Button>
         </div>
@@ -85,7 +85,7 @@ export default function AppSidebar() {
             <SidebarMenuItem key={item.href}>
               <SidebarMenuButton asChild isActive={pathname === item.href} tooltip={item.label}>
                 <Link href={item.href}>
-                  <item.icon />
+                  <item.icon className="text-primary"/>
                   <span>{item.label}</span>
                 </Link>
               </SidebarMenuButton>

@@ -5,6 +5,10 @@ import AppSidebar from '@/components/layout/AppSidebar';
 import AppHeader from '@/components/layout/AppHeader';
 import SosButton from '@/components/layout/SosButton';
 import { Toaster } from '@/components/ui/toaster';
+import BottomNavBar from '@/components/layout/BottomNavBar';
+import { Inter } from 'next/font/google'
+
+const inter = Inter({ subsets: ['latin'], variable: '--font-sans' })
 
 export const metadata: Metadata = {
   title: 'Bandhu Local',
@@ -17,24 +21,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,700;1,7..72,400&family=Source+Code+Pro:wght@400;700&display=swap" rel="stylesheet" />
-      </head>
-      <body className="font-body antialiased">
+    <html lang="en">
+      <body className={`font-sans antialiased ${inter.variable}`}>
         <SidebarProvider>
-          <AppSidebar />
-          <div className="flex h-full w-full flex-col">
+          <div className="relative flex min-h-screen flex-col">
             <AppHeader />
-            <SidebarInset>
-              <main className="flex-1 p-4 md:p-6 lg:p-8">
+            <div className="flex-1">
+              <main className="container mx-auto p-4 md:p-6 lg:p-8 pb-24">
                 {children}
               </main>
-            </SidebarInset>
+            </div>
+            <SosButton />
+            <BottomNavBar />
           </div>
-          <SosButton />
         </SidebarProvider>
         <Toaster />
       </body>
