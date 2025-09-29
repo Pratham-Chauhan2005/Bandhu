@@ -12,11 +12,15 @@ import { useScroll } from '@/hooks/use-scroll';
 import { cn } from '@/lib/utils';
 import { useState, useEffect } from 'react';
 import type { Attraction } from '@/ai/schemas';
+import { useRouter } from 'next/navigation';
 
 export default function Home() {
   const { isScrolled } = useScroll(60);
   const [userCoords, setUserCoords] = useState<{latitude: number, longitude: number} | null>(null);
   const [attractions, setAttractions] = useState<Attraction[]>(mustVisitAttractions);
+  const [searchQuery, setSearchQuery] = useState('');
+  const router = useRouter();
+
 
   useEffect(() => {
     if ('geolocation' in navigator) {
@@ -32,22 +36,33 @@ export default function Home() {
     }
   }, []);
 
+  const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      router.push(`/search?q=${encodeURIComponent(searchQuery.trim())}`);
+    }
+  };
+
   return (
     <div className="space-y-8">
       <div className={cn(
         "sticky z-20 bg-background/95 backdrop-blur-sm px-4 pb-4 transition-all duration-200",
         isScrolled ? 'top-14' : 'top-20'
       )}>
-        <div className="relative w-full">
-          <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
-          <Input
-            placeholder="Search services, guides, food..."
-            className={cn(
-              "text-base pl-12 pr-4 rounded-full shadow-sm border-0 bg-gray-100 focus-visible:ring-primary/50 transition-all duration-200",
-              isScrolled ? 'h-10' : 'h-12'
-            )}
-          />
-        </div>
+        <form onSubmit={handleSearch}>
+          <div className="relative w-full">
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+            <Input
+              placeholder="Search services, guides, food..."
+              className={cn(
+                "text-base pl-12 pr-4 rounded-full shadow-sm border-0 bg-gray-100 focus-visible:ring-primary/50 transition-all duration-200",
+                isScrolled ? 'h-10' : 'h-12'
+              )}
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
+          </div>
+        </form>
 
         <div className="mt-4">
           <div className="flex flex-wrap gap-2">
