@@ -30,8 +30,9 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["var(--font-sans)", ...fontFamily.sans],
-        headline: ["var(--font-sans)", ...fontFamily.sans],
+        sans: ['var(--font-literata)', ...fontFamily.serif],
+        headline: ['var(--font-literata)', ...fontFamily.serif],
+        mono: ['var(--font-source-code-pro)', ...fontFamily.mono],
       },
       colors: {
         background: 'hsl(var(--background))',

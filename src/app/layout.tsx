@@ -3,10 +3,19 @@ import './globals.css';
 import { SidebarProvider } from '@/components/ui/sidebar';
 import AppContainer from '@/components/layout/AppContainer';
 import { Toaster } from '@/components/ui/toaster';
-import { Inter } from 'next/font/google';
+import { Literata, Source_Code_Pro } from 'next/font/google';
 import { ThemeProvider } from '@/components/ThemeProvider';
+import { cn } from '@/lib/utils';
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
+const literata = Literata({
+  subsets: ['latin'],
+  variable: '--font-literata',
+});
+
+const sourceCodePro = Source_Code_Pro({
+  subsets: ['latin'],
+  variable: '--font-source-code-pro',
+});
 
 export const metadata: Metadata = {
   title: 'Bandhu Local',
@@ -20,7 +29,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`font-sans antialiased ${inter.variable} bg-background text-foreground`}>
+      <body className={cn(
+          "min-h-screen bg-background font-sans antialiased",
+          literata.variable,
+          sourceCodePro.variable
+        )}>
         <ThemeProvider
           attribute="class"
           defaultTheme="light"
