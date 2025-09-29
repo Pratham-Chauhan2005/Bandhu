@@ -151,23 +151,6 @@ export const recommendedBandhus = [
     photos: [getImage('gallery22'), getImage('gallery23'), getImage('gallery24')],
     phone: '+918901234567',
     isAvailable: true,
-  },
-  {
-    id: '10',
-    name: 'Aditi Rao',
-    service: 'Local Artist',
-    rate: 210,
-    rating: 4.9,
-    reviews: 90,
-    verified: true,
-    image: getImage('bandhu10'),
-    imageHint: getHint('bandhu10'),
-    bio: "I am a muralist and street artist. Let's explore the vibrant street art scene of the city or even collaborate on a community art project.",
-    languages: ['English', 'Kannada'],
-    skills: ['Street Art', 'Mural Painting', 'Community Art'],
-    photos: [getImage('gallery28'), getImage('gallery29'), getImage('gallery30')],
-    phone: '+910123456789',
-    isAvailable: true,
   }
 ];
 
