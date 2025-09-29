@@ -4,6 +4,7 @@ import { SidebarProvider } from '@/components/ui/sidebar';
 import AppContainer from '@/components/layout/AppContainer';
 import { Toaster } from '@/components/ui/toaster';
 import { Inter } from 'next/font/google';
+import { ThemeProvider } from '@/components/ThemeProvider';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 
@@ -18,14 +19,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={`font-sans antialiased ${inter.variable} bg-background text-foreground`}>
-        <SidebarProvider>
-          <AppContainer>
-            {children}
-          </AppContainer>
-        </SidebarProvider>
-        <Toaster />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+        >
+          <SidebarProvider>
+            <AppContainer>
+              {children}
+            </AppContainer>
+          </SidebarProvider>
+          <Toaster />
+        </ThemeProvider>
       </body>
     </html>
   );
