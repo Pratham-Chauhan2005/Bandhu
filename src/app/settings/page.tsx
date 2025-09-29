@@ -104,6 +104,7 @@ export default function SettingsPage() {
               </SelectTrigger>
               <SelectContent>
                 <SelectItem value="en">English</SelectItem>
+                <SelectItem value="hi">Hindi</SelectItem>
                 <SelectItem value="mr">Marathi</SelectItem>
                 <SelectItem value="te">Telugu</SelectItem>
                 <SelectItem value="ml">Malayalam</SelectItem>

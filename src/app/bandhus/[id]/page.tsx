@@ -92,6 +92,7 @@ export default function BandhuProfilePage({ params }: { params: { id: string } }
                         </SelectTrigger>
                         <SelectContent>
                             <SelectItem value="en">English (Original)</SelectItem>
+                            <SelectItem value="hi">Hindi</SelectItem>
                             <SelectItem value="mr">Marathi</SelectItem>
                             <SelectItem value="te">Telugu</SelectItem>
                             <SelectItem value="ml">Malayalam</SelectItem>
