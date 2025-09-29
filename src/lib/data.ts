@@ -101,23 +101,6 @@ export const recommendedBandhus = [
     phone: '+917890123456',
     isAvailable: false,
   },
-  {
-    id: '8',
-    name: 'Mira Kapoor',
-    service: 'Food Expert',
-    rate: 190,
-    rating: 4.8,
-    reviews: 150,
-    verified: true,
-    image: getImage('bandhu8'),
-    imageHint: getHint('bandhu8'),
-    bio: "From street food stalls to fine dining, I know all the best spots. My food tours are a journey through the city's culinary soul.",
-    languages: ['English', 'Hindi', 'Marathi'],
-    skills: ['Food Tours', 'Restaurant Curation', 'Wine Pairing'],
-    photos: [getImage('gallery22'), getImage('gallery23'), getImage('gallery24')],
-    phone: '+918901234567',
-    isAvailable: true,
-  }
 ];
 
 export const topFoods = [

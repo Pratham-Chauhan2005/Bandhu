@@ -31,12 +31,6 @@
       "imageHint": "indian photographer"
     },
     {
-      "id": "bandhu8",
-      "description": "Portrait of Mira Kapoor",
-      "imageUrl": "https://images.unsplash.com/photo-1604212879941-8c47a3e349b8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxpbmRpYW4lMjB3b21hbiUyMGZhY2V8ZW58MHx8fHwxNzY0MDgzNDMxfDA&ixlib.rb-4.1.0&q=80&w=1080",
-      "imageHint": "indian woman"
-    },
-    {
       "id": "food1",
       "description": "Chole Bhature",
       "imageUrl": "https://images.unsplash.com/photo-1517244683847-7456b63c5969?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxpbmRpYW4lMjBmb29kfGVufDB8fHx8MTc1ODkzMzU1MHww&ixlib.rb-4.1.0&q=80&w=1080",
