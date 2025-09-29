@@ -2,19 +2,14 @@
 import Image from 'next/image';
 import { Card, CardContent } from '@/components/ui/card';
 import { CalendarDays, Clock, MapPin } from 'lucide-react';
+import type { Event } from '@/ai/schemas';
 
-type Event = {
-  id: string;
-  title: string;
-  image: string;
-  imageHint: string;
-  date: string;
-  time?: string;
+type EventWithDistance = Event & {
   distance?: number;
 };
 
 type EventCardProps = {
-  event: Event;
+  event: EventWithDistance;
 };
 
 export default function EventCard({ event }: EventCardProps) {
@@ -22,7 +17,7 @@ export default function EventCard({ event }: EventCardProps) {
     <Card className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 group">
       <div className="relative">
         <Image
-          src={event.image}
+          src={event.image || 'https://picsum.photos/seed/event-placeholder/600/400'}
           alt={event.title}
           width={600}
           height={400}
@@ -37,15 +32,16 @@ export default function EventCard({ event }: EventCardProps) {
         )}
       </div>
       <CardContent className="p-4">
+        <h3 className="text-lg font-bold text-foreground mb-2">{event.title}</h3>
+        <p className="text-sm text-muted-foreground mb-3">{event.description}</p>
         <div className="flex justify-between items-end">
-          <h3 className="text-lg font-bold text-foreground">{event.title}</h3>
           <div className="text-right flex-shrink-0">
-            <div className="flex items-center justify-end gap-2 text-sm text-muted-foreground">
+            <div className="flex items-center gap-2 text-sm text-muted-foreground">
               <CalendarDays className="h-4 w-4 text-primary" />
               <span>{event.date}</span>
             </div>
             {event.time && (
-              <div className="flex items-center justify-end gap-2 text-sm text-muted-foreground">
+              <div className="flex items-center gap-2 text-sm text-muted-foreground mt-1">
                 <Clock className="h-4 w-4 text-primary" />
                 <span>{event.time}</span>
               </div>

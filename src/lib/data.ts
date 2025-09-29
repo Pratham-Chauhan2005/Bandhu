@@ -195,11 +195,12 @@ export const topFoods = [
   { id: '4', title: 'Jalebi', description: 'Sweet, crispy, and syrupy spirals.', image: getImage('food4'), imageHint: getHint('food4'), price: 2 },
 ];
 
-export const nearbyEvents = [
-  { id: '1', title: 'Diwali Festival', description: 'City-wide celebrations.', image: getImage('event1'), imageHint: getHint('event1'), date: 'Nov 12', time: 'All Day', latitude: 28.6139, longitude: 77.2090 },
-  { id: '2', title: 'Sufi Music Night', description: 'Soulful music at Nizamuddin.', image: getImage('event2'), imageHint: getHint('event2'), date: 'Fridays', time: '8:00 PM', latitude: 28.5919, longitude: 77.2427 },
-  { id: '3', title: 'India Art Fair', description: 'Contemporary art exhibition.', image: getImage('event3'), imageHint: getHint('event3'), date: 'Feb 1-4', time: '11 AM - 7 PM', latitude: 28.5273, longitude: 77.2114 },
-  { id: '4', title: 'Qutub Festival', description: 'Classical music and dance.', image: getImage('event4'), imageHint: getHint('event4'), date: 'Dec 15-19', time: '6:30 PM', latitude: 28.5245, longitude: 77.1855 },
+export const nearbyEvents: any[] = [
+  // This is now fetched by AI, but keeping as a fallback/example
+  // { id: '1', title: 'Diwali Festival', description: 'City-wide celebrations.', image: getImage('event1'), imageHint: getHint('event1'), date: 'Nov 12', time: 'All Day', latitude: 28.6139, longitude: 77.2090 },
+  // { id: '2', title: 'Sufi Music Night', description: 'Soulful music at Nizamuddin.', image: getImage('event2'), imageHint: getHint('event2'), date: 'Fridays', time: '8:00 PM', latitude: 28.5919, longitude: 77.2427 },
+  // { id: '3', title: 'India Art Fair', description: 'Contemporary art exhibition.', image: getImage('event3'), imageHint: getHint('event3'), date: 'Feb 1-4', time: '11 AM - 7 PM', latitude: 28.5273, longitude: 77.2114 },
+  // { id: '4', title: 'Qutub Festival', description: 'Classical music and dance.', image: getImage('event4'), imageHint: getHint('event4'), date: 'Dec 15-19', time: '6:30 PM', latitude: 28.5245, longitude: 77.1855 },
 ];
 
 export const mustVisitAttractions = [
@@ -221,7 +222,7 @@ export const localFoodShops = [
     { id: '3', name: 'Kwality Restaurant', location: 'Lashkar, Gwalior', rating: 4.4, reviews: 1800, image: getImage('gwalior_shop3'), imageHint: getHint('gwalior_shop3'), latitude: 26.204, longitude: 78.169 },
     { id: '4', name: 'Indian Coffee House', location: 'Phool Bagh, Gwalior', rating: 4.8, reviews: 3500, image: getImage('gwalior_shop4'), imageHint: getHint('gwalior_shop4'), latitude: 26.218, longitude: 78.18 },
     { id: '5', name: 'Panchhi Petha', location: 'Thatipur, Gwalior', rating: 4.6, reviews: 950, image: getImage('gwalior_shop5'), imageHint: getHint('gwalior_shop5'), latitude: 26.234, longitude: 78.199 },
-    { id: '6', name: 'Moti Mahal Delux', location: 'City Center, Gwalior', rating: 4.3, reviews: 2200, image: getImage('gwalior_shop6'), imageHint: getHint('gwalior_shop6'), latitude: 26.218, longitude: 78.201 },
+    { id: '6', name: 'Moti Mahal Delux', location: 'City Center, Gwalior', rating: 4.3, reviews: 2200, image:getImage('gwalior_shop6'), imageHint: getHint('gwalior_shop6'), latitude: 26.218, longitude: 78.201 },
     { id: '7', name: 'Shri Restaurant', location: 'Morar, Gwalior', rating: 4.5, reviews: 1500, image: getImage('gwalior_shop7'), imageHint: getHint('gwalior_shop7'), latitude: 26.237, longitude: 78.232 },
     { id: '8', name: 'Alfanzo Restaurant', location: 'City Center, Gwalior', rating: 4.2, reviews: 1100, image: getImage('gwalior_shop8'), imageHint: getHint('gwalior_shop8'), latitude: 26.219, longitude: 78.203 },
     { id: '9', name: 'Victorian Vantage', location: 'Jayendraganj, Lashkar', rating: 4.4, reviews: 800, image: getImage('gwalior_shop9'), imageHint: getHint('gwalior_shop9'), latitude: 26.207, longitude: 78.171 },

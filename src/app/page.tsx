@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent } from '@/components/ui/card';
 import { ArrowRight, Search } from 'lucide-react';
-import { recommendedBandhus, topFoods, nearbyEvents, categories, mustVisitAttractions } from '@/lib/data';
+import { recommendedBandhus, topFoods, categories, mustVisitAttractions } from '@/lib/data';
 import BandhuCard from '@/components/BandhuCard';
 import ContentCard from '@/components/ContentCard';
 import Link from 'next/link';
@@ -13,26 +13,55 @@ import { cn } from '@/lib/utils';
 import { useState, useEffect } from 'react';
 import type { Attraction } from '@/ai/schemas';
 import { useRouter } from 'next/navigation';
+import EventCard from '@/components/EventCard';
+import type { Event } from '@/ai/schemas';
+import { getEventsByLocation } from './actions';
+import { getDistance } from '@/lib/utils';
+import { Skeleton } from '@/components/ui/skeleton';
+
+type EventWithDistance = Event & { distance?: number };
 
 export default function Home() {
   const { isScrolled } = useScroll(60);
   const [userCoords, setUserCoords] = useState<{latitude: number, longitude: number} | null>(null);
   const [attractions, setAttractions] = useState<Attraction[]>(mustVisitAttractions);
+  const [nearbyEvents, setNearbyEvents] = useState<EventWithDistance[]>([]);
   const [searchQuery, setSearchQuery] = useState('');
+  const [loadingEvents, setLoadingEvents] = useState(true);
   const router = useRouter();
 
 
   useEffect(() => {
     if ('geolocation' in navigator) {
       navigator.geolocation.getCurrentPosition(
-        (position) => {
+        async (position) => {
           const { latitude, longitude } = position.coords;
           setUserCoords({ latitude, longitude });
+          try {
+            const response = await fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`);
+            const data = await response.json();
+            const { city, state, country } = data.address;
+            const userLocation = city ? `${city}, ${state || country}` : 'your area';
+            
+            const eventResults = await getEventsByLocation({ location: userLocation });
+            const eventsWithDistance = eventResults.events.map(event => ({
+              ...event,
+              distance: getDistance(latitude, longitude, event.latitude, event.longitude)
+            }));
+            setNearbyEvents(eventsWithDistance.slice(0, 2)); // Show 2 events on homepage
+          } catch (error) {
+            console.error('Error fetching location or events:', error);
+          } finally {
+            setLoadingEvents(false);
+          }
         },
         (error) => {
           console.error('Geolocation error:', error);
+          setLoadingEvents(false);
         }
       );
+    } else {
+      setLoadingEvents(false);
     }
   }, []);
 
@@ -111,19 +140,38 @@ export default function Home() {
       </section>
 
       <section>
-        <h2 className="text-xl font-bold mb-4">Nearby Events</h2>
+        <div className="flex justify-between items-center mb-4">
+            <h2 className="text-xl font-bold">Nearby Events</h2>
+            <Button variant="ghost" asChild>
+                <Link href="/events">
+                    View all
+                    <ArrowRight className="h-4 w-4 ml-2" />
+                </Link>
+            </Button>
+        </div>
         <div className="grid grid-cols-1 gap-4">
-            {nearbyEvents.map((event) => (
-              <Card key={event.id} className="shadow-md rounded-xl">
-                  <CardContent className="p-4 flex items-center justify-between">
-                    <div>
-                      <p className="font-bold text-primary">{event.title}</p>
-                      <p className="text-sm text-muted-foreground">{event.description}</p>
-                    </div>
-                    <Button size="sm">Details</Button>
-                  </CardContent>
-              </Card>
-            ))}
+            {loadingEvents ? (
+                <>
+                    <Card><CardContent className="p-4"><Skeleton className="h-20 w-full" /></CardContent></Card>
+                    <Card><CardContent className="p-4"><Skeleton className="h-20 w-full" /></CardContent></Card>
+                </>
+            ) : nearbyEvents.length > 0 ? (
+                nearbyEvents.map((event) => (
+                  <Card key={event.id} className="shadow-md rounded-xl">
+                      <CardContent className="p-4 flex items-center justify-between">
+                        <div>
+                          <p className="font-bold text-primary">{event.title}</p>
+                          <p className="text-sm text-muted-foreground">{event.description}</p>
+                        </div>
+                        <Button size="sm" asChild>
+                            <Link href="/events">Details</Link>
+                        </Button>
+                      </CardContent>
+                  </Card>
+                ))
+            ) : (
+                <p className="text-muted-foreground text-sm">No events found nearby.</p>
+            )}
         </div>
       </section>
 

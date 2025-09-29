@@ -4,13 +4,14 @@ import Image from 'next/image';
 import { Card, CardContent } from '@/components/ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Users, UtensilsCrossed, CalendarDays, Landmark, Star, IndianRupee } from 'lucide-react';
-import type { recommendedBandhus, topFoods, nearbyEvents, mustVisitAttractions } from '@/lib/data';
+import type { recommendedBandhus, topFoods } from '@/lib/data';
+import type { Attraction, Event } from '@/ai/schemas';
 
 type Item = 
     | (typeof recommendedBandhus)[0]
     | (typeof topFoods)[0] 
-    | (typeof nearbyEvents)[0]
-    | (typeof mustVisitAttractions)[0];
+    | Event
+    | Attraction;
 
 type ItemType = 'bandhu' | 'food' | 'event' | 'attraction';
 
@@ -22,7 +23,7 @@ type SearchResultItemProps = {
 const typeConfig = {
     bandhu: { icon: Users, path: '/bandhus/' },
     food: { icon: UtensilsCrossed, path: '#' },
-    event: { icon: CalendarDays, path: '#' },
+    event: { icon: CalendarDays, path: '/events' },
     attraction: { icon: Landmark, path: '/attractions/' },
 }
 
@@ -35,8 +36,7 @@ export default function SearchResultItem({ item, type }: SearchResultItemProps) 
     if ('description' in item) return item.description;
     return '';
   }
-  const getImage = () => item.image;
-  const getHint = () => 'imageHint' in item ? item.imageHint : '';
+  const getImage = () => 'image' in item ? item.image : undefined;
   const getHref = () => `${path}${item.id}`;
 
 
@@ -76,4 +76,3 @@ export default function SearchResultItem({ item, type }: SearchResultItemProps) 
     </Link>
   );
 }
-

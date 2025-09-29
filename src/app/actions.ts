@@ -4,6 +4,7 @@
 import { intelligentItinerarySuggestions, type IntelligentItinerarySuggestionsInput, type IntelligentItinerarySuggestionsOutput } from '@/ai/flows/intelligent-itinerary-suggestions';
 import { languageTranslationForBandhuProfiles, type LanguageTranslationForBandhuProfilesInput } from '@/ai/flows/language-translation-for-bandhu-profiles';
 import { getAttractions, type GetAttractionsInput, type GetAttractionsOutput } from '@/ai/flows/get-attractions-flow';
+import { getLocalEvents, type GetLocalEventsInput, type GetLocalEventsOutput } from '@/ai/flows/get-local-events-flow';
 
 export async function getItinerary(input: IntelligentItinerarySuggestionsInput): Promise<IntelligentItinerarySuggestionsOutput> {
     try {
@@ -32,5 +33,21 @@ export async function getAttractionsByLocation(input: GetAttractionsInput): Prom
     } catch (error) {
         console.error(error);
         return { attractions: [] };
+    }
+}
+
+export async function getEventsByLocation(input: GetLocalEventsInput): Promise<GetLocalEventsOutput> {
+    try {
+        const result = await getLocalEvents(input);
+        // Fallback for image URLs if not provided by AI
+        result.events.forEach((event: any, index: number) => {
+            if (!event.image) {
+                event.image = `https://picsum.photos/seed/event${index + 1}/600/400`;
+            }
+        });
+        return result;
+    } catch (error) {
+        console.error(error);
+        return { events: [] };
     }
 }
