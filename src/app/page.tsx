@@ -117,25 +117,21 @@ export default function Home() {
             </Link>
           </Button>
         </div>
-        <div className="overflow-x-hidden">
-          <div className="grid grid-cols-2 mobile-lg:grid-cols-3 tablet:grid-cols-4 laptop:grid-cols-5 desktop:grid-cols-6 gap-4">
-            {recommendedBandhus.slice(0, 6).map((bandhu) => (
-              <BandhuCard key={bandhu.id} bandhu={bandhu} />
-            ))}
-          </div>
+        <div className="grid grid-cols-2 mobile-lg:grid-cols-3 tablet:grid-cols-4 laptop:grid-cols-5 desktop:grid-cols-6 gap-4">
+          {recommendedBandhus.slice(0, 6).map((bandhu) => (
+            <BandhuCard key={bandhu.id} bandhu={bandhu} />
+          ))}
         </div>
       </section>
       
-      <section className="overflow-x-hidden">
+      <section>
         <h2 className="text-xl font-bold mb-4">Top Local Foods</h2>
-        <div className="overflow-x-auto pb-4 no-scrollbar">
-          <div className="flex space-x-4">
-            {topFoods.map((food) => (
-              <div key={food.id} className="w-64 flex-shrink-0">
-                <ContentCard content={food} type="food" userCoords={userCoords} />
-              </div>
-            ))}
-          </div>
+        <div className="grid grid-cols-2 mobile-lg:grid-cols-3 tablet:grid-cols-4 gap-4">
+          {topFoods.map((food) => (
+            <div key={food.id} className="w-full flex-shrink-0">
+              <ContentCard content={food} type="food" userCoords={userCoords} />
+            </div>
+          ))}
         </div>
       </section>
 
@@ -175,16 +171,14 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="overflow-x-hidden">
+      <section>
         <h2 className="text-xl font-bold mb-4">Must Visit Attractions</h2>
-        <div className="overflow-x-auto pb-4 no-scrollbar">
-          <div className="flex space-x-4">
-            {attractions.map((attraction) => (
-              <div key={attraction.id} className="w-64 flex-shrink-0">
-                <ContentCard content={attraction} type="attraction" userCoords={userCoords} />
-              </div>
-            ))}
-          </div>
+        <div className="grid grid-cols-2 mobile-lg:grid-cols-3 tablet:grid-cols-4 gap-4">
+          {attractions.map((attraction) => (
+            <div key={attraction.id} className="w-full flex-shrink-0">
+              <ContentCard content={attraction} type="attraction" userCoords={userCoords} />
+            </div>
+          ))}
         </div>
       </section>
       <style jsx global>{`
