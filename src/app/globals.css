@@ -4,33 +4,33 @@
 
 @layer base {
   :root {
-    --background: 47 80% 95%; /* Lighter, more vibrant yellow-gray */
-    --foreground: 47 20% 10%; /* Dark Brown */
+    --background: 0 0% 100%; /* White */
+    --foreground: 222 84% 4%; /* Dark Blue */
     
-    --card: 47 50% 98%;
-    --card-foreground: 47 20% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 84% 4%;
     
-    --popover: 47 50% 98%;
-    --popover-foreground: 47 20% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 84% 4%;
     
-    --primary: 47 80% 50%; /* #B39740 */
-    --primary-foreground: 47 20% 10%;
+    --primary: 210 90% 50%; /* Vibrant Light Blue */
+    --primary-foreground: 0 0% 100%;
     
-    --secondary: 47 40% 70%;
-    --secondary-foreground: 47 20% 10%;
+    --secondary: 210 40% 96%; /* Light Blue Gray */
+    --secondary-foreground: 222 84% 4%;
 
-    --muted: 47 20% 85%;
-    --muted-foreground: 47 10% 40%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 20% 65%;
     
-    --accent: 17 80% 50%; /* #B35240 */
-    --accent-foreground: 0 0% 98%;
+    --accent: 210 90% 60%; /* Slightly lighter blue for accents */
+    --accent-foreground: 0 0% 100%;
     
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
     
-    --border: 47 20% 80%;
-    --input: 47 20% 88%;
-    --ring: 47 80% 50%;
+    --border: 210 40% 90%;
+    --input: 210 40% 92%;
+    --ring: 210 90% 50%;
     
     --radius: 0.75rem;
 
@@ -40,33 +40,33 @@
   }
 
   .dark {
-    --background: 47 20% 20%; /* #3D3825 */
-    --foreground: 47 20% 95%;
+    --background: 222 84% 4%; /* Dark Blue */
+    --foreground: 0 0% 98%;
     
-    --card: 47 15% 25%;
-    --card-foreground: 47 20% 95%;
+    --card: 222 70% 8%;
+    --card-foreground: 0 0% 98%;
     
-    --popover: 47 15% 15%;
-    --popover-foreground: 47 20% 95%;
+    --popover: 222 84% 4%;
+    --popover-foreground: 0 0% 98%;
     
-    --primary: 47 80% 50%; /* #B39740 */
-    --primary-foreground: 47 20% 10%;
+    --primary: 210 90% 50%; /* Vibrant Light Blue */
+    --primary-foreground: 0 0% 100%;
     
-    --secondary: 47 30% 40%;
-    --secondary-foreground: 47 20% 95%;
+    --secondary: 222 50% 12%;
+    --secondary-foreground: 0 0% 98%;
     
-    --muted: 47 15% 30%;
-    --muted-foreground: 47 15% 65%;
+    --muted: 222 50% 12%;
+    --muted-foreground: 215 20% 65%;
     
-    --accent: 17 80% 50%; /* #B35240 */
-    --accent-foreground: 0 0% 98%;
+    --accent: 210 90% 60%;
+    --accent-foreground: 0 0% 100%;
     
     --destructive: 0 63% 31%;
     --destructive-foreground: 0 0% 98%;
     
-    --border: 47 15% 30%;
-    --input: 47 15% 30%;
-    --ring: 47 80% 50%;
+    --border: 222 50% 12%;
+    --input: 222 50% 12%;
+    --ring: 210 90% 50%;
   }
 }
 
