@@ -153,23 +153,6 @@ export const recommendedBandhus = [
     isAvailable: true,
   },
   {
-    id: '9',
-    name: 'Arjun Mehra',
-    service: 'City Guide',
-    rate: 170,
-    rating: 4.6,
-    reviews: 80,
-    verified: false,
-    image: getImage('bandhu9'),
-    imageHint: getHint('bandhu9'),
-    bio: "Explore the city's nightlife with me. From trendy bars to hidden local hangouts, I'll show you the best places to be after dark.",
-    languages: ['English', 'Hindi'],
-    skills: ['Nightlife', 'Music Scene', 'Local Culture'],
-    photos: [getImage('gallery25'), getImage('gallery26'), getImage('gallery27')],
-    phone: '+919012345678',
-    isAvailable: false,
-  },
-  {
     id: '10',
     name: 'Aditi Rao',
     service: 'Local Artist',
@@ -231,5 +214,7 @@ export const localFoodShops = [
 
 
 
+
+    
 
     
