@@ -27,6 +27,7 @@ import {
   Zap,
   User,
   LogOut,
+  MapPin,
 } from 'lucide-react';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
@@ -41,6 +42,7 @@ const navItems = [
   { href: '/homestays', icon: Home, label: 'Homestays' },
   { href: '/itinerary', icon: Zap, label: 'Itinerary AI' },
   { href: '/tracking', icon: Map, label: 'Tracking' },
+  { href: '/nearby-map', icon: MapPin, label: 'Nearby Map' },
 ];
 
 const bottomNavItems = [
