@@ -62,8 +62,7 @@ export default function AppSidebar() {
       </SidebarHeader>
       <SidebarContent>
         <SidebarMenu>
-          <div className='flex justify-between items-center px-2 mb-2'>
-            <SidebarGroupLabel className='px-0'>Menu</SidebarGroupLabel>
+          <div className='flex justify-end items-center px-2 mb-2'>
             <SidebarTrigger className={cn(
               "h-7 w-7 group-data-[collapsible=icon]:hidden",
                state === 'collapsed' && 'hidden'
