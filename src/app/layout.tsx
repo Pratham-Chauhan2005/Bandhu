@@ -4,6 +4,7 @@ import { SidebarProvider } from '@/components/ui/sidebar';
 import AppContainer from '@/components/layout/AppContainer';
 import { Toaster } from '@/components/ui/toaster';
 import { Inter } from 'next/font/google';
+import { AuthProvider } from '@/context/AuthContext';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 
@@ -20,11 +21,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`font-sans antialiased ${inter.variable} bg-background text-foreground`}>
-        <SidebarProvider>
-          <AppContainer>
-            {children}
-          </AppContainer>
-        </SidebarProvider>
+        <AuthProvider>
+          <SidebarProvider>
+            <AppContainer>
+              {children}
+            </AppContainer>
+          </SidebarProvider>
+        </AuthProvider>
         <Toaster />
       </body>
     </html>

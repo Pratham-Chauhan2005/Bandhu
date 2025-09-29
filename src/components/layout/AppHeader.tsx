@@ -8,11 +8,13 @@ import { useScroll } from '@/hooks/use-scroll';
 import { cn } from '@/lib/utils';
 import { SidebarTrigger, useSidebar } from '../ui/sidebar';
 import Logo from '../Logo';
+import { useAuth } from '@/context/AuthContext';
 
 export default function AppHeader() {
   const [location, setLocation] = useState('Detecting location...');
   const [isLoading, setIsLoading] = useState(true);
   const { isScrolled } = useScroll(60);
+  const { user, loading } = useAuth();
 
   useEffect(() => {
     if ('geolocation' in navigator) {
@@ -73,6 +75,14 @@ export default function AppHeader() {
         )}>
         <Logo />
         </Link>
+      </div>
+
+      <div className="flex flex-1 items-center justify-end">
+        {!loading && !user && (
+          <Button asChild>
+            <Link href="/login">Login</Link>
+          </Button>
+        )}
       </div>
     </header>
   );
