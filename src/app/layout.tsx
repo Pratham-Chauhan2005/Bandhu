@@ -23,7 +23,7 @@ export default function RootLayout({
       <body className={`font-sans antialiased ${inter.variable} bg-background text-foreground`}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
+          defaultTheme="light"
           enableSystem
         >
           <SidebarProvider>
