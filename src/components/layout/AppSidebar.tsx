@@ -31,7 +31,6 @@ import {
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import Logo from '../Logo';
-import { useAuth } from '@/context/AuthContext';
 
 const navItems = [
   { href: '/', icon: Home, label: 'Home' },
@@ -52,7 +51,6 @@ const bottomNavItems = [
 export default function AppSidebar() {
   const pathname = usePathname();
   const { state } = useSidebar();
-  const { user, logout } = useAuth();
 
   return (
     <Sidebar variant="floating">
@@ -104,14 +102,6 @@ export default function AppSidebar() {
               </SidebarMenuButton>
             </SidebarMenuItem>
           ))}
-          {user && (
-             <SidebarMenuItem>
-                <SidebarMenuButton onClick={logout} tooltip="Logout">
-                    <LogOut className="text-destructive" />
-                    <span className="text-destructive">Logout</span>
-                </SidebarMenuButton>
-            </SidebarMenuItem>
-          )}
         </SidebarMenu>
       </SidebarFooter>
     </Sidebar>
