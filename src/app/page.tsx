@@ -41,7 +41,7 @@ export default function Home() {
             const response = await fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`);
             const data = await response.json();
             const { city, state, country } = data.address;
-            const userLocation = city ? `${city}, ${state || country}` : 'your area';
+            const userLocation = city ? `${city}, ${state || country}` : state ? `${state}, ${country}` : country || 'your area';
             
             const eventResults = await getEventsByLocation({ location: userLocation });
             const eventsWithDistance = eventResults.events.map(event => ({

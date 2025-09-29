@@ -28,7 +28,7 @@ export default function EventsPage() {
             );
             const data = await response.json();
             const { city, state, country } = data.address;
-            const userLocation = city ? `${city}, ${state || country}` : 'your area';
+            const userLocation = city ? `${city}, ${state || country}` : state ? `${state}, ${country}` : country || 'your area';
             setLocation(userLocation);
 
             const eventResults = await getEventsByLocation({ location: userLocation });

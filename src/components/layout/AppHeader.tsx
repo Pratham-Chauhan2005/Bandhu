@@ -24,8 +24,9 @@ export default function AppHeader() {
               `https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`
             );
             const data = await response.json();
-            const { city, state } = data.address;
-            setLocation(city ? `${city}, ${state}` : 'Unknown Location');
+            const { city, state, country } = data.address;
+            const userLocation = city ? `${city}, ${state || country}` : state ? `${state}, ${country}` : country || 'Unknown Location';
+            setLocation(userLocation);
           } catch (error) {
             console.error('Error fetching address:', error);
             setLocation('Could not determine location');
