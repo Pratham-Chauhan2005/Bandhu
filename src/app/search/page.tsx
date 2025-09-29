@@ -24,10 +24,18 @@ function SearchPageContent() {
       const service = b.service.toLowerCase();
       
       // Handle "guides" -> "guide", "photographers" -> "photographer", etc.
-      if (normalizedQuery.includes('guide') && service.includes('guide')) return true;
-      if (normalizedQuery.includes('photographer') && service.includes('photographer')) return true;
-      if (normalizedQuery.includes('artist') && service.includes('artist')) return true;
-      if (normalizedQuery.includes('food') && service.includes('food expert')) return true;
+      if (normalizedQuery === 'guides' && service.includes('guide')) return true;
+      if (normalizedQuery === 'photographers' && service.includes('photographer')) return true;
+      if (normalizedQuery === 'artists' && service.includes('artist')) return true;
+
+      // Specific query for "food guide" or "food expert"
+      if ((query.includes('food guide') || query.includes('food expert')) && service.includes('food expert')) {
+        return true;
+      }
+      // If query is just "food", don't match food experts unless other fields match
+      if (query === 'food' && service.includes('food expert')) {
+        return false;
+      }
 
       return b.name.toLowerCase().includes(query) ||
       b.service.toLowerCase().includes(query) ||
