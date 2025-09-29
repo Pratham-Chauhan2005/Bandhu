@@ -25,12 +25,11 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { getItinerary } from '@/app/actions';
 import { Loader2, Zap } from 'lucide-react';
 import type { IntelligentItinerarySuggestionsOutput } from '@/ai/flows/intelligent-itinerary-suggestions';
-import { Separator } from '@/components/ui/separator';
 
 const formSchema = z.object({
   interests: z.string().min(3, 'Please list at least one interest.'),
   location: z.string().min(2, 'Location is required.'),
-  duration: z.string().min(1, 'Please select a duration.'),
+  duration: z.coerce.number().min(1, 'Duration must be at least 1 day.').max(14, 'Duration cannot exceed 14 days.'),
   travelStyle: z.string().optional(),
 });
 
@@ -45,7 +44,7 @@ export default function ItineraryPage() {
     defaultValues: {
       interests: '',
       location: '',
-      duration: '',
+      duration: 3,
       travelStyle: 'balanced',
     },
   });
@@ -53,7 +52,10 @@ export default function ItineraryPage() {
   const onSubmit = (values: FormValues) => {
     setItinerary(null);
     startTransition(async () => {
-      const result = await getItinerary(values);
+      const result = await getItinerary({
+          ...values,
+          duration: `${values.duration} ${values.duration > 1 ? 'days' : 'day'}`
+      });
       setItinerary(result);
     });
   };
@@ -104,19 +106,10 @@ export default function ItineraryPage() {
                   name="duration"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Duration</FormLabel>
-                      <Select onValueChange={field.onChange} defaultValue={field.value}>
-                        <FormControl>
-                          <SelectTrigger>
-                            <SelectValue placeholder="Select a duration" />
-                          </SelectTrigger>
-                        </FormControl>
-                        <SelectContent>
-                          <SelectItem value="1 day">1 Day</SelectItem>
-                          <SelectItem value="3 days">3 Days</SelectItem>
-                          <SelectItem value="1 week">1 Week</SelectItem>
-                        </SelectContent>
-                      </Select>
+                      <FormLabel>Duration (in days)</FormLabel>
+                      <FormControl>
+                        <Input type="number" placeholder="e.g., 3" {...field} />
+                      </FormControl>
                       <FormMessage />
                     </FormItem>
                   )}

@@ -1,3 +1,4 @@
+
 'use server';
 /**
  * @fileOverview Provides personalized itinerary suggestions for travelers based on their interests and real-time local data.
@@ -13,16 +14,16 @@ import {z} from 'genkit';
 const IntelligentItinerarySuggestionsInputSchema = z.object({
   interests: z
     .string()
-    .describe('A comma-separated list of the traveler\u0027s interests.'),
+    .describe('A comma-separated list of the traveler\'s interests.'),
   location: z.string().describe('The current location of the traveler.'),
   duration: z
     .string()
-    .describe('The desired duration of the itinerary (e.g., \"1 day\", \"3 days\").'),
+    .describe('The desired duration of the itinerary (e.g., "1 day", "3 days").'),
   travelStyle: z
     .string()
     .optional()
     .describe(
-      'The traveler\u0027s preferred travel style (e.g., \"budget-friendly\", \"luxury\").'
+      'The traveler\'s preferred travel style (e.g., "budget-friendly", "luxury").'
     ),
 });
 export type IntelligentItinerarySuggestionsInput = z.infer<
