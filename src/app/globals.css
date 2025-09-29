@@ -37,25 +37,35 @@
      /* Custom font variables for 'Literata' and 'Source Code Pro' */
     --font-literata: 'Literata', serif;
     --font-source-code-pro: 'Source Code Pro', monospace;
+    
+    /* Sidebar */
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 222 84% 4%;
+    --sidebar-border: 210 40% 90%;
+    --sidebar-ring: 210 90% 50%;
+    --sidebar-accent: 210 40% 96%;
+    --sidebar-accent-foreground: 222 84% 4%;
+    --sidebar-primary: 210 90% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
   }
 
   .dark {
-    --background: 222 84% 4%; /* Dark Blue */
+    --background: 0 0% 0%; /* Black */
     --foreground: 0 0% 98%;
     
-    --card: 222 70% 8%;
+    --card: 222 84% 4.9%;
     --card-foreground: 0 0% 98%;
     
-    --popover: 222 84% 4%;
+    --popover: 222 84% 4.9%;
     --popover-foreground: 0 0% 98%;
     
     --primary: 210 90% 50%; /* Vibrant Light Blue */
     --primary-foreground: 0 0% 100%;
     
-    --secondary: 222 50% 12%;
+    --secondary: 217 32.6% 17.5%;
     --secondary-foreground: 0 0% 98%;
     
-    --muted: 222 50% 12%;
+    --muted: 217 32.6% 17.5%;
     --muted-foreground: 215 20% 65%;
     
     --accent: 210 90% 60%;
@@ -64,9 +74,19 @@
     --destructive: 0 63% 31%;
     --destructive-foreground: 0 0% 98%;
     
-    --border: 222 50% 12%;
-    --input: 222 50% 12%;
+    --border: 217 32.6% 17.5%;
+    --input: 217 32.6% 17.5%;
     --ring: 210 90% 50%;
+
+    /* Sidebar */
+    --sidebar-background: 0 0% 0%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-border: 217 32.6% 17.5%;
+    --sidebar-ring: 210 90% 50%;
+    --sidebar-accent: 217 32.6% 17.5%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-primary: 210 90% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
   }
 }
 
