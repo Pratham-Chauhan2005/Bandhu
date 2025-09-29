@@ -42,7 +42,6 @@ const navItems = [
   { href: '/homestays', icon: Home, label: 'Homestays' },
   { href: '/itinerary', icon: Zap, label: 'Itinerary AI' },
   { href: '/tracking', icon: Map, label: 'Tracking' },
-  { href: '/nearby-map', icon: MapPin, label: 'Nearby Map' },
 ];
 
 const bottomNavItems = [
