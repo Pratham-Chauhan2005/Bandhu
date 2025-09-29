@@ -118,8 +118,8 @@ export default function Home() {
           </Button>
         </div>
         <div className="overflow-x-hidden">
-          <div className="grid grid-cols-2 mobile-lg:grid-cols-3 tablet:grid-cols-4 laptop:grid-cols-4 desktop:grid-cols-4 gap-4">
-            {recommendedBandhus.slice(0, 4).map((bandhu) => (
+          <div className="grid grid-cols-2 mobile-lg:grid-cols-3 tablet:grid-cols-4 laptop:grid-cols-5 desktop:grid-cols-6 gap-4">
+            {recommendedBandhus.slice(0, 6).map((bandhu) => (
               <BandhuCard key={bandhu.id} bandhu={bandhu} />
             ))}
           </div>
