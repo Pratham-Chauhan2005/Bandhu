@@ -1,6 +1,7 @@
+
 import Image from 'next/image';
 import { Card, CardContent } from '@/components/ui/card';
-import { CalendarDays, Clock } from 'lucide-react';
+import { CalendarDays, Clock, MapPin } from 'lucide-react';
 
 type Event = {
   id: string;
@@ -9,6 +10,7 @@ type Event = {
   imageHint: string;
   date: string;
   time?: string;
+  distance?: number;
 };
 
 type EventCardProps = {
@@ -27,6 +29,12 @@ export default function EventCard({ event }: EventCardProps) {
           className="w-full h-48 object-cover"
           data-ai-hint={event.imageHint}
         />
+         {event.distance !== undefined && (
+          <div className="absolute top-2 right-2 bg-background/80 text-foreground text-xs font-semibold p-1.5 rounded-md flex items-center gap-1">
+              <MapPin className="w-3 h-3 text-primary" />
+              <span>{event.distance.toFixed(1)} km away</span>
+          </div>
+        )}
       </div>
       <CardContent className="p-4">
         <div className="flex justify-between items-end">

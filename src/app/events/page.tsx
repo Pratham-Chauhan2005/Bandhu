@@ -7,9 +7,13 @@ import { nearbyEvents } from '@/lib/data';
 import EventCard from '@/components/EventCard';
 import { Loader2, MapPin } from 'lucide-react';
 import { Skeleton } from '@/components/ui/skeleton';
+import { getDistance } from '@/lib/utils';
+
+type Event = (typeof nearbyEvents)[0] & { distance?: number };
 
 export default function EventsPage() {
   const [location, setLocation] = useState('Detecting location...');
+  const [sortedEvents, setSortedEvents] = useState<Event[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -26,9 +30,18 @@ export default function EventsPage() {
               const data = await response.json();
               const { city, state } = data.address;
               setLocation(city ? `${city}, ${state}` : 'Unknown Location');
+
+              const eventsWithDistance = nearbyEvents.map(event => ({
+                ...event,
+                distance: getDistance(latitude, longitude, event.latitude, event.longitude)
+              }));
+              eventsWithDistance.sort((a,b) => a.distance - b.distance);
+              setSortedEvents(eventsWithDistance);
+
             } catch (error) {
               console.error('Error fetching address:', error);
               setLocation('Could not determine location');
+              setSortedEvents(nearbyEvents);
             } finally {
               setIsLoading(false);
             }
@@ -36,11 +49,13 @@ export default function EventsPage() {
           (error) => {
             console.error('Geolocation error:', error);
             setLocation('Location access denied');
+            setSortedEvents(nearbyEvents);
             setIsLoading(false);
           }
         );
       } else {
         setLocation('Geolocation not available');
+        setSortedEvents(nearbyEvents);
         setIsLoading(false);
       }
     }, 1000); // Simulate network delay
@@ -78,7 +93,7 @@ export default function EventsPage() {
         </div>
       ) : (
         <div className="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 gap-6">
-          {nearbyEvents.map((event) => (
+          {sortedEvents.map((event) => (
             <EventCard key={event.id} event={event} />
           ))}
         </div>
