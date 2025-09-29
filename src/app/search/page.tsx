@@ -16,13 +16,24 @@ function SearchPageContent() {
   if (!query) {
     return <NotFound title="Enter a search query" message="Please enter something in the search bar to find what you're looking for." />;
   }
+  
+  const normalize = (str: string) => str.toLowerCase().replace(/s$/, ''); // Basic plural to singular
+  const normalizedQuery = normalize(query);
 
-  const bandhuResults = recommendedBandhus.filter(b => 
-    b.name.toLowerCase().includes(query) ||
-    b.service.toLowerCase().includes(query) ||
-    b.skills.some(skill => skill.toLowerCase().includes(query)) ||
-    b.bio.toLowerCase().includes(query)
-  );
+  const bandhuResults = recommendedBandhus.filter(b => {
+      const service = b.service.toLowerCase();
+      
+      // Handle "guides" -> "guide", "photographers" -> "photographer", etc.
+      if (normalizedQuery.includes('guide') && service.includes('guide')) return true;
+      if (normalizedQuery.includes('photographer') && service.includes('photographer')) return true;
+      if (normalizedQuery.includes('artist') && service.includes('artist')) return true;
+      if (normalizedQuery.includes('food') && service.includes('food expert')) return true;
+
+      return b.name.toLowerCase().includes(query) ||
+      b.service.toLowerCase().includes(query) ||
+      b.skills.some(skill => skill.toLowerCase().includes(query)) ||
+      b.bio.toLowerCase().includes(query)
+  });
 
   const foodResults = topFoods.filter(f => 
     f.title.toLowerCase().includes(query) ||
