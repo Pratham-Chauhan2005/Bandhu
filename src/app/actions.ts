@@ -5,6 +5,8 @@ import { intelligentItinerarySuggestions, type IntelligentItinerarySuggestionsIn
 import { languageTranslationForBandhuProfiles, type LanguageTranslationForBandhuProfilesInput } from '@/ai/flows/language-translation-for-bandhu-profiles';
 import { getAttractions, type GetAttractionsInput, type GetAttractionsOutput } from '@/ai/flows/get-attractions-flow';
 import { getLocalEvents, type GetLocalEventsInput, type GetLocalEventsOutput } from '@/ai/flows/get-local-events-flow';
+import { getLocalFoodShops as getLocalFoodShopsFlow, type GetLocalFoodShopsInput, type GetLocalFoodShopsOutput } from '@/ai/flows/get-local-food-flow';
+
 
 export async function getItinerary(input: IntelligentItinerarySuggestionsInput): Promise<IntelligentItinerarySuggestionsOutput> {
     try {
@@ -49,5 +51,20 @@ export async function getEventsByLocation(input: GetLocalEventsInput): Promise<G
     } catch (error) {
         console.error(error);
         return { events: [] };
+    }
+}
+
+export async function getLocalFoodShops(input: GetLocalFoodShopsInput): Promise<GetLocalFoodShopsOutput> {
+    try {
+        const result = await getLocalFoodShopsFlow(input);
+        result.foodShops.forEach((shop: any, index: number) => {
+            if (!shop.image) {
+                shop.image = `https://picsum.photos/seed/foodshop${index + 1}/600/400`;
+            }
+        });
+        return result;
+    } catch (error) {
+        console.error(error);
+        return { foodShops: [] };
     }
 }

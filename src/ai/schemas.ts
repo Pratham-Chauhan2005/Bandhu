@@ -30,3 +30,15 @@ export const EventSchema = z.object({
     longitude: z.number().describe('The longitude of the event location.'),
 });
 export type Event = z.infer<typeof EventSchema>;
+
+export const FoodShopSchema = z.object({
+    id: z.string().describe('A unique ID for the food shop.'),
+    name: z.string().describe('The name of the food shop or restaurant.'),
+    description: z.string().describe('A short, compelling description of what makes this place special.'),
+    image: z.string().optional().describe('A URL to an image of the food shop or its signature dish.'),
+    imageHint: z.string().optional().describe('A two-word hint for a placeholder image (e.g., "street food").'),
+    rating: z.number().optional().describe('The rating of the shop, out of 5.'),
+    latitude: z.number().describe('The latitude of the food shop.'),
+    longitude: z.number().describe('The longitude of the food shop.'),
+});
+export type FoodShop = z.infer<typeof FoodShopSchema>;

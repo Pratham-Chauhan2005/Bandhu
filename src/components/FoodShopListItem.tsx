@@ -5,20 +5,14 @@ import { Star, MapPin } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from './ui/button';
 import Link from 'next/link';
+import type { FoodShop } from '@/ai/schemas';
 
-type FoodShop = {
-  id: string;
-  name: string;
-  location: string;
-  rating: number;
-  reviews: number;
-  image: string;
-  imageHint: string;
+type FoodShopWithDistance = FoodShop & {
   distance?: number;
 };
 
 type FoodShopListItemProps = {
-  shop: FoodShop;
+  shop: FoodShopWithDistance;
 };
 
 export default function FoodShopListItem({ shop }: FoodShopListItemProps) {
@@ -32,10 +26,7 @@ export default function FoodShopListItem({ shop }: FoodShopListItemProps) {
 
         <div className="flex-grow">
           <p className="font-bold text-lg text-foreground">{shop.name}</p>
-          <div className="flex items-center gap-2 text-sm text-muted-foreground mt-1">
-            <MapPin className="h-4 w-4" />
-            <span>{shop.location}</span>
-          </div>
+          <p className="text-sm text-muted-foreground line-clamp-2 mt-1">{shop.description}</p>
         </div>
 
         <div className="flex flex-col items-end justify-center gap-1 text-right">
@@ -44,11 +35,12 @@ export default function FoodShopListItem({ shop }: FoodShopListItemProps) {
                     {shop.distance.toFixed(1)} km away
                 </div>
             )}
-          <div className="flex items-center gap-1 font-bold text-amber-500">
-            <Star className="w-5 h-5 fill-current" />
-            <span>{shop.rating.toFixed(1)}</span>
-          </div>
-          <p className="text-xs text-muted-foreground">({shop.reviews} reviews)</p>
+          {shop.rating && (
+            <div className="flex items-center gap-1 font-bold text-amber-500">
+                <Star className="w-5 h-5 fill-current" />
+                <span>{shop.rating.toFixed(1)}</span>
+            </div>
+          )}
         </div>
       </CardContent>
     </Card>
