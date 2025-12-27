@@ -7,6 +7,24 @@
       "imageHint": "indian guide"
     },
     {
+      "id": "bandhu2",
+      "description": "Portrait of Priya Singh",
+      "imageUrl": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+      "imageHint": "woman photographer"
+    },
+    {
+      "id": "bandhu4",
+      "description": "Portrait of Ankit Desai",
+      "imageUrl": "https://images.unsplash.com/photo-1628890923662-2cb23c2a02dd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+      "imageHint": "man cooking"
+    },
+    {
+      "id": "bandhu5",
+      "description": "Portrait of Karan Johar",
+      "imageUrl": "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80",
+      "imageHint": "man nightlife"
+    },
+    {
       "id": "bandhu6",
       "description": "Portrait of Isha Verma",
       "imageUrl": "https://images.unsplash.com/photo-1580489944761-15a19d654956?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHx3b21hbiUyMHByb2ZpbGUlMjBwaWN8ZW58MHx8fHwxNzY0MDgzNzg4fDA&ixlib.rb-4.1.0&q=80&w=1080",
@@ -17,6 +35,12 @@
       "description": "Portrait of Vikram Singh",
       "imageUrl": "https://images.unsplash.com/photo-1615109398623-88346a601842?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aW5kaWFuJTIwbWFufGVufDB8fDB8fA%3D%3D&w=1000&q=80",
       "imageHint": "indian photographer"
+    },
+    {
+      "id": "bandhu8",
+      "description": "Portrait of Neha Sharma",
+      "imageUrl": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+      "imageHint": "woman artist"
     },
     {
       "id": "food1",

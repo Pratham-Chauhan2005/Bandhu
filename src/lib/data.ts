@@ -1,7 +1,7 @@
 
 
 import { PlaceHolderImages } from './placeholder-images';
-import { Users, Camera, Palette, UtensilsCrossed, CalendarDays, Landmark, Home } from 'lucide-react';
+import { Users, Camera, Palette, UtensilsCrossed, CalendarDays, Landmark, Home, Martini } from 'lucide-react';
 
 const getImage = (id: string) => PlaceHolderImages.find(img => img.id === id)?.imageUrl || 'https://picsum.photos/seed/placeholder/600/400';
 const getHint = (id: string) => PlaceHolderImages.find(img => img.id === id)?.imageHint || 'placeholder';
@@ -13,6 +13,7 @@ export const categories = [
   { name: 'Food', icon: UtensilsCrossed, href: '/category/food' },
   { name: 'Events', icon: CalendarDays, href: '/category/events' },
   { name: 'Attractions', icon: Landmark, href: '/category/attractions' },
+  { name: 'Nightlife', icon: Martini, href: '/category/nightlife'}
 ];
 
 export const recommendedBandhus = [
@@ -31,6 +32,57 @@ export const recommendedBandhus = [
     skills: ['History Buff', 'Street Food Expert', 'Photography'],
     photos: [getImage('gallery1'), getImage('gallery2'), getImage('gallery3')],
     phone: '+911234567890',
+    isAvailable: true,
+  },
+  {
+    id: '2',
+    name: 'Priya Singh',
+    service: 'Photographer',
+    rate: 250,
+    rating: 4.8,
+    reviews: 89,
+    verified: true,
+    image: getImage('bandhu2'),
+    imageHint: getHint('bandhu2'),
+    bio: "Capturing moments is my passion. I specialize in portrait and street photography, finding the beauty in everyday life. Let's create beautiful memories of your trip!",
+    languages: ['English', 'Hindi'],
+    skills: ['Portrait Photography', 'Street Photography', 'Photo Editing'],
+    photos: [getImage('gallery4'), getImage('gallery5'), getImage('gallery6')],
+    phone: '+912345678901',
+    isAvailable: false,
+  },
+  {
+    id: '4',
+    name: 'Ankit Desai',
+    service: 'Food Expert',
+    rate: 180,
+    rating: 4.9,
+    reviews: 150,
+    verified: true,
+    image: getImage('bandhu4'),
+    imageHint: getHint('bandhu4'),
+    bio: "I'm a food blogger and chef who knows the best culinary secrets of Mumbai. From street food stalls to fine dining, I'll take you on a gastronomic adventure.",
+    languages: ['English', 'Hindi', 'Marathi'],
+    skills: ['Culinary Tours', 'Food Blogging', 'Cooking Classes'],
+    photos: [getImage('gallery22'), getImage('gallery23'), getImage('gallery24')],
+    phone: '+914567890123',
+    isAvailable: true,
+  },
+  {
+    id: '5',
+    name: 'Karan Johar',
+    service: 'Nightlife Guide',
+    rate: 200,
+    rating: 4.7,
+    reviews: 95,
+    verified: false,
+    image: getImage('bandhu5'),
+    imageHint: getHint('bandhu5'),
+    bio: "Experience the vibrant nightlife of Bangalore with me. I know the best clubs, pubs, and hidden spots to make your nights unforgettable.",
+    languages: ['English', 'Hindi', 'Kannada'],
+    skills: ['Club Hopping', 'Craft Cocktails', 'Local Events'],
+    photos: [getImage('gallery25'), getImage('gallery26'), getImage('gallery27')],
+    phone: '+915678901234',
     isAvailable: true,
   },
   {
@@ -67,6 +119,23 @@ export const recommendedBandhus = [
     phone: '+917890123456',
     isAvailable: false,
   },
+  {
+    id: '8',
+    name: 'Neha Sharma',
+    service: 'Local Artist',
+    rate: 190,
+    rating: 4.8,
+    reviews: 88,
+    verified: true,
+    image: getImage('bandhu8'),
+    imageHint: getHint('bandhu8'),
+    bio: "A contemporary artist inspired by Indian mythology. I offer studio tours and personalized art workshops where you can explore your creativity.",
+    languages: ['English', 'Hindi'],
+    skills: ['Painting', 'Sculpture', 'Art History'],
+    photos: [getImage('gallery28'), getImage('gallery29'), getImage('gallery30')],
+    phone: '+918901234567',
+    isAvailable: false,
+  }
 ];
 
 export const topFoods = [
