@@ -52,23 +52,6 @@ export const recommendedBandhus = [
     isAvailable: false,
   },
   {
-    id: '4',
-    name: 'Ankit Desai',
-    service: 'Food Expert',
-    rate: 180,
-    rating: 4.9,
-    reviews: 150,
-    verified: true,
-    image: getImage('bandhu4'),
-    imageHint: getHint('bandhu4'),
-    bio: "I'm a food blogger and chef who knows the best culinary secrets of Mumbai. From street food stalls to fine dining, I'll take you on a gastronomic adventure.",
-    languages: ['English', 'Hindi', 'Marathi'],
-    skills: ['Culinary Tours', 'Food Blogging', 'Cooking Classes'],
-    photos: [getImage('gallery22'), getImage('gallery23'), getImage('gallery24')],
-    phone: '+914567890123',
-    isAvailable: true,
-  },
-  {
     id: '5',
     name: 'Karan Johar',
     service: 'Nightlife Guide',
@@ -181,6 +164,8 @@ export const localFoodShops = [
 
 
 
+
+    
 
     
 

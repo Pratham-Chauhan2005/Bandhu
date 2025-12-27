@@ -13,12 +13,6 @@
       "imageHint": "woman photographer"
     },
     {
-      "id": "bandhu4",
-      "description": "Portrait of Ankit Desai",
-      "imageUrl": "https://images.unsplash.com/photo-1628890923662-2cb23c2a02dd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-      "imageHint": "man cooking"
-    },
-    {
       "id": "bandhu5",
       "description": "Portrait of Karan Johar",
       "imageUrl": "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80",
