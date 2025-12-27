@@ -12,10 +12,36 @@ import { getEventsByLocation } from '@/app/actions';
 
 type EventWithDistance = Event & { distance?: number };
 
+const DEFAULT_LOCATION = 'Delhi, India';
+
 export default function EventsPage() {
   const [location, setLocation] = useState('Detecting location...');
   const [sortedEvents, setSortedEvents] = useState<EventWithDistance[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+
+  const fetchEvents = async (loc: string, userCoords?: { latitude: number; longitude: number }) => {
+    setIsLoading(true);
+    try {
+      const eventResults = await getEventsByLocation({ location: loc });
+      
+      if (userCoords) {
+        const eventsWithDistance = eventResults.events.map(event => ({
+          ...event,
+          distance: getDistance(userCoords.latitude, userCoords.longitude, event.latitude, event.longitude)
+        }));
+        eventsWithDistance.sort((a,b) => a.distance - b.distance);
+        setSortedEvents(eventsWithDistance);
+      } else {
+        setSortedEvents(eventResults.events);
+      }
+
+    } catch (error) {
+      console.error('Error fetching events:', error);
+      setSortedEvents([]);
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   useEffect(() => {
     if ('geolocation' in navigator) {
@@ -30,36 +56,23 @@ export default function EventsPage() {
             const { city, state, country } = data.address;
             const userLocation = city ? `${city}, ${state || country}` : state ? `${state}, ${country}` : country || 'your area';
             setLocation(userLocation);
-
-            const eventResults = await getEventsByLocation({ location: userLocation });
-            
-            const eventsWithDistance = eventResults.events.map(event => ({
-              ...event,
-              distance: getDistance(latitude, longitude, event.latitude, event.longitude)
-            }));
-            
-            eventsWithDistance.sort((a,b) => a.distance - b.distance);
-            setSortedEvents(eventsWithDistance);
+            fetchEvents(userLocation, { latitude, longitude });
 
           } catch (error) {
-            console.error('Error fetching events:', error);
-            setLocation('Could not determine location');
-            setSortedEvents([]);
-          } finally {
-            setIsLoading(false);
+            console.error('Error processing location:', error);
+            setLocation(`Fell back to ${DEFAULT_LOCATION}`);
+            fetchEvents(DEFAULT_LOCATION);
           }
         },
         (error) => {
-          console.error('Geolocation error:', error);
-          setLocation('Location access denied');
-          setIsLoading(false);
-          // Optionally fetch generic events here
+          console.error('Geolocation error:', error.message);
+          setLocation(`Location access denied. Showing events for ${DEFAULT_LOCATION}.`);
+          fetchEvents(DEFAULT_LOCATION);
         }
       );
     } else {
-      setLocation('Geolocation not available');
-      setIsLoading(false);
-      // Optionally fetch generic events here
+      setLocation(`Geolocation not available. Showing events for ${DEFAULT_LOCATION}.`);
+      fetchEvents(DEFAULT_LOCATION);
     }
   }, []);
 

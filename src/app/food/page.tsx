@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -11,10 +12,35 @@ import { getLocalFoodShops } from '@/app/actions';
 
 type FoodShopWithDistance = FoodShop & { distance?: number };
 
+const DEFAULT_LOCATION = 'Delhi, India';
+
 export default function FoodPage() {
   const [location, setLocation] = useState('Detecting location...');
   const [sortedShops, setSortedShops] = useState<FoodShopWithDistance[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+
+  const fetchFoodShops = async (loc: string, userCoords?: { latitude: number; longitude: number }) => {
+    setIsLoading(true);
+    try {
+      const foodShopResults = await getLocalFoodShops({ location: loc });
+      
+      if (userCoords) {
+        const shopsWithDistance = foodShopResults.foodShops.map(shop => ({
+          ...shop,
+          distance: getDistance(userCoords.latitude, userCoords.longitude, shop.latitude, shop.longitude)
+        }));
+        shopsWithDistance.sort((a,b) => a.distance - b.distance);
+        setSortedShops(shopsWithDistance);
+      } else {
+        setSortedShops(foodShopResults.foodShops);
+      }
+    } catch (error) {
+      console.error('Error fetching food shops:', error);
+      setSortedShops([]);
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   useEffect(() => {
     if ('geolocation' in navigator) {
@@ -29,34 +55,22 @@ export default function FoodPage() {
             const { city, state, country } = data.address;
             const userLocation = city ? `${city}, ${state || country}` : state ? `${state}, ${country}` : country || 'your area';
             setLocation(userLocation);
-
-            const foodShopResults = await getLocalFoodShops({ location: userLocation });
-            
-            const shopsWithDistance = foodShopResults.foodShops.map(shop => ({
-              ...shop,
-              distance: getDistance(latitude, longitude, shop.latitude, shop.longitude)
-            }));
-            
-            shopsWithDistance.sort((a,b) => a.distance - b.distance);
-            setSortedShops(shopsWithDistance);
-
+            fetchFoodShops(userLocation, { latitude, longitude });
           } catch (error) {
-            console.error('Error fetching food shops:', error);
-            setLocation('Could not determine location');
-            setSortedShops([]);
-          } finally {
-            setIsLoading(false);
+            console.error('Error processing location:', error);
+            setLocation(`Fell back to ${DEFAULT_LOCATION}`);
+            fetchFoodShops(DEFAULT_LOCATION);
           }
         },
         (error) => {
-          console.error('Geolocation error:', error);
-          setLocation('Location access denied');
-          setIsLoading(false);
+          console.error('Geolocation error:', error.message);
+          setLocation(`Location access denied. Showing food shops for ${DEFAULT_LOCATION}.`);
+          fetchFoodShops(DEFAULT_LOCATION);
         }
       );
     } else {
-      setLocation('Geolocation not available');
-      setIsLoading(false);
+      setLocation(`Geolocation not available. Showing food shops for ${DEFAULT_LOCATION}.`);
+      fetchFoodShops(DEFAULT_LOCATION);
     }
   }, []);
 

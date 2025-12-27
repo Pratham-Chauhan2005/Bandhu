@@ -35,79 +35,90 @@ export type MapItem = {
   imageHint?: string;
 };
 
+const DEFAULT_LOCATION = { lat: 28.6139, lng: 77.2090 }; // Delhi
+const DEFAULT_LOCATION_STRING = 'Delhi, India';
+
 export default function NearbyMapPage() {
   const [userLocation, setUserLocation] = useState<{ lat: number; lng: number } | null>(null);
   const [mapItems, setMapItems] = useState<MapItem[]>([]);
   const [status, setStatus] = useState('loading-location'); // loading-location, loading-data, ready, error
+
+  const fetchDataForMap = async (location: { lat: number; lng: number }, locationString: string) => {
+    setStatus('loading-data');
+    try {
+      // Fetch all data in parallel
+      const [foodResults, eventResults] = await Promise.all([
+        getLocalFoodShops({ location: locationString }),
+        getEventsByLocation({ location: locationString }),
+      ]);
+
+      const homestayItems: MapItem[] = homestays.map(stay => ({
+        id: `homestay-${stay.id}`,
+        type: 'homestay',
+        latitude: stay.latitude,
+        longitude: stay.longitude,
+        name: stay.name,
+        description: `₹${stay.price}/night - ${stay.rating} ★`,
+        image: stay.image,
+        imageHint: stay.imageHint,
+      }));
+
+      const foodItems: MapItem[] = foodResults.foodShops.map((shop: FoodShop) => ({
+        id: `food-${shop.id}`,
+        type: 'food',
+        latitude: shop.latitude,
+        longitude: shop.longitude,
+        name: shop.name,
+        description: shop.description,
+        image: shop.image,
+        imageHint: shop.imageHint,
+      }));
+
+      const eventItems: MapItem[] = eventResults.events.map((event: Event) => ({
+        id: `event-${event.id}`,
+        type: 'event',
+        latitude: event.latitude,
+        longitude: event.longitude,
+        name: event.title,
+        description: `${event.date} - ${event.description}`,
+        image: event.image,
+        imageHint: event.imageHint,
+      }));
+      
+      setMapItems([...homestayItems, ...foodItems, ...eventItems]);
+      setUserLocation(location);
+      setStatus('ready');
+    } catch (error) {
+      console.error('Error fetching data for map:', error);
+      setStatus('error');
+    }
+  };
 
   useEffect(() => {
     if ('geolocation' in navigator) {
       navigator.geolocation.getCurrentPosition(
         async (position) => {
           const { latitude, longitude } = position.coords;
-          setUserLocation({ lat: latitude, lng: longitude });
-          setStatus('loading-data');
-
           try {
             // Fetch location name for AI queries
             const geoResponse = await fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`);
             const geoData = await geoResponse.json();
             const { city, state, country } = geoData.address;
             const locationString = city ? `${city}, ${state || country}` : state ? `${state}, ${country}` : country || 'your area';
-
-            // Fetch all data in parallel
-            const [foodResults, eventResults] = await Promise.all([
-              getLocalFoodShops({ location: locationString }),
-              getEventsByLocation({ location: locationString }),
-            ]);
-
-            const homestayItems: MapItem[] = homestays.map(stay => ({
-              id: `homestay-${stay.id}`,
-              type: 'homestay',
-              latitude: stay.latitude,
-              longitude: stay.longitude,
-              name: stay.name,
-              description: `₹${stay.price}/night - ${stay.rating} ★`,
-              image: stay.image,
-              imageHint: stay.imageHint,
-            }));
-
-            const foodItems: MapItem[] = foodResults.foodShops.map((shop: FoodShop) => ({
-              id: `food-${shop.id}`,
-              type: 'food',
-              latitude: shop.latitude,
-              longitude: shop.longitude,
-              name: shop.name,
-              description: shop.description,
-              image: shop.image,
-              imageHint: shop.imageHint,
-            }));
-
-            const eventItems: MapItem[] = eventResults.events.map((event: Event) => ({
-              id: `event-${event.id}`,
-              type: 'event',
-              latitude: event.latitude,
-              longitude: event.longitude,
-              name: event.title,
-              description: `${event.date} - ${event.description}`,
-              image: event.image,
-              imageHint: event.imageHint,
-            }));
-            
-            setMapItems([...homestayItems, ...foodItems, ...eventItems]);
-            setStatus('ready');
-          } catch (error) {
-            console.error('Error fetching data for map:', error);
-            setStatus('error');
+            fetchDataForMap({ lat: latitude, lng: longitude }, locationString);
+          } catch(e) {
+            console.error('Could not reverse geocode. Falling back to default.', e);
+            fetchDataForMap(DEFAULT_LOCATION, DEFAULT_LOCATION_STRING);
           }
         },
         (error) => {
-          console.error('Geolocation error:', error);
-          setStatus('error');
+          console.error('Geolocation error:', error.message);
+          fetchDataForMap(DEFAULT_LOCATION, DEFAULT_LOCATION_STRING);
         }
       );
     } else {
-      setStatus('error');
+      console.error('Geolocation not available. Falling back to default.');
+      fetchDataForMap(DEFAULT_LOCATION, DEFAULT_LOCATION_STRING);
     }
   }, []);
 

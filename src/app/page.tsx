@@ -56,7 +56,7 @@ export default function Home() {
           }
         },
         (error) => {
-          console.error('Geolocation error:', error);
+          console.error('Geolocation error:', error.message);
           setLoadingEvents(false);
         }
       );

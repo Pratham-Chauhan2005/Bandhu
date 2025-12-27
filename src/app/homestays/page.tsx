@@ -20,7 +20,7 @@ export default function HomestaysPage() {
     // Set a timeout to prevent geolocation from hanging
     const locationTimeout = setTimeout(() => {
       if (isLoading) {
-        setLocation('Could not determine location');
+        setLocation('Could not determine location. Showing default results.');
         setSortedHomestays(homestays); // Show default list
         setIsLoading(false);
       }
@@ -50,7 +50,7 @@ export default function HomestaysPage() {
 
           } catch (error) {
             console.error('Error processing location:', error);
-            setLocation('Could not determine location');
+            setLocation('Could not determine location. Showing default results.');
             setSortedHomestays(homestays); // Fallback to default list
           } finally {
             setIsLoading(false);
@@ -58,15 +58,15 @@ export default function HomestaysPage() {
         },
         (error) => {
           clearTimeout(locationTimeout);
-          console.error('Geolocation error:', error);
-          setLocation('Location access denied');
+          console.error('Geolocation error:', error.message);
+          setLocation('Location access denied. Showing default results.');
           setSortedHomestays(homestays); // Show default list if permission denied
           setIsLoading(false);
         }
       );
     } else {
       clearTimeout(locationTimeout);
-      setLocation('Geolocation not available');
+      setLocation('Geolocation not available. Showing default results.');
       setSortedHomestays(homestays); // Show default list if geolocation is not available
       setIsLoading(false);
     }
