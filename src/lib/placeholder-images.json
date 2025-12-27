@@ -7,18 +7,6 @@
       "imageHint": "indian guide"
     },
     {
-      "id": "bandhu4",
-      "description": "Portrait of Sunita Gupta",
-      "imageUrl": "https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxpbmRpYW4lMjB3b21hbiUyMGNvb2tpbmd8ZW58MHx8fHwxNzY0NTg0NzE1fDA&ixlib.rb-4.1.0&q=80&w=1080",
-      "imageHint": "indian cook"
-    },
-    {
-      "id": "bandhu5",
-      "description": "Portrait of Aarav Patel",
-      "imageUrl": "https://images.unsplash.com/photo-1599481238640-4c1288750d7a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxpbmRpYW4lMjBtYW58ZW58MHx8fHwxNzY0NTg0NTU3fDA&ixlib.rb-4.1.0&q=80&w=1080",
-      "imageHint": "indian guide"
-    },
-    {
       "id": "bandhu6",
       "description": "Portrait of Isha Verma",
       "imageUrl": "https://images.unsplash.com/photo-1580489944761-15a19d654956?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHx3b21hbiUyMHByb2ZpbGUlMjBwaWN8ZW58MHx8fHwxNzY0MDgzNzg4fDA&ixlib.rb-4.1.0&q=80&w=1080",
@@ -140,36 +128,6 @@
       "id": "gallery9",
       "imageUrl": "https://images.unsplash.com/photo-1613463251864-2a2bc3952817?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxhcnRpc3QlMjBzdHVkaW8fZW58MHx8fHwxNzU4OTYxMDU2fDA&ixlib.rb-4.1.0&q=80&w=1080",
       "imageHint": "artist studio"
-    },
-    {
-      "id": "gallery10",
-      "imageUrl": "https://images.unsplash.com/photo-1592457711340-2412dc07b733?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxpbmRpYW4lMjBzcGljZXN8ZW58MHx8fHwxNzU5MDI3OTEyfDA&ixlib.rb-4.1.0&q=80&w=1080",
-      "imageHint": "indian spices"
-    },
-    {
-      "id": "gallery11",
-      "imageUrl": "https://images.unsplash.com/photo-1653233797467-1a528819fd4f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxjb29raW5nJTIwY2xhc3N8ZW58MHx8fHwxNzU4OTYwMDAyfDA&ixlib.rb-4.1.0&q=80&w=1080",
-      "imageHint": "cooking class"
-    },
-    {
-      "id": "gallery12",
-      "imageUrl": "https://images.unsplash.com/photo-1604200657090-ae45994b2451?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxmb29kJTIwbWFya2V0fGVufDB8fHx8MTc1ODk1OTc5OHww&ixlib.rb-4.1.0&q=80&w=1080",
-      "imageHint": "food market"
-    },
-    {
-      "id": "gallery13",
-      "imageUrl": "https://images.unsplash.com/photo-1588630134363-654b9f4937e2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxpbmRpYW4lMjBoaWtpbmd8ZW58MHx8fHwxNzU5MDUzNDI1fDA&ixlib.rb-4.1.0&q=80&w=1080",
-      "imageHint": "indian hiking"
-    },
-    {
-      "id": "gallery14",
-      "imageUrl": "https://images.unsplash.com/photo-1594731849138-0852e9a8f465?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxpbmRpYW4lMjBmb3Jlc3R8ZW58MHx8fHwxNzU5MDUzNDI1fDA&ixlib.rb-4.1.0&q=80&w=1080",
-      "imageHint": "indian forest"
-    },
-    {
-      "id": "gallery15",
-      "imageUrl": "https://images.unsplash.com/photo-1506935272995-d85c8959a78c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxpbmRpYW4lMjByaXZlcnxlbnwwfHx8fDE3NTkwNTM0MjV8MA&ixlib.rb-4.1.0&q=80&w=1080",
-      "imageHint": "indian river"
     },
     {
       "id": "gallery16",
